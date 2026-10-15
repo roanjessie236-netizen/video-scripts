@@ -1,20 +1,23 @@
 #!/bin/bash
-# Render 《未来简史》 in ~60 s segments so an interrupted run can resume; then concat + mux audio.
+# v2: render homo_deus_future_v2.mp4 (270.7 s) in independent segments, then mux with out/score.wav.
+# Resumable: segments that have out/seg/seg_N.done are skipped (0-120 s is identical to v1 and can be reused).
 cd /data/hd
+STARTS=(0 60 120 180 240)
+ENDS=(60 120 180 240 270.7)
+OUTNAME=homo_deus_future_v2.mp4
 mkdir -p out/seg
-STARTS=(0 60 120 180)
-ENDS=(60 120 180 234)
-for i in 0 1 2 3; do
-  s=${STARTS[$i]}; e=${ENDS[$i]}
-  if [ -f out/seg/seg_$i.done ]; then continue; fi
-  python3 render.py --video out/seg/seg_$i.mp4 --start $s --end $e --preset medium --crf 19 > out/seg/seg_$i.log 2>&1 \
-    && echo ok > out/seg/seg_$i.done || { echo FAIL $i; exit 1; }
-  echo SEGDONE $i
+for i in "${!STARTS[@]}"; do
+  if [ -f out/seg/seg_$i.done ]; then echo "SKIP $i"; continue; fi
+  python3 render.py --video out/seg/seg_$i.mp4 --start ${STARTS[$i]} --end ${ENDS[$i]} --preset medium --crf 19 \
+    > out/seg/seg_$i.log 2>&1 || { echo "SEGFAIL $i"; exit 1; }
+  touch out/seg/seg_$i.done
+  echo "SEGDONE $i"
 done
-printf "file 'seg_%d.mp4'\n" 0 1 2 3 > out/seg/list.txt
+: > out/seg/list.txt
+for i in "${!STARTS[@]}"; do echo "file 'seg_$i.mp4'" >> out/seg/list.txt; done
 if [ -f out/score.wav ]; then
-  ffmpeg -y -loglevel error -f concat -safe 0 -i out/seg/list.txt -i out/score.wav -map 0:v -map 1:a \
-    -c:v copy -c:a aac -b:a 256k -shortest -movflags +faststart out/homo_deus_future_2K.mp4 && echo ALLDONE
+  ffmpeg -y -loglevel error -f concat -safe 0 -i out/seg/list.txt -i out/score.wav -map 0:v -map 1:a -c:v copy \
+    -c:a aac -b:a 256k -shortest -movflags +faststart out/$OUTNAME && echo ALLDONE
 else
   echo VIDEO_SEGMENTS_DONE_NO_SCORE
 fi

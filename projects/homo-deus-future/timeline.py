@@ -6,11 +6,14 @@ coordinates of the view centre inside the (16:9-cropped) source still.
 trans = how this shot enters over the previous one; its duration = overlap with the previous shot.
 Engine = Film-1 engine (projects/sapiens-70000-years) + tools/patch_engine.py
 (adds grades void/cyan/lab/tender/dawn/amber, fx datastream/bloom, transition 'digital').
+v2 (homo_deus_future_v2.mp4, 270.7 s): ch3 prosthetic shot cut (-4.8 s); 44 s 'useless class' insert
+at 161.6-205.6 (shots clinic..toport, 9 subtitles); ch4 Moon->Mars pass 2.5 s shorter; all later
+timecodes recalibrated. 0-120 s is identical to v1.
 """
 import json, os
 
 S = []
-DUR = 234.0
+DUR = 270.7
 
 
 def shot(id, image, start, end, cam, grade, trans='fade', ease='io', fx=None, prep=None, desc=''):
@@ -66,46 +69,64 @@ shot('cellplanets', '18_cellplanets.jpg', 104.6, 113.0, [[1.06, .5, .5, 0], [1.2
      desc='Cells orbiting like planets, micro meets cosmos')
 shot('neurons', '19_neurons.jpg', 112.0, 121.8, [[1.04, .5, .5, 0], [1.24, .52, .48, 0]], 'cyan',
      fx={'bloom': 0.25}, desc='Neural network of light')
-# ---------------------------------------------------------------- CH3 人与机器融合 2:01-2:46
+# ---------------------------------------------------------------- CH3 人与机器融合 2:01-2:42
+# v2: the 'prosthetic' shot (v1 132.0-137.8) was cut (repeats hands/bci); everything after it moves up 4.8 s.
 shot('hands', '20_hands.jpg', 120.8, 127.8, [[1.04, .5, .5, 0], [1.2, .5, .5, 0]], 'tender', trans='digital',
      desc='Human hand meeting a robotic hand')
 shot('bci', '21_bci.jpg', 126.8, 133.0, [[1.2, .5, .46, 0], [1.05, .5, .5, 0]], 'cyan',
      desc='Brain-computer interface')
-shot('prosthetic', '23_prosthetic.jpg', 132.0, 137.8, [[1.06, .5, .5, 0], [1.22, .5, .48, 0]], 'cyan',
-     desc='Smart prosthetic arm')
-shot('underground', '24_underground.jpg', 136.8, 143.8, [[1.14, .43, .5, 0], [1.14, .57, .5, 0]], 'cyan',
+shot('underground', '24_underground.jpg', 132.0, 139.0, [[1.14, .43, .5, 0], [1.14, .57, .5, 0]], 'cyan',
      ease='lin', desc='Giant Eastern underground city, Wandering-Earth scale')
-shot('upload', '25_upload.jpg', 142.8, 149.6, [[1.04, .5, .5, 0], [1.24, .5, .5, 0]], 'cyan', trans='digital',
+shot('upload', '25_upload.jpg', 138.0, 144.8, [[1.04, .5, .5, 0], [1.24, .5, .5, 0]], 'cyan', trans='digital',
      fx={'datastream': {'n': 420, 'y': 0.5, 'spread': 0.14, 'amp': 0.06, 'speed': 0.12, 'tilt': 0.0,
                         'col': CYAN, 'alpha': 0.6}}, desc='Consciousness dissolving into digital light')
-shot('ar', '22_ar.jpg', 148.6, 154.8, [[1.16, .5, .5, 0], [1.04, .5, .5, 0]], 'cyan',
+shot('ar', '22_ar.jpg', 143.8, 150.0, [[1.16, .5, .5, 0], [1.04, .5, .5, 0]], 'cyan',
      prep={'blur': [[145, 160, 210, 310], [484, 208, 544, 352], [718, 40, 788, 184], [796, 235, 928, 343],
                     [162, 406, 230, 462]]},
      desc='Augmented-reality street')
-shot('stationin', '26_stationin.jpg', 153.8, 160.0, [[1.04, .5, .5, 0], [1.2, .5, .5, 0]], 'cyan',
+shot('stationin', '26_stationin.jpg', 149.0, 155.2, [[1.04, .5, .5, 0], [1.2, .5, .5, 0]], 'cyan',
      desc='Space station interior')
-shot('mirror', '27_mirror.jpg', 159.0, 167.4, [[1.02, .5, .5, 0], [1.16, .5, .48, 0]], 'tender',
+shot('mirror', '27_mirror.jpg', 154.2, 162.6, [[1.02, .5, .5, 0], [1.16, .5, .48, 0]], 'tender',
      fx={'dim': 0.9}, desc='A person facing a digital reflection of themself')
-# ---------------------------------------------------------------- CH4 人类的新纪元 2:46-3:25
-shot('sunrise', '28_sunrise.jpg', 166.4, 174.0, [[1.04, .5, .5, 0], [1.22, .5, .5, 0]], 'dawn', fx={'bloom': 0.35},
+# ---------------------------------------------------------------- v2 INSERT 无用阶级 2:41.6-3:25.6 (no chapter card)
+# From the life-upgrade lab to automated work and ordinary faces in the same city, then with the crowd to the space port.
+shot('clinic', '36_clinic.jpg', 161.6, 169.2, [[1.22, .6, .44, 0], [1.04, .5, .5, 0]], 'lab',
+     desc='Life-upgrade clinic high above the city: a privileged client under a BCI halo')
+shot('automation', '37_automation.jpg', 168.2, 175.4, [[1.04, .5, .5, 0], [1.2, .5, .42, 0]], 'cyan', trans='digital',
+     ease='lin', desc='Lights-out automated factory in the same city; one human watching from a catwalk')
+shot('worker', '38_worker.jpg', 174.4, 181.4, [[1.04, .52, .5, 0], [1.18, .58, .42, 0]], 'tender',
+     desc='MCU: a middle-aged worker behind glass, watching robots do his former job')
+shot('faces', '39_faces.jpg', 180.4, 188.6, [[1.1, .44, .5, 0], [1.1, .56, .48, 0]], 'tender', ease='lin',
+     prep={'blur': [[128, 150, 252, 330], [903, 0, 965, 232], [1232, 212, 1350, 292], [565, 262, 592, 325]]},
+     desc='MCU: ordinary people - a delivery rider, an old man, a mother and child - looking up')
+shot('divide', '40_divide.jpg', 187.6, 195.0, [[1.2, .5, .42, 0], [1.2, .5, .58, 0]], 'dawn',
+     desc='Divided city: sky-towers in sunlight above, crowded streets in shadow below')
+shot('crowdwalk', '41_crowdwalk.jpg', 194.0, 200.6, [[1.12, .42, .52, 0], [1.12, .56, .5, 0]], 'amber', ease='lin',
+     prep={'blur': [[175, 150, 242, 197], [355, 95, 382, 188], [1255, 252, 1280, 306], [632, 244, 646, 294]]},
+     desc='MS tracking: ordinary people walking together toward the space port')
+shot('toport', '42_toport.jpg', 199.6, 206.6, [[1.04, .5, .55, 0], [1.24, .5, .45, 0]], 'amber', ease='in',
+     fx={'bloom': 0.25}, desc='The crowd streams through the great gate toward the rocket and the light')
+# ---------------------------------------------------------------- CH4 人类的新纪元 3:25.6-4:01.5
+# v2: +39.2 s; the Moon->Mars pass is 2.5 s shorter (v1 183.9-186.4 cut).
+shot('sunrise', '28_sunrise.jpg', 205.6, 213.2, [[1.04, .5, .5, 0], [1.22, .5, .5, 0]], 'dawn', fx={'bloom': 0.35},
      desc='Sun rising over the curve of the Earth')
-shot('futureearth', '29_futureearth.jpg', 173.0, 180.0, [[1.06, .5, .5, 0], [1.24, .5, .5, 1.5]], 'dawn',
+shot('futureearth', '29_futureearth.jpg', 212.2, 219.2, [[1.06, .5, .5, 0], [1.24, .5, .5, 1.5]], 'dawn',
      desc='Future Earth ringed with orbital structures')
-shot('moonbase', '30_moonbase.jpg', 179.0, 186.0, [[1.14, .44, .5, 0], [1.14, .56, .5, 0]], 'cyan', ease='lin',
+shot('moonbase', '30_moonbase.jpg', 218.2, 222.9, [[1.14, .45, .5, 0], [1.14, .55, .5, 0]], 'cyan', ease='lin',
      desc='Permanent Moon base')
-shot('marscity', '31_marscity.jpg', 185.0, 191.0, [[1.04, .5, .5, 0], [1.2, .5, .5, 0]], 'amber',
+shot('marscity', '31_marscity.jpg', 221.9, 227.7, [[1.04, .5, .5, 0], [1.2, .5, .5, 0]], 'amber',
      desc='Domed city on Mars')
-shot('starship', '32_starship.jpg', 190.0, 197.8, [[1.04, .5, .5, 0], [1.3, .5, .5, 0]], 'void', ease='in',
-     fx={'shake': {'t0': 190.6, 'peak': 197.8}}, desc='Starship leaving the solar system')
-shot('spaceport', '33_spaceport.jpg', 197.75, 205.8, [[1.2, .5, .5, 0], [1.04, .5, .5, 0]], 'amber', trans='cut',
+shot('starship', '32_starship.jpg', 226.7, 234.5, [[1.04, .5, .5, 0], [1.3, .5, .5, 0]], 'void', ease='in',
+     fx={'shake': {'t0': 227.3, 'peak': 234.5}}, desc='Starship leaving the solar system')
+shot('spaceport', '33_spaceport.jpg', 234.45, 242.5, [[1.2, .5, .5, 0], [1.04, .5, .5, 0]], 'amber', trans='cut',
      ease='out', prep={'blur': [[400, 262, 436, 380], [1235, 338, 1272, 422], [72, 88, 156, 148], [262, 362, 330, 406]]},
      desc='Crowds of humanity at an Eastern space port')
-# ---------------------------------------------------------------- ENDING 3:25-3:54
-shot('child', '34_child.jpg', 204.8, 222.0, [[1.0, .5, .5, 0], [1.22, .5, .48, 0]], 'tender',
+# ---------------------------------------------------------------- ENDING 4:01.5-4:30.7
+shot('child', '34_child.jpg', 241.5, 258.7, [[1.0, .5, .5, 0], [1.22, .5, .48, 0]], 'tender',
      desc='A child in a space station looking at Earth')
-shot('eye', '35_eye.jpg', 221.0, 229.0, [[1.0, .5, .5, 0], [1.3, .5, .5, 0]], 'tender', fx={'bloom': 0.3},
+shot('eye', '35_eye.jpg', 257.7, 265.7, [[1.0, .5, .5, 0], [1.3, .5, .5, 0]], 'tender', fx={'bloom': 0.3},
      desc="Earth's blue light reflected in the child's eye")
-shot('end', '01_cosmos.jpg', 226.6, DUR, [[1.1, .5, .5, 0], [1.2, .5, .5, 0.5]], 'void',
+shot('end', '01_cosmos.jpg', 263.3, DUR, [[1.1, .5, .5, 0], [1.2, .5, .5, 0.5]], 'void',
      fx={'stars3d': {'k1': 0.01, 'k2': 0.0}, 'dim': 0.45}, desc='Back to the cosmos for the end card')
 
 SUBS = [  # [start, end, text, source]  source: 'brief' = user's script, 'added' = added line based on Homo Deus
@@ -122,37 +143,47 @@ SUBS = [  # [start, end, text, source]  source: 'brief' = user's script, 'added'
     [94.4, 98.6, '如今，智能设计开始取代自然选择。', 'added'],
     [106.0, 112.6, '疾病、衰老，甚至身体本身，都可能成为可以修改的对象。', 'brief'],
     [114.2, 119.2, '新的人类议程：长生不死、幸福快乐、化身为神。', 'added'],
-    [133.6, 137.6, '身体的边界，正在被重新定义。', 'added'],
-    [144.8, 148.6, '如果意识可以被复制。', 'brief'],
-    [150.6, 154.2, '如果记忆可以被保存。', 'brief'],
-    [154.8, 158.8, '如果生命可以无限延续。', 'brief'],
-    [160.0, 165.0, '我们还是原来的自己吗？', 'brief'],
-    [173.4, 177.0, '未来最大的挑战。', 'brief'],
-    [178.4, 182.4, '不是机器是否会超越人类。', 'brief'],
-    [186.6, 191.0, '而是当我们拥有创造神的能力。', 'brief'],
-    [192.4, 197.2, '是否仍然知道如何成为人？', 'brief'],
-    [199.6, 204.4, '智人，也许正在走向“神人”。', 'added'],
+    [127.6, 131.6, '身体的边界，正在被重新定义。', 'added'],
+    [140.0, 143.8, '如果意识可以被复制。', 'brief'],
+    [145.8, 149.4, '如果记忆可以被保存。', 'brief'],
+    [150.0, 154.0, '如果生命可以无限延续。', 'brief'],
+    [155.2, 160.2, '我们还是原来的自己吗？', 'brief'],
+    # v2 insert: the 'useless class' (brief v2). Long sentences are split at commas for one-line subtitles.
+    [162.4, 167.0, '但还有一个问题：这样的未来，会属于每个人吗？', 'brief'],
+    [168.6, 174.6, '当算法承担越来越多工作，一些人可能难以在经济体系中重新找到位置。', 'brief'],
+    [175.2, 179.4, '赫拉利将这种风险称为“无用阶级”。', 'brief'],
+    [180.8, 184.6, '这里的“无用”，指劳动可能不再被需要，', 'brief'],
+    [184.9, 188.0, '绝不意味着人失去了价值。', 'brief'],
+    [188.6, 193.4, '如果少数人获得升级生命的能力，更多人却被留在身后，', 'brief'],
+    [193.7, 197.6, '技术的进步，将把我们带向怎样的社会？', 'brief'],
+    [198.4, 201.2, '当我们追问人类能成为什么，', 'brief'],
+    [201.5, 205.2, '也必须追问：谁能共享这个未来？', 'brief'],
+    [212.6, 216.2, '未来最大的挑战。', 'brief'],
+    [217.6, 221.6, '不是机器是否会超越人类。', 'brief'],
+    [223.3, 227.7, '而是当我们拥有创造神的能力。', 'brief'],
+    [229.1, 233.9, '是否仍然知道如何成为人？', 'brief'],
+    [236.3, 241.1, '智人，也许正在走向“神人”。', 'added'],
 ]
 CHAPTERS = [
     [30.8, 35.2, '第一章', '智能革命', 'THE INTELLIGENCE REVOLUTION'],
     [72.4, 76.8, '第二章', '生命重塑', 'REDESIGNING LIFE'],
     [121.4, 126.0, '第三章', '人与机器融合', 'HUMANS  &  MACHINES'],
-    [167.2, 171.8, '第四章', '人类的新纪元', 'A NEW ERA FOR HUMANKIND'],
+    [206.4, 211.0, '第四章', '人类的新纪元', 'A NEW ERA FOR HUMANKIND'],
 ]
 LABELS = [  # static lower-left labels [start, end, line1, line2]
     [18.6, 22.4, '近未来', '太空电梯 · 连接地球与轨道'],
-    [139.0, 142.8, '未来', '地下城'],
-    [180.4, 184.2, '未来', '月球基地 · 永久前哨'],
-    [186.0, 189.8, '未来', '火星城市 · 第二家园'],
+    [134.2, 138.0, '未来', '地下城'],
+    [219.4, 222.6, '未来', '月球基地 · 永久前哨'],
+    [223.4, 227.0, '未来', '火星城市 · 第二家园'],
 ]
 TICKER = {'windows': [], 'keys': []}
 ROUTES = []
 TITLE = [22.6, 27.6]
-CAPTIONS = [[216.2, 220.6, '下一章人类历史。'], [221.0, 225.6, '正在等待我们书写。']]
-ENDCARD = [227.4, 233.4]
+CAPTIONS = [[252.9, 257.3, '下一章人类历史。'], [257.7, 262.3, '正在等待我们书写。']]
+ENDCARD = [264.1, 270.1]
 PARCHMENT = [[0, 0.0], [DUR, 0.0]]
-FLASHES = [[13.0, 0.9, 0.16], [30.4, 0.25, 0.3], [72.0, 0.2, 0.3], [121.0, 0.25, 0.3], [166.9, 0.3, 0.4],
-           [197.8, 0.45, 0.45]]
+FLASHES = [[13.0, 0.9, 0.16], [30.4, 0.25, 0.3], [72.0, 0.2, 0.3], [121.0, 0.25, 0.3], [206.1, 0.3, 0.4],
+           [234.5, 0.45, 0.45]]
 
 DATA = dict(title='未来简史：人类之后，会是谁？', width=2560, height=1440, fps=24, duration=DUR,
             shots=S, subtitles=SUBS, chapters=CHAPTERS, labels=LABELS, ticker=TICKER, routes=ROUTES,

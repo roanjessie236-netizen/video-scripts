@@ -2,7 +2,7 @@
 """Build /data/hd/music.py for 《未来简史：人类之后，会是谁？》.
 
 music.py = Film-1 instrument library (projects/sapiens-70000-years/music.py, everything before the
-'harmony' marker, with a few constants patched) + tools/score.py (the new 234 s cue) + the Film-1
+'harmony' marker, with a few constants patched) + tools/score.py (the 270.7 s v2 cue) + the Film-1
 reverb/master stage (patched for the new length).
 Usage: python3 tools/build_music.py [film1_music.py] [out_music.py]
 """
@@ -24,14 +24,16 @@ d0 = head.index('"""')
 d1 = head.index('"""', d0 + 3) + 3
 head = head[:d0] + '''"""Procedural score for 《未来简史：人类之后，会是谁？》.
 
-234 s, 44.1 kHz, stereo. Pure numpy (no samples, no internet). Built by tools/build_music.py.
+270.7 s (v2), 44.1 kHz, stereo. Pure numpy (no samples, no internet). Built by tools/build_music.py.
 Sections (seconds) follow the picture edit in shotlist.json:
   0-30.4      opening : low electronic drone + cosmic shimmer, impact 13.0 (into the city), title 22.6
   30.4-72     ch 1    : intelligence - synth arps 96 BPM, sub pulse, electronic kit, strings
   72-121      ch 2    : redesigning life - strings/spiccato + celesta DNA motif, braam 106, brass 111+
-  121-166.4   ch 3    : humans & machines - felt piano, pulse, low ostinato, 'u' choir, heartbeat
-  166.4-205   ch 4    : new era - Eastern orchestral epic: taiko, guzheng, erhu, dizi, brass, choir; climax 197.8
-  204.8-234   ending  : warm piano + choir, solo voice, resolve to Cadd9 at 228.2
+  121-161.6   ch 3    : humans & machines - felt piano, pulse, low ostinato, 'u' choir, heartbeat
+  161.6-205.6 insert  : the 'useless class' - low drone, sparse piano, faint pulse, heartbeat, 'u' voices
+  205.6-242.5 ch 4    : new era - orchestra returns gradually: taiko, guzheng, brass, choir; climax 234.5
+  241.5-270.7 ending  : warm piano + choir, solo voice, resolve to Cadd9 at 264.9
+Cue times in tools/score.py stay in v1 picture time (except the insert); place() maps them to v2.
 Usage: python3 music.py [out.wav]
 """''' + head[d1:]
 
@@ -43,7 +45,7 @@ def rep(s, a, b, must=True):
     return s.replace(a, b)
 
 
-head = rep(head, 'DUR = 300.0', 'DUR = 234.0')
+head = rep(head, 'DUR = 300.0', 'DUR = 270.7')
 head = rep(head, 'default_rng(70000)', 'default_rng(2047)', must=False)
 head = rep(head, "'/data/video/out/score.wav'", "'/data/hd/out/score.wav'")
 head = rep(head, '(33, 36, 38, 41, 43, 45, 46)', '(33, 36, 38, 40, 41, 43, 45)')
