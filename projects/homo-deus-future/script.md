@@ -1,34 +1,51 @@
-# 《未来简史：人类之后，会是谁？》— 分镜与旁白脚本
+# 《未来简史：人类之后，会是谁？》— 分镜与旁白脚本（v2）
 
-> 时长 3:54 · 16:9 · 3840×2160（2K 渲染后放大）· 24fps · 灵感来自尤瓦尔·赫拉利《未来简史》
+> 时长 4:30.7 · 16:9 · 2560×1440 · 24fps · 灵感来自尤瓦尔·赫拉利《未来简史》
+> 版本 v2（homo_deus_future_v2.mp4）：在第三章“我们还是原来的自己吗？”与第四章“人类的新纪元”之间补入“无用阶级”段落
 
 核心思想：未来最大的变化，不是机器超过人类，而是人类可能拥有重新设计生命和意识的能力。
 
-旁白标记：无标记 = 原稿旁白；☆ = 依据《未来简史》观点补充的旁白（可删改）。
+旁白标记：无标记 = 原稿旁白；☆ = 依据《未来简史》观点补充的旁白（可删改）；🆕 = v2 新增。每条旁白前为字幕起止时间。
 
-## 开场（0:00–0:30）
+分镜细节（运镜、特效、素材文件）见 storyboard.md；字幕文件见 narration.srt。
+
+## v1 → v2 时间码对照
+
+| v1 时间 | v2 时间 | 处理 |
+|---|---|---|
+| 0:00.0–2:12.0 | 0:00.0–2:12.0 | 不变 |
+| 2:12.0–2:16.8 | — | 删除义肢镜头（与握手、脑机接口重复）；字幕“身体的边界，正在被重新定义。”移到脑机接口镜头 |
+| 2:16.8–2:46.4 | 2:12.0–2:41.6 | 整体前移 4.8 秒 |
+| — | 2:41.6–3:25.6 | 新增 44 秒“无用阶级”段落（7 个镜头、9 条字幕） |
+| 2:46.4–3:03.9 | 3:25.6–3:43.1 | 整体后移 39.2 秒 |
+| 3:03.9–3:06.4 | — | 删除月球→火星过渡中的一小节（太空展示重复） |
+| 3:06.4–3:54.0 | 3:43.1–4:30.7 | 整体后移 36.7 秒 |
+
+v1 片长 3:54.0 → v2 片长 4:30.7（+44.0 秒新增，−7.3 秒压缩）。插入点之后的字幕、章节卡、画面标注、闪白、片尾卡和配乐已全部按新时间重新校准。
+
+## 开场（0:00.0–0:30.0）
 
 **音乐：** 低沉电子氛围 + 宇宙声音；13.0s 从地球冲入城市重击，城市亮灯钢片琴琶音，22.6s 片名重击
 
 | 时间 | 镜头 | 画面 | 色调 | 转场 |
 |---|---|---|---|---|
-| 0:00–0:08 | `cosmos` | Dark universe, deep star field | 深空黑蓝 | — |
-| 0:07–0:14 | `earth` | Earth slowly rotating, night-side city lights | 深空黑蓝 | 叠化 |
-| 0:12–0:19 | `citylights` | Future Eastern megacity, lights switching on | 科技冷蓝 | 硬切 |
-| 0:18–0:24 | `elevator` | Giant space elevator rising from the city into orbit | 科技冷蓝 | 叠化 |
-| 0:23–0:30 | `drones` | Uncrewed craft piercing the cloud sea | 科技冷蓝 | 叠化 |
-| 0:29–0:37 | `bluecity` | Blue high-tech city at night | 科技冷蓝 | 数字故障 |
+| 0:00.0–0:08.0 | `cosmos` | Dark universe, deep star field | 深空黑蓝 | — |
+| 0:07.0–0:14.2 | `earth` | Earth slowly rotating, night-side city lights | 深空黑蓝 | 叠化 |
+| 0:12.9–0:19.0 | `citylights` | Future Eastern megacity, lights switching on | 科技冷蓝 | 硬切 |
+| 0:18.0–0:24.6 | `elevator` | Giant space elevator rising from the city into orbit | 科技冷蓝 | 叠化 |
+| 0:23.6–0:30.4 | `drones` | Uncrewed craft piercing the cloud sea | 科技冷蓝 | 叠化 |
+| 0:29.6–0:37.6 | `bluecity` | Blue high-tech city at night | 科技冷蓝 | 数字故障 |
 
 **旁白：**
 
-- `0:02` 过去，人类最大的梦想，是改变世界。
-- `0:08` 未来，人类可能开始改变自己。
+- `0:02.6–0:06.6` 过去，人类最大的梦想，是改变世界。
+- `0:08.0–0:12.2` 未来，人类可能开始改变自己。
 
 **画面标注：**
 
-- `0:18` 近未来 · 太空电梯 · 连接地球与轨道
+- `0:18.6–0:22.4` 近未来 · 太空电梯 · 连接地球与轨道
 
-## 第一章 · 智能革命（0:30–1:12）
+## 第一章 · 智能革命（0:30.0–1:12.0）
 
 **音乐：** 96 BPM 合成器琶音 + 低频脉冲 + 电子鼓，弦乐旋律从 50s 进入；提问句处抽掉鼓点留白
 
@@ -36,23 +53,23 @@
 
 | 时间 | 镜头 | 画面 | 色调 | 转场 |
 |---|---|---|---|---|
-| 0:36–0:44 | `ainetwork` | Global AI network wrapping the Earth | 科技冷蓝 | 叠化 |
-| 0:43–0:50 | `robotwork` | Robots working side by side with humans | 实验室青白 | 叠化 |
-| 0:49–0:56 | `assistant` | Holographic assistant anticipating needs | 温柔蓝白 | 叠化 |
-| 0:55–1:03 | `datagalaxy` | Data streams flowing like the Milky Way | 科技冷蓝 | 叠化 |
-| 1:02–1:08 | `datacenter` | Endless data-centre corridor | 科技冷蓝 | 叠化 |
-| 1:07–1:12 | `metro` | Crowds in a smart metro hall | 科技冷蓝 | 叠化 |
-| 1:11–1:20 | `lab` | Future bio-laboratory | 实验室青白 | 数字故障 |
+| 0:36.6–0:44.0 | `ainetwork` | Global AI network wrapping the Earth | 科技冷蓝 | 叠化 |
+| 0:43.0–0:50.0 | `robotwork` | Robots working side by side with humans | 实验室青白 | 叠化 |
+| 0:49.0–0:56.0 | `assistant` | Holographic assistant anticipating needs | 温柔蓝白 | 叠化 |
+| 0:55.0–1:03.6 | `datagalaxy` | Data streams flowing like the Milky Way | 科技冷蓝 | 叠化 |
+| 1:02.6–1:08.6 | `datacenter` | Endless data-centre corridor | 科技冷蓝 | 叠化 |
+| 1:07.6–1:12.8 | `metro` | Crowds in a smart metro hall | 科技冷蓝 | 叠化 |
+| 1:11.8–1:20.0 | `lab` | Future bio-laboratory | 实验室青白 | 数字故障 |
 
 **旁白：**
 
-- `0:36` 人类第一次创造了一种新的智能。
-- `0:42` 它不需要生命，却能够学习。
-- `0:47` 智能，正在与意识分道扬镳。　☆
-- `0:53` 算法，也许会比你自己更了解你。　☆
-- `1:02` 当机器开始理解世界，人类的位置将发生什么变化？
+- `0:36.8–0:40.6` 人类第一次创造了一种新的智能。
+- `0:42.0–0:45.6` 它不需要生命，却能够学习。
+- `0:47.6–0:51.6` 智能，正在与意识分道扬镳。　☆
+- `0:53.0–0:57.0` 算法，也许会比你自己更了解你。　☆
+- `1:02.8–1:08.8` 当机器开始理解世界，人类的位置将发生什么变化？
 
-## 第二章 · 生命重塑（1:12–2:01）
+## 第二章 · 生命重塑（1:12.0–2:01.0）
 
 **音乐：** 交响乐融合电子：弦乐跳弓 + 钢片琴 DNA 动机 + 定音鼓；106s braam 重击，111s 起铜管
 
@@ -60,98 +77,135 @@
 
 | 时间 | 镜头 | 画面 | 色调 | 转场 |
 |---|---|---|---|---|
-| 1:19–1:27 | `dna` | Glowing DNA double helix | 实验室青白 | 叠化 |
-| 1:26–1:33 | `editing` | Gene editing of a helix strand | 实验室青白 | 叠化 |
-| 1:32–1:39 | `artlife` | Artificial life forming in a vessel | 实验室青白 | 叠化 |
-| 1:38–1:45 | `nanobots` | Nanobots travelling through a blood vessel | 科技冷蓝 | 径向光晕 |
-| 1:44–1:53 | `cellplanets` | Cells orbiting like planets, micro meets cosmos | 深空黑蓝 | 径向光晕 |
-| 1:52–2:01 | `neurons` | Neural network of light | 科技冷蓝 | 叠化 |
-| 2:00–2:07 | `hands` | Human hand meeting a robotic hand | 温柔蓝白 | 数字故障 |
+| 1:19.0–1:27.0 | `dna` | Glowing DNA double helix | 实验室青白 | 叠化 |
+| 1:26.0–1:33.0 | `editing` | Gene editing of a helix strand | 实验室青白 | 叠化 |
+| 1:32.0–1:39.0 | `artlife` | Artificial life forming in a vessel | 实验室青白 | 叠化 |
+| 1:38.0–1:45.6 | `nanobots` | Nanobots travelling through a blood vessel | 科技冷蓝 | 径向光晕 |
+| 1:44.6–1:53.0 | `cellplanets` | Cells orbiting like planets, micro meets cosmos | 深空黑蓝 | 径向光晕 |
+| 1:52.0–2:01.8 | `neurons` | Neural network of light | 科技冷蓝 | 叠化 |
+| 2:00.8–2:07.8 | `hands` | Human hand meeting a robotic hand | 温柔蓝白 | 数字故障 |
 
 **旁白：**
 
-- `1:18` 过去，人类接受自然赋予的生命。
-- `1:23` 未来，人类可能开始设计生命。
-- `1:28` 四十亿年来，生命一直由自然选择塑造。　☆
-- `1:34` 如今，智能设计开始取代自然选择。　☆
-- `1:46` 疾病、衰老，甚至身体本身，都可能成为可以修改的对象。
-- `1:54` 新的人类议程：长生不死、幸福快乐、化身为神。　☆
+- `1:18.0–1:21.8` 过去，人类接受自然赋予的生命。
+- `1:23.4–1:27.2` 未来，人类可能开始设计生命。
+- `1:28.8–1:33.0` 四十亿年来，生命一直由自然选择塑造。　☆
+- `1:34.4–1:38.6` 如今，智能设计开始取代自然选择。　☆
+- `1:46.0–1:52.6` 疾病、衰老，甚至身体本身，都可能成为可以修改的对象。
+- `1:54.2–1:59.2` 新的人类议程：长生不死、幸福快乐、化身为神。　☆
 
-## 第三章 · 人与机器融合（2:01–2:46）
+## 第三章 · 人与机器融合（2:01.0–2:41.6）
 
-**音乐：** 温暖而不安的钢琴 + 电子脉冲 + 低音弦乐固定音型；地下城铜管；“如果……”段落只留钢琴、心跳与 u 音合唱
+**音乐：** 温暖而不安的钢琴 + 电子脉冲 + 低音弦乐固定音型；地下城铜管；“如果……”段落只留钢琴、心跳与 u 音合唱。v2：删去义肢镜头对应的一小节，并去掉进入第四章前的上升音效，让音乐自然落入插入段
 
 **章节卡：** 121.4s–126.0s　第三章「人与机器融合」/ HUMANS  &  MACHINES
 
 | 时间 | 镜头 | 画面 | 色调 | 转场 |
 |---|---|---|---|---|
-| 2:06–2:13 | `bci` | Brain-computer interface | 科技冷蓝 | 叠化 |
-| 2:12–2:17 | `prosthetic` | Smart prosthetic arm | 科技冷蓝 | 叠化 |
-| 2:16–2:23 | `underground` | Giant Eastern underground city, Wandering-Earth scale | 科技冷蓝 | 叠化 |
-| 2:22–2:29 | `upload` | Consciousness dissolving into digital light | 科技冷蓝 | 数字故障 |
-| 2:28–2:34 | `ar` | Augmented-reality street | 科技冷蓝 | 叠化 |
-| 2:33–2:40 | `stationin` | Space station interior | 科技冷蓝 | 叠化 |
-| 2:39–2:47 | `mirror` | A person facing a digital reflection of themself | 温柔蓝白 | 叠化 |
+| 2:06.8–2:13.0 | `bci` | Brain-computer interface | 科技冷蓝 | 叠化 |
+| 2:12.0–2:19.0 | `underground` | Giant Eastern underground city, Wandering-Earth scale | 科技冷蓝 | 叠化 |
+| 2:18.0–2:24.8 | `upload` | Consciousness dissolving into digital light | 科技冷蓝 | 数字故障 |
+| 2:23.8–2:30.0 | `ar` | Augmented-reality street | 科技冷蓝 | 叠化 |
+| 2:29.0–2:35.2 | `stationin` | Space station interior | 科技冷蓝 | 叠化 |
+| 2:34.2–2:42.6 | `mirror` | A person facing a digital reflection of themself | 温柔蓝白 | 叠化 |
 
 **旁白：**
 
-- `2:13` 身体的边界，正在被重新定义。　☆
-- `2:24` 如果意识可以被复制。
-- `2:30` 如果记忆可以被保存。
-- `2:34` 如果生命可以无限延续。
-- `2:40` 我们还是原来的自己吗？
+- `2:07.6–2:11.6` 身体的边界，正在被重新定义。　☆
+- `2:20.0–2:23.8` 如果意识可以被复制。
+- `2:25.8–2:29.4` 如果记忆可以被保存。
+- `2:30.0–2:34.0` 如果生命可以无限延续。
+- `2:35.2–2:40.2` 我们还是原来的自己吗？
 
 **画面标注：**
 
-- `2:19` 未来 · 地下城
+- `2:14.2–2:18.0` 未来 · 地下城
 
-## 第四章 · 人类的新纪元（2:46–3:24）
+## 插入段 · 谁能共享这个未来？（v2 新增，片中不加章节标题）（2:41.6–3:25.6）
 
-**音乐：** 东方管弦史诗：古筝刮奏、二胡主旋律、笛子八度重叠、太鼓、铜管、合唱；197.8s 空间港口全奏高潮
+**音乐：** 音乐适度回落：低沉电子氛围（锯齿波持续低音 + 环境声）+ 稀疏钢琴（部分拍位留白）；2:48.2 数字故障切入无人工厂，淡入极轻的机械脉冲；3:00.4 普通人面孔处加入 u 音人声；3:08.6–3:17.4 分化的城市下是缓慢、不安的心跳；3:14.0 人群出发，钢琴改为逐拍前行；3:22.8 定音鼓轻击 + 缓慢上升音效（无重击），E 和弦交给第四章
 
-**章节卡：** 167.2s–171.8s　第四章「人类的新纪元」/ A NEW ERA FOR HUMANKIND
+**立意：** 把“无用阶级”呈现为一种需要警惕的可能性，而不是预言：“无用”指劳动可能不再被经济体系需要，绝不意味着人失去价值。画面从宏大的科技奇观落到普通人的中近景，把“人类能成为什么”和“谁能共享这个未来”连在一起。
+
+**画面衔接：** 镜子（数字倒影）→ 同一座城市里的生命升级诊所（拉远露出城市）→ 数字故障切入无人工厂 → 工人中近景 → 街头普通人的面孔 → 金色高塔与阴影中的下层城市 → 跟随人群 → 走向空间港大门，叠化进第四章日出。
+
+**字幕：** 新增旁白按逗号拆为 9 条字幕，每条一行；字体、字号、位置与原片一致；“无用阶级”“无用”使用中文引号“”。
 
 | 时间 | 镜头 | 画面 | 色调 | 转场 |
 |---|---|---|---|---|
-| 2:46–2:54 | `sunrise` | Sun rising over the curve of the Earth | 日出暖金 | 叠化 |
-| 2:53–3:00 | `futureearth` | Future Earth ringed with orbital structures | 日出暖金 | 叠化 |
-| 2:59–3:06 | `moonbase` | Permanent Moon base | 科技冷蓝 | 叠化 |
-| 3:05–3:11 | `marscity` | Domed city on Mars | 东方琥珀金 | 叠化 |
-| 3:10–3:17 | `starship` | Starship leaving the solar system | 深空黑蓝 | 叠化 |
-| 3:17–3:25 | `spaceport` | Crowds of humanity at an Eastern space port | 东方琥珀金 | 硬切 |
+| 2:41.6–2:49.2 | `clinic` 🆕 | Life-upgrade clinic high above the city: a privileged client under a BCI halo | 实验室青白 | 叠化 |
+| 2:48.2–2:55.4 | `automation` 🆕 | Lights-out automated factory in the same city; one human watching from a catwalk | 科技冷蓝 | 数字故障 |
+| 2:54.4–3:01.4 | `worker` 🆕 | MCU: a middle-aged worker behind glass, watching robots do his former job | 温柔蓝白 | 叠化 |
+| 3:00.4–3:08.6 | `faces` 🆕 | MCU: ordinary people - a delivery rider, an old man, a mother and child - looking up | 温柔蓝白 | 叠化 |
+| 3:07.6–3:15.0 | `divide` 🆕 | Divided city: sky-towers in sunlight above, crowded streets in shadow below | 日出暖金 | 叠化 |
+| 3:14.0–3:20.6 | `crowdwalk` 🆕 | MS tracking: ordinary people walking together toward the space port | 东方琥珀金 | 叠化 |
+| 3:19.6–3:26.6 | `toport` 🆕 | The crowd streams through the great gate toward the rocket and the light | 东方琥珀金 | 叠化 |
 
 **旁白：**
 
-- `2:53` 未来最大的挑战。
-- `2:58` 不是机器是否会超越人类。
-- `3:06` 而是当我们拥有创造神的能力。
-- `3:12` 是否仍然知道如何成为人？
-- `3:19` 智人，也许正在走向“神人”。　☆
+- `2:42.4–2:47.0` 但还有一个问题：这样的未来，会属于每个人吗？　🆕
+- `2:48.6–2:54.6` 当算法承担越来越多工作，一些人可能难以在经济体系中重新找到位置。　🆕
+- `2:55.2–2:59.4` 赫拉利将这种风险称为“无用阶级”。　🆕
+- `3:00.8–3:04.6` 这里的“无用”，指劳动可能不再被需要，　🆕
+- `3:04.9–3:08.0` 绝不意味着人失去了价值。　🆕
+- `3:08.6–3:13.4` 如果少数人获得升级生命的能力，更多人却被留在身后，　🆕
+- `3:13.7–3:17.6` 技术的进步，将把我们带向怎样的社会？　🆕
+- `3:18.4–3:21.2` 当我们追问人类能成为什么，　🆕
+- `3:21.5–3:25.2` 也必须追问：谁能共享这个未来？　🆕
 
-**画面标注：**
+## 第四章 · 人类的新纪元（3:25.6–4:01.5）
 
-- `3:00` 未来 · 月球基地 · 永久前哨
-- `3:06` 未来 · 火星城市 · 第二家园
+**音乐：** 交响乐逐步恢复：3:25.6 只有轻柔的镲片余响与古筝刮奏，弦乐铺底、合唱与主旋律由弱渐强，3:30.6 起定音鼓、3:33.1 起太鼓（渐强）；古筝、二胡、笛子、铜管、合唱依次回到全奏；月球到火星的过渡缩短一小节；3:54.5 空间港全奏高潮，接回“是否仍然知道如何成为人？”
 
-## 尾声（3:24–3:54）
-
-**音乐：** 温暖钢琴 + 合唱 + 女声独唱，228.2s 落在 Cadd9 和弦，最后 4.5 秒淡出
+**章节卡：** 206.4s–211.0s　第四章「人类的新纪元」/ A NEW ERA FOR HUMANKIND
 
 | 时间 | 镜头 | 画面 | 色调 | 转场 |
 |---|---|---|---|---|
-| 3:24–3:42 | `child` | A child in a space station looking at Earth | 温柔蓝白 | 叠化 |
-| 3:41–3:49 | `eye` | Earth's blue light reflected in the child's eye | 温柔蓝白 | 叠化 |
-| 3:46–3:54 | `end` | Back to the cosmos for the end card | 深空黑蓝 | 叠化 |
+| 3:25.6–3:33.2 | `sunrise` | Sun rising over the curve of the Earth | 日出暖金 | 叠化 |
+| 3:32.2–3:39.2 | `futureearth` | Future Earth ringed with orbital structures | 日出暖金 | 叠化 |
+| 3:38.2–3:42.9 | `moonbase` | Permanent Moon base | 科技冷蓝 | 叠化 |
+| 3:41.9–3:47.7 | `marscity` | Domed city on Mars | 东方琥珀金 | 叠化 |
+| 3:46.7–3:54.5 | `starship` | Starship leaving the solar system | 深空黑蓝 | 叠化 |
+| 3:54.4–4:02.5 | `spaceport` | Crowds of humanity at an Eastern space port | 东方琥珀金 | 硬切 |
+
+**旁白：**
+
+- `3:32.6–3:36.2` 未来最大的挑战。
+- `3:37.6–3:41.6` 不是机器是否会超越人类。
+- `3:43.3–3:47.7` 而是当我们拥有创造神的能力。
+- `3:49.1–3:53.9` 是否仍然知道如何成为人？
+- `3:56.3–4:01.1` 智人，也许正在走向“神人”。　☆
+
+**画面标注：**
+
+- `3:39.4–3:42.6` 未来 · 月球基地 · 永久前哨
+- `3:43.4–3:47.0` 未来 · 火星城市 · 第二家园
+
+## 尾声（4:01.5–4:30.7）
+
+**音乐：** 温暖钢琴 + 合唱 + 女声独唱，264.9s 落在 Cadd9 和弦，最后 4.5 秒淡出
+
+| 时间 | 镜头 | 画面 | 色调 | 转场 |
+|---|---|---|---|---|
+| 4:01.5–4:18.7 | `child` | A child in a space station looking at Earth | 温柔蓝白 | 叠化 |
+| 4:17.7–4:25.7 | `eye` | Earth's blue light reflected in the child's eye | 温柔蓝白 | 叠化 |
+| 4:23.3–4:30.7 | `end` | Back to the cosmos for the end card | 深空黑蓝 | 叠化 |
 
 **旁白：**
 
 
 **结尾字幕：**
 
-- `3:36` 下一章人类历史。
-- `3:41` 正在等待我们书写。
+- `4:12.9–4:17.3` 下一章人类历史。
+- `4:17.7–4:22.3` 正在等待我们书写。
 
 ## 片头 / 片尾
 
 - 片名卡 22.6s–27.6s：未来简史 / 人类之后，会是谁？
-- 片尾卡 227.4s–233.4s：未来简史 · 灵感来自尤瓦尔·赫拉利《未来简史》
+- 片尾卡 264.1s–270.1s：未来简史 · 灵感来自尤瓦尔·赫拉利《未来简史》
+- 闪白：13.0s、30.4s、72.0s、121.0s、206.1s、234.5s
+
+## 版本记录
+
+- v1（3:54）：homo_deus_future_2K.mp4
+- v2（4:30.7）：homo_deus_future_v2.mp4 — 新增“无用阶级”段落，压缩重复的科技与太空镜头，重校全部时间码
