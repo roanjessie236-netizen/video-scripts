@@ -248,6 +248,36 @@ def taiko_bar(t, g):
     taiko(t + 3.5 * BEAT, g * 0.4, pan=0.2)
 
 
+# ------------------------------------------------------------------ v2 edit map (homo_deus_future_v2, 270.7 s)
+# The cue below is still written in v1 picture time (v1 = 234 s). place() maps every event to v2 time:
+#   * v1 132.0-136.8 is cut  (ch 3 'prosthetic' shot, C chord)            -> later events move up 4.8 s
+#   * v1 166.4 gets a 44.0 s insert (the 'useless class', v2 161.6-205.6) -> later events move down 44.0 s
+#   * v1 183.9-186.4 is cut  (ch 4 Esus bar, Moon -> Mars pass)           -> later events move up 2.5 s
+# Events that start inside a cut are dropped. The insert block is written directly in v2 time (RAW[0] = True).
+# v2 sections: opening 0-30.4 | ch1 30.4-72 | ch2 72-121 | ch3 121-161.6 | insert 161.6-205.6 |
+#              ch4 205.6-242.5 (climax 234.5) | ending 241.5-270.7
+V2_CUTS = [(132.0, 136.8), (183.9, 186.4)]
+V2_INSERT = (166.4, 44.0)
+RAW = [False]
+_place_v1 = place
+
+
+def tmap(t):
+    for a, b in V2_CUTS:
+        if a <= t < b:
+            return None
+    s = t - sum(b - a for a, b in V2_CUTS if t >= b)
+    return s + V2_INSERT[1] if t >= V2_INSERT[0] else s
+
+
+def place(sig, t0, gain=1.0, pan=0.0, hall=0.25, cath=0.0):
+    if not RAW[0]:
+        t0 = tmap(t0)
+        if t0 is None:
+            return
+    _place_v1(sig, t0, gain, pan, hall, cath)
+
+
 # ------------------------------------------------------------------ OPENING 0-30.4  low electronics + cosmos
 log('opening')
 place(ensemble('saw', 33, 30.0, p=1.6, voices=4, cents=8, vib=0.0, att=5.0, rel=3.0, width=0.9), 0.0, 0.2,
@@ -346,30 +376,70 @@ ambience(142.8, 24.0, 0.08, fin=2.0, fout=3.0, wind=0.2, shimmer=1.5)
 for t in np.arange(144.8, 160.0, 1.25):
     place(HEART, t, ramp(t, [(144.8, 0.1), (159.0, 0.2)]), hall=0.1, cath=0.2)
 choir_prog(P3, [(142.8, 0.05), (159, 0.09)], att=2.0, rel=2.0, vowels=('u',), t_lo=142.8, t_hi=163.5)
-place(riser(1.6, 400.0, 1.5), 164.8, 0.08, hall=0.3)
+# v2: the v1 riser into ch 4 (164.8) is gone - ch 3 now resolves into the quiet insert
+
+# ------------------------------------------------------------------ v2 INSERT  v2 161.6-205.6  the 'useless class'
+# Written directly in v2 time (RAW). The music drops back: low electronic drone + ambience + sparse felt piano;
+# a faint machine pulse under the automation, warm 'u' voices for the ordinary faces, a slow uneasy heartbeat under
+# the divided city, then a slow swell (no hit) that hands over to ch 4, where the orchestra returns gradually.
+log('v2 insert')
+RAW[0] = True
+PI = [(161.6, 6.6, 'Am'), (168.2, 6.2, 'Fmaj7'), (174.4, 6.0, 'C/E'), (180.4, 7.2, 'Dm'), (187.6, 6.4, 'Am'),
+      (194.0, 3.4, 'F'), (197.4, 2.2, 'G'), (199.6, 3.2, 'Esus'), (202.8, 2.8, 'E')]
+impact(161.6, 0.22, notes=(33, 45))
+place(ensemble('saw', 33, 44.0, p=1.4, voices=4, cents=8, vib=0.0, att=4.0, rel=3.0, width=0.9), 161.6, 0.10,
+      hall=0.1, cath=0.5)
+place(ensemble('saw', 45, 26.0, p=1.3, voices=3, cents=14, vib=0.0, att=6.0, rel=4.0, width=1.0), 161.6, 0.035,
+      hall=0.1, cath=0.6)
+ambience(161.6, 44.0, 0.07, fin=2.5, fout=3.0, wind=0.3, shimmer=0.9)
+pad_prog(PI, [(161.6, 0.04), (187.6, 0.045), (199.6, 0.07)], p=2.0, att=2.4, rel=2.4, hall=0.4, cath=0.35)
+KEEP = [1, 0, 1, 1, 0, 1, 0, 1]                                # sparse: some steps are rests
+for s, e, ch in segs(PI):
+    notes = [m + 12 for m in CH[ch][2:]]
+    piano(s + 0.05, CH[ch][1], 0.085, pan=-0.1)
+    dense = s >= 194.0                                         # the crowd sets off: the piano walks on every beat
+    step = BEAT if dense else 2 * BEAT
+    k, t = 0, s + step
+    while t < e - 0.3:
+        if dense or KEEP[k % 8]:
+            piano(t, notes[PP[k % 8] % len(notes)], 0.065 * (1.0 if k % 2 == 0 else 0.8))
+        t += step
+        k += 1
+glitch(168.2, 0.6, 0.05, 21)                                   # digital cut into the automated factory
+subpulse(PI, BEAT / 2, [(168.2, 0.016), (174.4, 0.028), (180.0, 0.01)], 168.2, 180.4)
+choir_prog(PI, [(180.4, 0.035), (194.0, 0.05), (202.8, 0.065)], att=2.4, rel=2.4, vowels=('u',), t_lo=180.4,
+           t_hi=205.0)
+piano(185.0, 76, 0.06, pan=0.2)                                # "绝不意味着人失去了价值"
+piano(186.25, 79, 0.05, pan=0.25)
+for t in np.arange(188.6, 197.4, 2 * BEAT):                    # the divided city: a slow, uneasy heartbeat
+    place(HEART, t, ramp(t, [(188.6, 0.06), (196.0, 0.11)]), hall=0.1, cath=0.2)
+timp(202.8, TR['E'], 0.1)
+place(riser(2.8, 140.0, 2.2), 202.8, 0.06, hall=0.3)
+RAW[0] = False
 
 # ------------------------------------------------------------------ CH4 166.4-205  a new era: Eastern orchestral epic
+# v2: = v2 205.6-242.5. No hit at the top: the orchestra comes back gradually after the insert.
 log('ch4')
 P4 = [(166.4, 2.5, 'F'), (168.9, 2.5, 'G'), (171.4, 5.0, 'Am'), (176.4, 2.5, 'F'), (178.9, 2.5, 'G'),
       (181.4, 2.5, 'C'), (183.9, 2.5, 'Esus'), (186.4, 2.5, 'F'), (188.9, 2.5, 'G'), (191.4, 2.5, 'Am'),
       (193.9, 2.5, 'C'), (196.4, 1.4, 'E'), (197.8, 2.5, 'F'), (200.3, 2.5, 'G'), (202.8, 2.2, 'Am')]
-place(CRASH, 166.4, 0.2, hall=0.3, cath=0.3)
-zheng_gliss(166.4, 57, 86, 0.12)
-pad_prog(P4, [(166.4, 0.12), (186.4, 0.17), (197.8, 0.22)], p=4.5, att=0.6, rel=1.4, hall=0.4, cath=0.2)
-choir_prog(P4, [(166.4, 0.07), (186.4, 0.12), (197.8, 0.17)], att=0.6, rel=1.6)
+place(CRASH, 166.4, 0.07, hall=0.4, cath=0.4)
+zheng_gliss(166.4, 57, 86, 0.07)
+pad_prog(P4, [(166.4, 0.06), (173.9, 0.12), (186.4, 0.17), (197.8, 0.22)], p=4.5, att=0.6, rel=1.4, hall=0.4, cath=0.2)
+choir_prog(P4, [(166.4, 0.03), (173.9, 0.07), (186.4, 0.12), (197.8, 0.17)], att=0.6, rel=1.6)
 choir_prog(P4, [(197.8, 0.09), (202.8, 0.1)], att=0.4, rel=2.0, up=12, t_lo=197.8)
-timp_prog(P4, 0.3)
-lead(168.9, [(67, 2), (69, 2), (72, 4), (74, 2), (76, 4), (74, 2), (72, 1), (69, 1)], BEAT, 0.16)
-lead(181.4, [(76, 2), (79, 2), (81, 3), (79, 1), (76, 4)], BEAT, 0.16)
+timp_prog(P4, 0.3, t_lo=171.4)
+lead(168.9, [(67, 2), (69, 2), (72, 4), (74, 2), (76, 4), (74, 2), (72, 1), (69, 1)], BEAT, 0.12)
+lead(181.4, [(76, 2), (79, 2), (76, 4)], BEAT, 0.16)   # v2: 4 beats shorter (Esus bar cut)
 E3 = [(72, 2), (74, 2), (76, 2), (79, 2), (81, 4)]
 lead(188.9, E3, BEAT, 0.18)
 flute_phrase(188.9, [(m + 12, b) for m, b in E3], BEAT, 0.06, pan=-0.3)
 EC = [(81, 2), (84, 1), (81, 1), (79, 2), (76, 2), (79, 1), (76, 1), (76, 2)]
 lead(197.8, EC, BEAT, 0.18, rel=2.0)
 flute_phrase(197.8, [(m + 12, b) for m, b in EC], BEAT, 0.06, pan=-0.3)
-zheng_arp(P4, BEAT / 2, [(173, 0.05), (196, 0.07)], 173.9, 196.4)
+zheng_arp(P4, BEAT / 2, [(173, 0.035), (196, 0.07)], 173.9, 196.4)
 for t in np.arange(173.9, 196.0, 4 * BEAT):
-    taiko_bar(t, ramp(t, [(173.9, 0.25), (193.9, 0.45)]))
+    taiko_bar(t, ramp(t, [(173.9, 0.16), (193.9, 0.45)]))
 brass_prog(P4, 0.09, t_lo=181.4, t_hi=197.8)
 brass_prog(P4, 0.14, t_lo=197.8)
 spic(P4, BEAT / 2, [(186.4, 0.06), (196.4, 0.09)], [0, 1, 2, 3], 186.4, 196.4)
