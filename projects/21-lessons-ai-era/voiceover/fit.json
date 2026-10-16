@@ -1,0 +1,923 @@
+{
+ "voice": "zh-CN-YunjianNeural",
+ "rate_offset": 0,
+ "pause": 0.45,
+ "pause_min": 0.25,
+ "gap": 0.35,
+ "max_rate": 12,
+ "lines": [
+  {
+   "i": 1,
+   "t": "火，‖改变了我们的生存。",
+   "cue": "低沉开篇，像点燃第一簇火",
+   "pitch": "-3Hz",
+   "vol": "+0%",
+   "rate_in": -10,
+   "rate": -10,
+   "pause": 0.45,
+   "slot": 3.05,
+   "dur": 2.53,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     -10,
+     0.45,
+     2.53
+    ]
+   ]
+  },
+  {
+   "i": 2,
+   "t": "文字，‖延伸了我们的记忆。",
+   "cue": "排比，略升",
+   "pitch": "-1Hz",
+   "vol": "+0%",
+   "rate_in": -10,
+   "rate": -10,
+   "pause": 0.45,
+   "slot": 3.25,
+   "dur": 2.83,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     -10,
+     0.45,
+     2.83
+    ]
+   ]
+  },
+  {
+   "i": 3,
+   "t": "机器，‖放大了我们的力量。",
+   "cue": "排比，再升、有力",
+   "pitch": "+1Hz",
+   "vol": "+5%",
+   "rate_in": -8,
+   "rate": -8,
+   "pause": 0.45,
+   "slot": 3.25,
+   "dur": 2.48,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     -8,
+     0.45,
+     2.48
+    ]
+   ]
+  },
+  {
+   "i": 4,
+   "t": "而人工智能，‖正在改变，一种更深层的东西。",
+   "cue": "转折，压低、留悬念",
+   "pitch": "-2Hz",
+   "vol": "+0%",
+   "rate_in": -6,
+   "rate": 3,
+   "pause": 0.25,
+   "slot": 4.25,
+   "dur": 4.12,
+   "fits": true,
+   "adjusted": true,
+   "tries": [
+    [
+     -6,
+     0.45,
+     4.68
+    ],
+    [
+     -6,
+     0.25,
+     4.48
+    ],
+    [
+     3,
+     0.25,
+     4.12
+    ]
+   ]
+  },
+  {
+   "i": 5,
+   "t": "思考。",
+   "cue": "一字一顿，全片题眼",
+   "pitch": "-4Hz",
+   "vol": "+10%",
+   "rate_in": -20,
+   "rate": -20,
+   "pause": 0.45,
+   "slot": 11.65,
+   "dur": 0.75,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     -20,
+     0.45,
+     0.75
+    ]
+   ]
+  },
+  {
+   "i": 6,
+   "t": "过去的机器，延伸人的双手。",
+   "cue": "平稳叙述",
+   "pitch": "-2Hz",
+   "vol": "+0%",
+   "rate_in": -6,
+   "rate": -6,
+   "pause": 0.45,
+   "slot": 3.65,
+   "dur": 2.61,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     -6,
+     0.45,
+     2.61
+    ]
+   ]
+  },
+  {
+   "i": 7,
+   "t": "今天的机器，‖开始参与创造、设计与发现。",
+   "cue": "递进，三个词逐个加重",
+   "pitch": "+1Hz",
+   "vol": "+5%",
+   "rate_in": -6,
+   "rate": -6,
+   "pause": 0.45,
+   "slot": 6.65,
+   "dur": 4.21,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     -6,
+     0.45,
+     4.21
+    ]
+   ]
+  },
+  {
+   "i": 8,
+   "t": "那些曾被视为人类独有的能力，",
+   "cue": "铺垫（时间紧，语速稍快）",
+   "pitch": "+0Hz",
+   "vol": "+0%",
+   "rate_in": 0,
+   "rate": 0,
+   "pause": 0.45,
+   "slot": 2.85,
+   "dur": 2.64,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     0,
+     0.45,
+     2.64
+    ]
+   ]
+  },
+  {
+   "i": 9,
+   "t": "正在被重新审视。",
+   "cue": "放慢、凝重",
+   "pitch": "-2Hz",
+   "vol": "+0%",
+   "rate_in": -10,
+   "rate": -10,
+   "pause": 0.45,
+   "slot": 5.65,
+   "dur": 1.69,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     -10,
+     0.45,
+     1.69
+    ]
+   ]
+  },
+  {
+   "i": 10,
+   "t": "当智能走出实验室，进入每个人的生活，",
+   "cue": "展开，语气开阔",
+   "pitch": "+0Hz",
+   "vol": "+0%",
+   "rate_in": -2,
+   "rate": -2,
+   "pause": 0.45,
+   "slot": 4.05,
+   "dur": 3.26,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     -2,
+     0.45,
+     3.26
+    ]
+   ]
+  },
+  {
+   "i": 11,
+   "t": "人类的位置，‖也开始发生变化。",
+   "cue": "沉下来，章节收尾",
+   "pitch": "-3Hz",
+   "vol": "+0%",
+   "rate_in": -12,
+   "rate": -12,
+   "pause": 0.45,
+   "slot": 17.05,
+   "dur": 3.24,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     -12,
+     0.45,
+     3.24
+    ]
+   ]
+  },
+  {
+   "i": 12,
+   "t": "新的工作可能诞生，",
+   "cue": "对比前半，略扬",
+   "pitch": "+2Hz",
+   "vol": "+0%",
+   "rate_in": -4,
+   "rate": -4,
+   "pause": 0.45,
+   "slot": 2.45,
+   "dur": 1.77,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     -4,
+     0.45,
+     1.77
+    ]
+   ]
+  },
+  {
+   "i": 13,
+   "t": "旧的技能也可能迅速贬值。",
+   "cue": "对比后半，下沉",
+   "pitch": "-2Hz",
+   "vol": "+0%",
+   "rate_in": -4,
+   "rate": -4,
+   "pause": 0.45,
+   "slot": 3.45,
+   "dur": 2.5,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     -4,
+     0.45,
+     2.5
+    ]
+   ]
+  },
+  {
+   "i": 14,
+   "t": "赫拉利担忧，一些人可能长期难以在经济体系中重新找到位置，",
+   "cue": "克制、略带忧虑（时间紧）",
+   "pitch": "-1Hz",
+   "vol": "+0%",
+   "rate_in": 2,
+   "rate": 2,
+   "pause": 0.45,
+   "slot": 5.45,
+   "dur": 5.26,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     2,
+     0.45,
+     5.26
+    ]
+   ]
+  },
+  {
+   "i": 15,
+   "t": "这就是‖“无用阶级”的风险。",
+   "cue": "“无用阶级”放慢加重",
+   "pitch": "-3Hz",
+   "vol": "+0%",
+   "rate_in": -8,
+   "rate": -8,
+   "pause": 0.45,
+   "slot": 4.05,
+   "dur": 2.71,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     -8,
+     0.45,
+     2.71
+    ]
+   ]
+  },
+  {
+   "i": 16,
+   "t": "劳动不再被需要，‖绝不意味着一个人失去了价值。",
+   "cue": "坚定、温暖",
+   "pitch": "+2Hz",
+   "vol": "+8%",
+   "rate_in": -6,
+   "rate": -6,
+   "pause": 0.45,
+   "slot": 5.65,
+   "dur": 4.66,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     -6,
+     0.45,
+     4.66
+    ]
+   ]
+  },
+  {
+   "i": 17,
+   "t": "持续学习需要机会，",
+   "cue": "恳切",
+   "pitch": "+0Hz",
+   "vol": "+0%",
+   "rate_in": -2,
+   "rate": -2,
+   "pause": 0.45,
+   "slot": 2.25,
+   "dur": 1.69,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     -2,
+     0.45,
+     1.69
+    ]
+   ]
+  },
+  {
+   "i": 18,
+   "t": "技术创造的财富也需要被分享。",
+   "cue": "恳切，略强",
+   "pitch": "+1Hz",
+   "vol": "+3%",
+   "rate_in": -4,
+   "rate": -4,
+   "pause": 0.45,
+   "slot": 4.05,
+   "dur": 2.68,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     -4,
+     0.45,
+     2.68
+    ]
+   ]
+  },
+  {
+   "i": 19,
+   "t": "当工作发生改变，‖我们将如何重新理解自身的价值？",
+   "cue": "发问，尾音上扬",
+   "pitch": "+2Hz",
+   "vol": "+0%",
+   "rate_in": -8,
+   "rate": -8,
+   "pause": 0.45,
+   "slot": 10.05,
+   "dur": 4.95,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     -8,
+     0.45,
+     4.95
+    ]
+   ]
+  },
+  {
+   "i": 20,
+   "t": "如果机器可以写诗。",
+   "cue": "轻声假设",
+   "pitch": "-2Hz",
+   "vol": "-3%",
+   "rate_in": -10,
+   "rate": -10,
+   "pause": 0.45,
+   "slot": 3.05,
+   "dur": 1.66,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     -10,
+     0.45,
+     1.66
+    ]
+   ]
+  },
+  {
+   "i": 21,
+   "t": "可以绘画。",
+   "cue": "排比，略升",
+   "pitch": "-1Hz",
+   "vol": "+0%",
+   "rate_in": -10,
+   "rate": -10,
+   "pause": 0.45,
+   "slot": 2.65,
+   "dur": 0.97,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     -10,
+     0.45,
+     0.97
+    ]
+   ]
+  },
+  {
+   "i": 22,
+   "t": "甚至帮助我们发现新的知识。",
+   "cue": "排比，再升",
+   "pitch": "+1Hz",
+   "vol": "+5%",
+   "rate_in": -6,
+   "rate": -6,
+   "pause": 0.45,
+   "slot": 4.25,
+   "dur": 2.54,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     -6,
+     0.45,
+     2.54
+    ]
+   ]
+  },
+  {
+   "i": 23,
+   "t": "那么，‖创造力还是人类的专属吗？",
+   "cue": "停顿后发问，问完留白",
+   "pitch": "-2Hz",
+   "vol": "+0%",
+   "rate_in": -12,
+   "rate": -12,
+   "pause": 0.45,
+   "slot": 7.25,
+   "dur": 3.65,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     -12,
+     0.45,
+     3.65
+    ]
+   ]
+  },
+  {
+   "i": 24,
+   "t": "也许，‖我们需要重新理解创造。",
+   "cue": "柔和、思索",
+   "pitch": "-2Hz",
+   "vol": "-3%",
+   "rate_in": -10,
+   "rate": -10,
+   "pause": 0.45,
+   "slot": 4.05,
+   "dur": 3.24,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     -10,
+     0.45,
+     3.24
+    ]
+   ]
+  },
+  {
+   "i": 25,
+   "t": "一首歌，可以承载一个人的思念。",
+   "cue": "深情、温柔",
+   "pitch": "-1Hz",
+   "vol": "+0%",
+   "rate_in": -10,
+   "rate": -10,
+   "pause": 0.45,
+   "slot": 4.45,
+   "dur": 2.88,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     -10,
+     0.45,
+     2.88
+    ]
+   ]
+  },
+  {
+   "i": 26,
+   "t": "一幅画，可以留下一个时代的追问。",
+   "cue": "深情，略重",
+   "pitch": "+0Hz",
+   "vol": "+0%",
+   "rate_in": -10,
+   "rate": -10,
+   "pause": 0.45,
+   "slot": 4.65,
+   "dur": 2.88,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     -10,
+     0.45,
+     2.88
+    ]
+   ]
+  },
+  {
+   "i": 27,
+   "t": "未来的创造，也将发生在人与新的智能之间。",
+   "cue": "展望",
+   "pitch": "+1Hz",
+   "vol": "+0%",
+   "rate_in": -6,
+   "rate": -6,
+   "pause": 0.45,
+   "slot": 5.05,
+   "dur": 4.42,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     -6,
+     0.45,
+     4.42
+    ]
+   ]
+  },
+  {
+   "i": 28,
+   "t": "而我们，‖仍要寻找自己真正想表达的东西。",
+   "cue": "收束，坚定",
+   "pitch": "-2Hz",
+   "vol": "+3%",
+   "rate_in": -10,
+   "rate": -10,
+   "pause": 0.45,
+   "slot": 12.45,
+   "dur": 4.26,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     -10,
+     0.45,
+     4.26
+    ]
+   ]
+  },
+  {
+   "i": 29,
+   "t": "人工智能可能改变世界。",
+   "cue": "平稳，开启终章",
+   "pitch": "+0Hz",
+   "vol": "+0%",
+   "rate_in": -6,
+   "rate": -6,
+   "pause": 0.45,
+   "slot": 3.25,
+   "dur": 2.27,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     -6,
+     0.45,
+     2.27
+    ]
+   ]
+  },
+  {
+   "i": 30,
+   "t": "但它无法替代，‖人类提出的问题。",
+   "cue": "转折加重",
+   "pitch": "+2Hz",
+   "vol": "+8%",
+   "rate_in": -6,
+   "rate": -6,
+   "pause": 0.45,
+   "slot": 4.65,
+   "dur": 3.16,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     -6,
+     0.45,
+     3.16
+    ]
+   ]
+  },
+  {
+   "i": 31,
+   "t": "我们为什么存在？",
+   "cue": "哲思发问",
+   "pitch": "+0Hz",
+   "vol": "+0%",
+   "rate_in": -12,
+   "rate": -12,
+   "pause": 0.45,
+   "slot": 3.45,
+   "dur": 1.42,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     -12,
+     0.45,
+     1.42
+    ]
+   ]
+  },
+  {
+   "i": 32,
+   "t": "我们希望创造怎样的未来？",
+   "cue": "发问，尾音上扬",
+   "pitch": "+2Hz",
+   "vol": "+3%",
+   "rate_in": -10,
+   "rate": -10,
+   "pause": 0.45,
+   "slot": 5.25,
+   "dur": 2.44,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     -10,
+     0.45,
+     2.44
+    ]
+   ]
+  },
+  {
+   "i": 33,
+   "t": "当算法越来越了解我们，",
+   "cue": "低声提醒",
+   "pitch": "-2Hz",
+   "vol": "-3%",
+   "rate_in": -2,
+   "rate": -2,
+   "pause": 0.45,
+   "slot": 2.55,
+   "dur": 1.88,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     -2,
+     0.45,
+     1.88
+    ]
+   ]
+  },
+  {
+   "i": 34,
+   "t": "我们也需要重新认识自己。",
+   "cue": "回到自身",
+   "pitch": "+0Hz",
+   "vol": "+0%",
+   "rate_in": -6,
+   "rate": -6,
+   "pause": 0.45,
+   "slot": 4.15,
+   "dur": 2.11,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     -6,
+     0.45,
+     2.11
+    ]
+   ]
+  },
+  {
+   "i": 35,
+   "t": "我们真正渴望什么？",
+   "cue": "内省发问",
+   "pitch": "-1Hz",
+   "vol": "+0%",
+   "rate_in": -10,
+   "rate": -10,
+   "pause": 0.45,
+   "slot": 3.45,
+   "dur": 1.62,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     -10,
+     0.45,
+     1.62
+    ]
+   ]
+  },
+  {
+   "i": 36,
+   "t": "又愿意为了怎样的未来，‖承担责任？",
+   "cue": "恳切、有分量",
+   "pitch": "+2Hz",
+   "vol": "+5%",
+   "rate_in": -8,
+   "rate": -8,
+   "pause": 0.45,
+   "slot": 5.05,
+   "dur": 3.54,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     -8,
+     0.45,
+     3.54
+    ]
+   ]
+  },
+  {
+   "i": 37,
+   "t": "人类真正的优势。",
+   "cue": "沉下来，高潮前铺垫",
+   "pitch": "-2Hz",
+   "vol": "+0%",
+   "rate_in": -10,
+   "rate": -10,
+   "pause": 0.45,
+   "slot": 2.65,
+   "dur": 1.53,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     -10,
+     0.45,
+     1.53
+    ]
+   ]
+  },
+  {
+   "i": 38,
+   "t": "从来不是比机器更快。",
+   "cue": "否定，干脆",
+   "pitch": "+0Hz",
+   "vol": "+0%",
+   "rate_in": -6,
+   "rate": -6,
+   "pause": 0.45,
+   "slot": 3.05,
+   "dur": 1.72,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     -6,
+     0.45,
+     1.72
+    ]
+   ]
+  },
+  {
+   "i": 39,
+   "t": "而是拥有梦想。",
+   "cue": "排比起势",
+   "pitch": "+2Hz",
+   "vol": "+5%",
+   "rate_in": -8,
+   "rate": -8,
+   "pause": 0.45,
+   "slot": 2.85,
+   "dur": 1.27,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     -8,
+     0.45,
+     1.27
+    ]
+   ]
+  },
+  {
+   "i": 40,
+   "t": "拥有爱。",
+   "cue": "温柔、放慢",
+   "pitch": "+1Hz",
+   "vol": "+5%",
+   "rate_in": -16,
+   "rate": -16,
+   "pause": 0.45,
+   "slot": 2.65,
+   "dur": 0.79,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     -16,
+     0.45,
+     0.79
+    ]
+   ]
+  },
+  {
+   "i": 41,
+   "t": "拥有，‖选择未来的能力。",
+   "cue": "全片最强音",
+   "pitch": "+3Hz",
+   "vol": "+10%",
+   "rate_in": -8,
+   "rate": -8,
+   "pause": 0.45,
+   "slot": 4.05,
+   "dur": 2.65,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     -8,
+     0.45,
+     2.65
+    ]
+   ]
+  },
+  {
+   "i": 42,
+   "t": "未来尚未写定。",
+   "cue": "回落，意味深长",
+   "pitch": "-2Hz",
+   "vol": "+0%",
+   "rate_in": -14,
+   "rate": -14,
+   "pause": 0.45,
+   "slot": 3.45,
+   "dur": 1.4,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     -14,
+     0.45,
+     1.4
+    ]
+   ]
+  },
+  {
+   "i": 43,
+   "t": "我们的选择，‖正在成为历史。",
+   "cue": "极慢，尾音落在音乐里",
+   "pitch": "-4Hz",
+   "vol": "+0%",
+   "rate_in": -16,
+   "rate": -16,
+   "pause": 0.45,
+   "slot": 6.6,
+   "dur": 3.13,
+   "fits": true,
+   "adjusted": false,
+   "tries": [
+    [
+     -16,
+     0.45,
+     3.13
+    ]
+   ]
+  }
+ ]
+}
