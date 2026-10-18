@@ -1,0 +1,1720 @@
+{
+ "title": "人类简史：七万年的文明觉醒",
+ "width": 2560,
+ "height": 1440,
+ "fps": 24,
+ "duration": 300.0,
+ "shots": [
+  {
+   "id": "galaxy",
+   "image": "01_galaxy.jpg",
+   "start": 0.0,
+   "end": 7.0,
+   "cam": [
+    [
+     1.0,
+     0.5,
+     0.5,
+     0
+    ],
+    [
+     1.38,
+     0.53,
+     0.47,
+     2.5
+    ]
+   ],
+   "grade": "cosmos",
+   "trans": "none",
+   "ease": "io",
+   "fx": {
+    "stars3d": {
+     "k1": 0.03,
+     "k2": 0.012
+    }
+   },
+   "prep": {},
+   "desc": "Full-bleed Milky Way core, deep space, cinematic, no text, no black bars"
+  },
+  {
+   "id": "earth",
+   "image": "02_earth.jpg",
+   "start": 6.0,
+   "end": 11.0,
+   "cam": [
+    [
+     1.0,
+     0.5,
+     0.5,
+     0
+    ],
+    [
+     2.7,
+     0.62,
+     0.37,
+     0
+    ]
+   ],
+   "grade": "cosmos",
+   "trans": "fade",
+   "ease": "in",
+   "fx": {
+    "zoomblur": {
+     "t0": 10.3
+    }
+   },
+   "prep": {},
+   "desc": "Blue Earth from orbit with sunrise rim, Africa visible upper right, photoreal"
+  },
+  {
+   "id": "wasteland",
+   "image": "03_wasteland.jpg",
+   "start": 10.95,
+   "end": 17.0,
+   "cam": [
+    [
+     1.38,
+     0.5,
+     0.64,
+     0
+    ],
+    [
+     1.08,
+     0.5,
+     0.58,
+     0
+    ]
+   ],
+   "grade": "ember",
+   "trans": "cut",
+   "ease": "out",
+   "fx": {
+    "embers": {
+     "src": [
+      0.49,
+      0.8
+     ],
+     "rate": 22,
+     "spread": 40
+    },
+    "flicker": {
+     "amp": 0.035
+    }
+   },
+   "prep": {},
+   "desc": "Prehistoric wasteland at dusk, lone human silhouette beside a small fire"
+  },
+  {
+   "id": "firevisions",
+   "image": "04_firevisions.jpg",
+   "start": 15.8,
+   "end": 21.8,
+   "cam": [
+    [
+     1.05,
+     0.5,
+     0.56,
+     0
+    ],
+    [
+     1.24,
+     0.5,
+     0.5,
+     0
+    ]
+   ],
+   "grade": "ember",
+   "trans": "fade",
+   "ease": "io",
+   "fx": {
+    "embers": {
+     "src": [
+      0.5,
+      0.62
+     ],
+     "rate": 40,
+     "spread": 120
+    },
+    "flicker": {
+     "amp": 0.04
+    }
+   },
+   "prep": {},
+   "desc": "Campfire whose flames reveal cave paintings, ziggurats and a rocket launch"
+  },
+  {
+   "id": "savanna",
+   "image": "05_savanna.jpg",
+   "start": 20.8,
+   "end": 28.6,
+   "cam": [
+    [
+     1.12,
+     0.44,
+     0.5,
+     0
+    ],
+    [
+     1.12,
+     0.56,
+     0.5,
+     0
+    ]
+   ],
+   "grade": "ember",
+   "trans": "fade",
+   "ease": "lin",
+   "fx": {},
+   "prep": {},
+   "desc": "Golden African savanna, a small band of Homo sapiens, acacias, elephants"
+  },
+  {
+   "id": "campfire",
+   "image": "06_campfire.jpg",
+   "start": 27.6,
+   "end": 35.2,
+   "cam": [
+    [
+     1.05,
+     0.45,
+     0.56,
+     0
+    ],
+    [
+     1.2,
+     0.4,
+     0.5,
+     0
+    ]
+   ],
+   "grade": "ember",
+   "trans": "fade",
+   "ease": "io",
+   "fx": {
+    "embers": {
+     "src": [
+      0.47,
+      0.86
+     ],
+     "rate": 26,
+     "spread": 60
+    },
+    "flicker": {
+     "amp": 0.045
+    }
+   },
+   "prep": {},
+   "desc": "Elder telling a story around a campfire under the stars"
+  },
+  {
+   "id": "cave",
+   "image": "07_cave.jpg",
+   "start": 34.2,
+   "end": 40.6,
+   "cam": [
+    [
+     1.08,
+     0.42,
+     0.44,
+     0
+    ],
+    [
+     1.2,
+     0.58,
+     0.42,
+     0
+    ]
+   ],
+   "grade": "ember",
+   "trans": "fade",
+   "ease": "io",
+   "fx": {
+    "flicker": {
+     "amp": 0.05
+    }
+   },
+   "prep": {},
+   "desc": "Lascaux-style cave wall lit by a torch"
+  },
+  {
+   "id": "bison",
+   "image": "08_bison.jpg",
+   "start": 39.0,
+   "end": 46.0,
+   "cam": [
+    [
+     1.16,
+     0.5,
+     0.5,
+     0
+    ],
+    [
+     1.05,
+     0.5,
+     0.5,
+     0
+    ]
+   ],
+   "grade": "ember",
+   "trans": "fade",
+   "ease": "io",
+   "fx": {
+    "painted": {
+     "t0": 41.0,
+     "t1": 42.8
+    }
+   },
+   "prep": {},
+   "desc": "Bison herd stampeding through orange dust"
+  },
+  {
+   "id": "tools",
+   "image": "09_tools.jpg",
+   "start": 45.0,
+   "end": 50.8,
+   "cam": [
+    [
+     1.04,
+     0.5,
+     0.52,
+     0
+    ],
+    [
+     1.16,
+     0.5,
+     0.47,
+     0
+    ]
+   ],
+   "grade": "ember",
+   "trans": "fade",
+   "ease": "io",
+   "fx": {},
+   "prep": {},
+   "desc": "Palaeolithic stone tools on museum pedestals, dramatic museum lighting"
+  },
+  {
+   "id": "mammoth",
+   "image": "10_mammoth.jpg",
+   "start": 49.8,
+   "end": 55.8,
+   "cam": [
+    [
+     1.1,
+     0.45,
+     0.5,
+     0
+    ],
+    [
+     1.1,
+     0.55,
+     0.5,
+     0
+    ]
+   ],
+   "grade": "ember",
+   "trans": "fade",
+   "ease": "lin",
+   "fx": {},
+   "prep": {},
+   "desc": "Ice-age hunters on a snowy ridge watching a mammoth herd"
+  },
+  {
+   "id": "map",
+   "image": "11_map.jpg",
+   "start": 54.6,
+   "end": 63.6,
+   "cam": [
+    [
+     1.55,
+     0.582,
+     0.456,
+     0
+    ],
+    [
+     1.06,
+     0.5,
+     0.47,
+     0
+    ]
+   ],
+   "grade": "parch",
+   "trans": "inkmap",
+   "ease": "io",
+   "fx": {
+    "routes": {}
+   },
+   "prep": {},
+   "desc": "Antique parchment world map, hand drawn, no text"
+  },
+  {
+   "id": "startribe",
+   "image": "12_startribe.jpg",
+   "start": 62.4,
+   "end": 70.8,
+   "cam": [
+    [
+     1.0,
+     0.5,
+     0.5,
+     0
+    ],
+    [
+     1.14,
+     0.5,
+     0.45,
+     0
+    ]
+   ],
+   "grade": "earth",
+   "trans": "fade",
+   "ease": "io",
+   "fx": {},
+   "prep": {},
+   "desc": "Tribe on a ridge under the Milky Way, one figure pointing to the stars"
+  },
+  {
+   "id": "seed",
+   "image": "13_seed.jpg",
+   "start": 70.0,
+   "end": 77.0,
+   "cam": [
+    [
+     1.0,
+     0.5,
+     0.5,
+     0
+    ],
+    [
+     1.22,
+     0.52,
+     0.45,
+     0
+    ]
+   ],
+   "grade": "earth",
+   "trans": "fade",
+   "ease": "io",
+   "fx": {},
+   "prep": {},
+   "desc": "Macro: a wheat seed falling into dark soil, a sprout, god rays"
+  },
+  {
+   "id": "farm",
+   "image": "14_farm.jpg",
+   "start": 76.0,
+   "end": 83.5,
+   "cam": [
+    [
+     1.06,
+     0.45,
+     0.52,
+     0
+    ],
+    [
+     1.16,
+     0.55,
+     0.5,
+     0
+    ]
+   ],
+   "grade": "earth",
+   "trans": "radial",
+   "ease": "io",
+   "fx": {
+    "radial": {
+     "c": [
+      0.52,
+      0.45
+     ]
+    }
+   },
+   "prep": {},
+   "desc": "Neolithic wheat harvest by a river, mud-brick village"
+  },
+  {
+   "id": "mesopotamia",
+   "image": "15_mesopotamia.jpg",
+   "start": 82.3,
+   "end": 89.5,
+   "cam": [
+    [
+     1.0,
+     0.5,
+     0.5,
+     0
+    ],
+    [
+     1.16,
+     0.66,
+     0.42,
+     0
+    ]
+   ],
+   "grade": "gold",
+   "trans": "radial",
+   "ease": "io",
+   "fx": {
+    "radial": {
+     "c": [
+      0.5,
+      0.4
+     ]
+    }
+   },
+   "prep": {},
+   "desc": "Aerial view of a Mesopotamian ziggurat city on a river"
+  },
+  {
+   "id": "cuneiform",
+   "image": "16_cuneiform.jpg",
+   "start": 88.5,
+   "end": 95.0,
+   "cam": [
+    [
+     1.0,
+     0.5,
+     0.5,
+     0
+    ],
+    [
+     1.12,
+     0.5,
+     0.48,
+     0
+    ]
+   ],
+   "grade": "gold",
+   "trans": "fade",
+   "ease": "io",
+   "fx": {},
+   "prep": {
+    "crop": [
+     180,
+     62,
+     1200,
+     636
+    ]
+   },
+   "desc": "Sumerian cuneiform clay tablet under museum light"
+  },
+  {
+   "id": "pyramids",
+   "image": "17_pyramids.jpg",
+   "start": 94.0,
+   "end": 101.5,
+   "cam": [
+    [
+     1.14,
+     0.5,
+     0.5,
+     0
+    ],
+    [
+     1.02,
+     0.5,
+     0.5,
+     0
+    ]
+   ],
+   "grade": "gold",
+   "trans": "fade",
+   "ease": "io",
+   "fx": {},
+   "prep": {},
+   "desc": "Giza pyramids under construction, thousands of workers, golden dust"
+  },
+  {
+   "id": "bronze",
+   "image": "18_bronze.jpg",
+   "start": 100.5,
+   "end": 107.5,
+   "cam": [
+    [
+     1.1,
+     0.6,
+     0.5,
+     0
+    ],
+    [
+     1.2,
+     0.64,
+     0.5,
+     0
+    ]
+   ],
+   "grade": "gold",
+   "trans": "fade",
+   "ease": "io",
+   "fx": {},
+   "prep": {
+    "blur": [
+     [
+      270,
+      245,
+      450,
+      315
+     ]
+    ]
+   },
+   "desc": "Shang dynasty bronze ding vessels and oracle bones in a museum"
+  },
+  {
+   "id": "terracotta",
+   "image": "19_terracotta.jpg",
+   "start": 106.5,
+   "end": 120.6,
+   "cam": [
+    [
+     1.0,
+     0.5,
+     0.5,
+     0
+    ],
+    [
+     1.24,
+     0.5,
+     0.45,
+     0
+    ]
+   ],
+   "grade": "gold",
+   "trans": "fade",
+   "ease": "io",
+   "fx": {},
+   "prep": {},
+   "desc": "Terracotta army excavation hall with shafts of light"
+  },
+  {
+   "id": "silkroad",
+   "image": "20_silkroad.jpg",
+   "start": 119.6,
+   "end": 129.6,
+   "cam": [
+    [
+     1.1,
+     0.42,
+     0.5,
+     0
+    ],
+    [
+     1.1,
+     0.58,
+     0.5,
+     0
+    ]
+   ],
+   "grade": "gold",
+   "trans": "fade",
+   "ease": "lin",
+   "fx": {},
+   "prep": {},
+   "desc": "Silk Road camel caravan crossing dunes at golden hour"
+  },
+  {
+   "id": "roman",
+   "image": "21_roman.jpg",
+   "start": 128.6,
+   "end": 137.0,
+   "cam": [
+    [
+     1.15,
+     0.5,
+     0.5,
+     0
+    ],
+    [
+     1.04,
+     0.5,
+     0.5,
+     0
+    ]
+   ],
+   "grade": "gold",
+   "trans": "fade",
+   "ease": "io",
+   "fx": {},
+   "prep": {},
+   "desc": "Roman road and aqueduct with a marching legion"
+  },
+  {
+   "id": "sail",
+   "image": "22_sail.jpg",
+   "start": 136.0,
+   "end": 145.0,
+   "cam": [
+    [
+     1.06,
+     0.5,
+     0.5,
+     0
+    ],
+    [
+     1.16,
+     0.5,
+     0.5,
+     -0.8
+    ]
+   ],
+   "grade": "goldblue",
+   "trans": "fade",
+   "ease": "io",
+   "fx": {},
+   "prep": {},
+   "desc": "Age of Sail galleons on the open ocean with god rays"
+  },
+  {
+   "id": "manuscript",
+   "image": "23_manuscript.jpg",
+   "start": 144.0,
+   "end": 154.0,
+   "cam": [
+    [
+     1.08,
+     0.5,
+     0.56,
+     0
+    ],
+    [
+     1.26,
+     0.5,
+     0.54,
+     0
+    ]
+   ],
+   "grade": "goldblue",
+   "trans": "fade",
+   "ease": "io",
+   "fx": {},
+   "prep": {
+    "blur": [
+     [
+      640,
+      5,
+      790,
+      55
+     ]
+    ]
+   },
+   "desc": "Renaissance astronomical manuscript, armillary sphere and telescope"
+  },
+  {
+   "id": "steam",
+   "image": "24_steam.jpg",
+   "start": 152.4,
+   "end": 161.0,
+   "cam": [
+    [
+     1.16,
+     0.5,
+     0.5,
+     0
+    ],
+    [
+     1.04,
+     0.5,
+     0.5,
+     0
+    ]
+   ],
+   "grade": "steel",
+   "trans": "burn",
+   "ease": "io",
+   "fx": {},
+   "prep": {},
+   "desc": "Steam engine hall, giant flywheel, steam and sparks"
+  },
+  {
+   "id": "factory",
+   "image": "25_factory.jpg",
+   "start": 160.0,
+   "end": 168.0,
+   "cam": [
+    [
+     1.05,
+     0.5,
+     0.5,
+     0
+    ],
+    [
+     1.15,
+     0.5,
+     0.48,
+     0
+    ]
+   ],
+   "grade": "steel",
+   "trans": "fade",
+   "ease": "io",
+   "fx": {},
+   "prep": {},
+   "desc": "Industrial revolution smokestacks and a steam train on a bridge"
+  },
+  {
+   "id": "electric",
+   "image": "26_electric.jpg",
+   "start": 167.0,
+   "end": 176.0,
+   "cam": [
+    [
+     1.1,
+     0.47,
+     0.55,
+     0
+    ],
+    [
+     1.22,
+     0.47,
+     0.53,
+     0
+    ]
+   ],
+   "grade": "goldblue",
+   "trans": "fade",
+   "ease": "io",
+   "fx": {
+    "lights_on": {
+     "t0": 167.8,
+     "t1": 170.2
+    }
+   },
+   "prep": {},
+   "desc": "Boulevard c.1900 as electric street lights switch on"
+  },
+  {
+   "id": "rocket",
+   "image": "27_rocket.jpg",
+   "start": 175.0,
+   "end": 187.0,
+   "cam": [
+    [
+     1.25,
+     0.5,
+     0.6,
+     0
+    ],
+    [
+     1.25,
+     0.5,
+     0.4,
+     0
+    ]
+   ],
+   "grade": "steel",
+   "trans": "fade",
+   "ease": "io",
+   "fx": {
+    "shake": {
+     "t0": 176.4,
+     "peak": 177.6
+    }
+   },
+   "prep": {},
+   "desc": "Night Saturn-V-style rocket launch watched by crowds"
+  },
+  {
+   "id": "netearth",
+   "image": "28_netearth.jpg",
+   "start": 186.0,
+   "end": 200.8,
+   "cam": [
+    [
+     1.02,
+     0.5,
+     0.5,
+     0
+    ],
+    [
+     1.22,
+     0.5,
+     0.5,
+     -2.0
+    ]
+   ],
+   "grade": "future",
+   "trans": "fade",
+   "ease": "io",
+   "fx": {},
+   "prep": {},
+   "desc": "Night-side Earth wrapped in glowing network arcs"
+  },
+  {
+   "id": "citynight",
+   "image": "29_citynight.jpg",
+   "start": 199.8,
+   "end": 209.6,
+   "cam": [
+    [
+     1.16,
+     0.5,
+     0.5,
+     0
+    ],
+    [
+     1.03,
+     0.5,
+     0.5,
+     0
+    ]
+   ],
+   "grade": "future",
+   "trans": "fade",
+   "ease": "io",
+   "fx": {},
+   "prep": {},
+   "desc": "Aerial night view of a modern megacity"
+  },
+  {
+   "id": "ai",
+   "image": "30_ai.jpg",
+   "start": 208.6,
+   "end": 217.0,
+   "cam": [
+    [
+     1.0,
+     0.5,
+     0.5,
+     0
+    ],
+    [
+     1.15,
+     0.5,
+     0.5,
+     0
+    ]
+   ],
+   "grade": "future",
+   "trans": "fade",
+   "ease": "io",
+   "fx": {},
+   "prep": {},
+   "desc": "AI data centre with threads of light and an engineer"
+  },
+  {
+   "id": "gene",
+   "image": "31_gene.jpg",
+   "start": 216.0,
+   "end": 224.0,
+   "cam": [
+    [
+     1.05,
+     0.5,
+     0.5,
+     0
+    ],
+    [
+     1.15,
+     0.5,
+     0.5,
+     0
+    ]
+   ],
+   "grade": "future",
+   "trans": "fade",
+   "ease": "io",
+   "fx": {},
+   "prep": {
+    "blur": [
+     [
+      420,
+      120,
+      570,
+      270
+     ],
+     [
+      770,
+      320,
+      870,
+      390
+     ]
+    ]
+   },
+   "desc": "Gene-editing lab, holographic DNA helix"
+  },
+  {
+   "id": "robot",
+   "image": "32_robot.jpg",
+   "start": 223.0,
+   "end": 230.6,
+   "cam": [
+    [
+     1.12,
+     0.5,
+     0.5,
+     0
+    ],
+    [
+     1.22,
+     0.5,
+     0.5,
+     0
+    ]
+   ],
+   "grade": "future",
+   "trans": "fade",
+   "ease": "io",
+   "fx": {},
+   "prep": {},
+   "desc": "A human hand and a robot hand almost touching"
+  },
+  {
+   "id": "moon",
+   "image": "33_moon.jpg",
+   "start": 229.6,
+   "end": 237.6,
+   "cam": [
+    [
+     1.1,
+     0.55,
+     0.5,
+     0
+    ],
+    [
+     1.1,
+     0.45,
+     0.5,
+     0
+    ]
+   ],
+   "grade": "future",
+   "trans": "fade",
+   "ease": "lin",
+   "fx": {},
+   "prep": {},
+   "desc": "Realistic lunar base, Earth hanging in the black sky"
+  },
+  {
+   "id": "mars",
+   "image": "34_mars.jpg",
+   "start": 236.6,
+   "end": 244.6,
+   "cam": [
+    [
+     1.05,
+     0.5,
+     0.5,
+     0
+    ],
+    [
+     1.15,
+     0.5,
+     0.5,
+     0
+    ]
+   ],
+   "grade": "mars",
+   "trans": "fade",
+   "ease": "io",
+   "fx": {},
+   "prep": {},
+   "desc": "Astronauts, rover and a habitat dome on Mars"
+  },
+  {
+   "id": "futurecity",
+   "image": "35_futurecity.jpg",
+   "start": 243.6,
+   "end": 252.6,
+   "cam": [
+    [
+     1.0,
+     0.5,
+     0.5,
+     0
+    ],
+    [
+     1.2,
+     0.5,
+     0.47,
+     0
+    ]
+   ],
+   "grade": "future",
+   "trans": "fade",
+   "ease": "io",
+   "fx": {},
+   "prep": {},
+   "desc": "Wandering-Earth-scale megastructures rising above the clouds"
+  },
+  {
+   "id": "station",
+   "image": "36_station.jpg",
+   "start": 251.6,
+   "end": 267.0,
+   "cam": [
+    [
+     1.35,
+     0.5,
+     0.37,
+     0
+    ],
+    [
+     1.35,
+     0.46,
+     0.63,
+     0
+    ]
+   ],
+   "grade": "future",
+   "trans": "fade",
+   "ease": "io",
+   "fx": {},
+   "prep": {},
+   "desc": "Astronaut at a porthole facing a giant ring station, Earth below with sunrise flare"
+  },
+  {
+   "id": "child",
+   "image": "37_child.jpg",
+   "start": 266.0,
+   "end": 293.5,
+   "cam": [
+    [
+     1.0,
+     0.52,
+     0.5,
+     0
+    ],
+    [
+     1.2,
+     0.53,
+     0.42,
+     0
+    ]
+   ],
+   "grade": "future",
+   "trans": "fade",
+   "ease": "io",
+   "fx": {},
+   "prep": {},
+   "desc": "A child on a rooftop of a future city looking up at the Milky Way"
+  },
+  {
+   "id": "end",
+   "image": "01_galaxy.jpg",
+   "start": 292.0,
+   "end": 300.0,
+   "cam": [
+    [
+     1.2,
+     0.5,
+     0.5,
+     0
+    ],
+    [
+     1.32,
+     0.5,
+     0.5,
+     1.0
+    ]
+   ],
+   "grade": "cosmos",
+   "trans": "fade",
+   "ease": "io",
+   "fx": {
+    "stars3d": {
+     "k1": 0.01,
+     "k2": 0.0
+    },
+    "dim": 0.45
+   },
+   "prep": {},
+   "desc": "End card over the Milky Way"
+  }
+ ],
+ "subtitles": [
+  [
+   2.6,
+   6.4,
+   "七万年前，他们只是地球上不起眼的一群动物。",
+   "brief"
+  ],
+  [
+   7.2,
+   10.8,
+   "没有锋利的爪牙，没有强壮的身体。",
+   "brief"
+  ],
+  [
+   12.2,
+   16.6,
+   "但他们拥有一种力量——创造不存在的世界。",
+   "brief"
+  ],
+  [
+   26.6,
+   30.8,
+   "大约七万年前，智人的大脑里发生了一场无声的革命。",
+   "added"
+  ],
+  [
+   31.4,
+   34.8,
+   "语言让陌生人成为伙伴。",
+   "brief"
+  ],
+  [
+   36.6,
+   40.6,
+   "他们开始谈论从未见过的事物——神灵、祖先与传说。",
+   "added"
+  ],
+  [
+   50.4,
+   54.6,
+   "共同的故事，让数万人能够共同合作。",
+   "brief"
+  ],
+  [
+   56.2,
+   60.2,
+   "从非洲出发，他们走遍了整个世界。",
+   "added"
+  ],
+  [
+   64.2,
+   69.4,
+   "神话、国家、文明，都诞生于人类共同相信的想象。",
+   "brief"
+  ],
+  [
+   78.2,
+   81.0,
+   "人类驯服了植物。",
+   "brief"
+  ],
+  [
+   81.6,
+   86.2,
+   "我们以为驯化了小麦，其实是小麦驯化了我们。",
+   "added"
+  ],
+  [
+   90.2,
+   94.4,
+   "文字诞生了——人类第一次把想象刻进泥土。",
+   "added"
+  ],
+  [
+   96.0,
+   100.6,
+   "村落变成城市，城市变成王国，王国变成帝国。",
+   "added"
+  ],
+  [
+   111.8,
+   116.8,
+   "却也开始被自己创造的秩序束缚。",
+   "brief"
+  ],
+  [
+   126.6,
+   131.4,
+   "金钱、帝国与宗教，把陌生人联结成一个全球网络。",
+   "added"
+  ],
+  [
+   132.4,
+   136.0,
+   "人类不断突破自己的边界。",
+   "brief"
+  ],
+  [
+   138.4,
+   143.6,
+   "科学革命始于一个伟大的发现——承认我们的无知。",
+   "added"
+  ],
+  [
+   146.2,
+   150.8,
+   "从相信神明，到探索宇宙。",
+   "brief"
+  ],
+  [
+   155.2,
+   159.8,
+   "科学、帝国与资本结盟，世界开始加速运转。",
+   "added"
+  ],
+  [
+   189.8,
+   195.2,
+   "从仰望星空，到成为改变星球的力量。",
+   "brief"
+  ],
+  [
+   206.0,
+   209.8,
+   "过去七万年，我们改变了世界。",
+   "brief"
+  ],
+  [
+   211.4,
+   215.8,
+   "但未来，我们是否还能理解自己？",
+   "brief"
+  ],
+  [
+   218.4,
+   224.6,
+   "当人工智能、基因技术和宇宙探索改变生命本身……",
+   "brief"
+  ],
+  [
+   231.6,
+   237.2,
+   "我们正获得近乎神的力量，却仍不清楚自己想要什么。",
+   "added"
+  ],
+  [
+   256.6,
+   262.0,
+   "下一章人类历史，将由谁书写？",
+   "brief"
+  ]
+ ],
+ "chapters": [
+  [
+   21.8,
+   26.0,
+   "第一章",
+   "认知革命",
+   "THE COGNITIVE REVOLUTION"
+  ],
+  [
+   70.6,
+   75.0,
+   "第二章",
+   "农业革命",
+   "THE AGRICULTURAL REVOLUTION"
+  ],
+  [
+   120.6,
+   125.6,
+   "第三章",
+   "帝国与科学革命",
+   "EMPIRES  &  THE SCIENTIFIC REVOLUTION"
+  ],
+  [
+   200.8,
+   205.6,
+   "第四章",
+   "未来的选择",
+   "THE CHOICE AHEAD"
+  ]
+ ],
+ "labels": [
+  [
+   23.0,
+   27.4,
+   "约 7 万年前",
+   "东非 · 智人"
+  ],
+  [
+   36.0,
+   40.2,
+   "约 3 万年前",
+   "欧洲 · 洞穴壁画"
+  ],
+  [
+   46.0,
+   50.2,
+   "旧石器时代",
+   "石器 · 人类最早的技术"
+  ],
+  [
+   51.0,
+   55.0,
+   "冰河时期",
+   "猛犸象草原"
+  ],
+  [
+   205.9,
+   209.6,
+   "今天",
+   "八十亿智人"
+  ],
+  [
+   230.6,
+   235.4,
+   "未来",
+   "月球基地"
+  ],
+  [
+   237.6,
+   242.4,
+   "未来",
+   "火星前哨"
+  ]
+ ],
+ "ticker": {
+  "windows": [
+   [
+    71.6,
+    119.8
+   ],
+   [
+    125.9,
+    198.8
+   ]
+  ],
+  "keys": [
+   [
+    71.6,
+    -9500,
+    "新月沃地 · 农业起源"
+   ],
+   [
+    76.6,
+    -7000,
+    "新石器时代 · 农耕村落"
+   ],
+   [
+    82.9,
+    -3500,
+    "美索不达米亚 · 城市诞生"
+   ],
+   [
+    89.0,
+    -3200,
+    "苏美尔 · 楔形文字"
+   ],
+   [
+    94.5,
+    -2560,
+    "古埃及 · 吉萨金字塔"
+   ],
+   [
+    101.0,
+    -1300,
+    "中国 · 商代青铜与甲骨"
+   ],
+   [
+    107.0,
+    -221,
+    "中国 · 秦统一天下"
+   ],
+   [
+    125.9,
+    -130,
+    "丝绸之路"
+   ],
+   [
+    129.1,
+    117,
+    "罗马帝国 · 大道与水渠"
+   ],
+   [
+    136.5,
+    1492,
+    "大航海时代"
+   ],
+   [
+    144.5,
+    1543,
+    "科学革命"
+   ],
+   [
+    153.0,
+    1776,
+    "蒸汽机 · 工业革命"
+   ],
+   [
+    160.5,
+    1850,
+    "工业时代"
+   ],
+   [
+    167.5,
+    1882,
+    "电灯点亮城市"
+   ],
+   [
+    175.5,
+    1969,
+    "人类登月"
+   ],
+   [
+    186.5,
+    1991,
+    "互联网连接世界"
+   ]
+  ]
+ },
+ "routes": [
+  [
+   55.9,
+   57.2,
+   [
+    [
+     770,
+     425
+    ],
+    [
+     805,
+     385
+    ],
+    [
+     822,
+     335
+    ],
+    [
+     805,
+     292
+    ]
+   ],
+   "东非 · 约7万年前",
+   [
+    -250,
+    40
+   ],
+   "start"
+  ],
+  [
+   57.0,
+   58.4,
+   [
+    [
+     805,
+     292
+    ],
+    [
+     770,
+     258
+    ],
+    [
+     722,
+     228
+    ],
+    [
+     662,
+     214
+    ]
+   ],
+   "欧洲 · 约4.5万年前",
+   [
+    -120,
+    -70
+   ],
+   "end"
+  ],
+  [
+   57.3,
+   58.9,
+   [
+    [
+     805,
+     292
+    ],
+    [
+     880,
+     266
+    ],
+    [
+     960,
+     250
+    ],
+    [
+     1040,
+     266
+    ],
+    [
+     1072,
+     292
+    ]
+   ],
+   "东亚 · 约4万年前",
+   [
+    20,
+    -70
+   ],
+   "end"
+  ],
+  [
+   57.6,
+   59.4,
+   [
+    [
+     805,
+     292
+    ],
+    [
+     870,
+     330
+    ],
+    [
+     932,
+     352
+    ],
+    [
+     1010,
+     386
+    ],
+    [
+     1072,
+     422
+    ],
+    [
+     1118,
+     468
+    ],
+    [
+     1135,
+     508
+    ]
+   ],
+   "澳大利亚 · 约4.5万年前",
+   [
+    -60,
+    50
+   ],
+   "end"
+  ],
+  [
+   59.0,
+   61.8,
+   [
+    [
+     1072,
+     292
+    ],
+    [
+     1150,
+     222
+    ],
+    [
+     1250,
+     166
+    ],
+    [
+     1340,
+     140
+    ],
+    null,
+    [
+     36,
+     136
+    ],
+    [
+     110,
+     166
+    ],
+    [
+     200,
+     232
+    ],
+    [
+     272,
+     302
+    ],
+    [
+     332,
+     372
+    ],
+    [
+     400,
+     432
+    ],
+    [
+     440,
+     500
+    ],
+    [
+     420,
+     582
+    ]
+   ],
+   "美洲 · 约1.6万年前",
+   [
+    30,
+    10
+   ],
+   "end"
+  ]
+ ],
+ "title_card": [
+  17.6,
+  21.3
+ ],
+ "captions": [
+  [
+   274.0,
+   279.6,
+   "我们从哪里来？"
+  ],
+  [
+   281.0,
+   287.6,
+   "我们将走向哪里？"
+  ]
+ ],
+ "endcard": [
+  292.8,
+  299.2
+ ],
+ "parchment": [
+  [
+   0,
+   0.0
+  ],
+  [
+   10.8,
+   0.0
+  ],
+  [
+   11.6,
+   0.34
+  ],
+  [
+   70,
+   0.3
+  ],
+  [
+   120,
+   0.22
+  ],
+  [
+   152,
+   0.12
+  ],
+  [
+   200,
+   0.05
+  ],
+  [
+   300,
+   0.0
+  ]
+ ],
+ "flashes": [
+  [
+   11.0,
+   1.0,
+   0.16
+  ],
+  [
+   17.6,
+   0.35,
+   0.35
+  ],
+  [
+   70.0,
+   0.12,
+   0.3
+  ],
+  [
+   120.0,
+   0.22,
+   0.3
+  ],
+  [
+   177.6,
+   0.3,
+   0.45
+  ],
+  [
+   252.0,
+   0.18,
+   0.4
+  ]
+ ]
+}

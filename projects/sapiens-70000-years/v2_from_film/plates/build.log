@@ -1,0 +1,50 @@
+31 plates planned, 31 to build
+j=0 t=0.0s  0s elapsed
+  saved galaxy: bb=[762, 1147, 2254, 1572] acc=135 frames, coverage(w>0.5)=1.000
+j=240 t=10.0s  25s elapsed
+  saved earth: bb=[641, 851, 2303, 1656] acc=80 frames, coverage(w>0.5)=0.984
+  saved wasteland: bb=[740, 1392, 2204, 1656] acc=116 frames, coverage(w>0.5)=1.000
+j=480 t=20.0s  42s elapsed
+  saved firevisions: bb=[719, 1385, 2225, 1656] acc=92 frames, coverage(w>0.5)=1.000
+  saved savanna: bb=[725, 1312, 2463, 1576] acc=139 frames, coverage(w>0.5)=0.970
+j=720 t=30.0s  55s elapsed
+  saved campfire: bb=[486, 1281, 2290, 1656] acc=134 frames, coverage(w>0.5)=1.000
+  saved cave: bb=[555, 1147, 2481, 1542] acc=91 frames, coverage(w>0.5)=0.952
+  saved bison_painted: bb=[663, 1295, 2281, 1559] acc=9 frames, coverage(w>0.5)=0.981
+  saved tools: bb=[871, 1246, 2073, 1502] acc=92 frames, coverage(w>0.5)=1.000
+  saved mammoth: bb=[722, 1321, 2192, 1589] acc=91 frames, coverage(w>0.5)=0.970
+j=1440 t=60.0s  93s elapsed
+  saved map: bb=[1003, 1113, 2135, 1460] acc=158 frames, coverage(w>0.5)=1.000
+  saved startribe: bb=[587, 1231, 2357, 1643] acc=153 frames, coverage(w>0.5)=1.000
+j=1920 t=80.0s  129s elapsed
+  saved farm: bb=[850, 1295, 2337, 1630] acc=128 frames, coverage(w>0.5)=1.000
+  saved mesopotamia: bb=[641, 1258, 2356, 1656] acc=120 frames, coverage(w>0.5)=0.955
+j=2160 t=90.0s  143s elapsed
+  saved cuneiform: bb=[696, 1281, 2248, 1643] acc=108 frames, coverage(w>0.5)=1.000
+j=2400 t=100.0s  155s elapsed
+  saved pyramids: bb=[661, 1304, 2283, 1645] acc=132 frames, coverage(w>0.5)=0.969
+  saved bronze: bb=[850, 1321, 2362, 1589] acc=120 frames, coverage(w>0.5)=0.955
+j=2640 t=110.0s  165s elapsed
+  saved terracotta: bb=[888, 1211, 2056, 1581] acc=291 frames, coverage(w>0.5)=1.000
+  saved silkroad: bb=[750, 1321, 2423, 1589] acc=192 frames, coverage(w>0.5)=0.970
+j=3120 t=130.0s  187s elapsed
+  saved roman: bb=[671, 1300, 2273, 1630] acc=153 frames, coverage(w>0.5)=0.971
+j=3360 t=140.0s  201s elapsed
+  saved sail: bb=[641, 1288, 2301, 1607] acc=168 frames, coverage(w>0.5)=0.998
+j=3600 t=150.0s  212s elapsed
+  saved manuscript: bb=[993, 1347, 1950, 1656] acc=178 frames, coverage(w>0.5)=1.000
+  saved steam: bb=[709, 1308, 2234, 1628] acc=144 frames, coverage(w>0.5)=0.978
+j=4560 t=190.0s  244s elapsed
+  saved netearth: bb=[806, 1282, 2131, 1628] acc=308 frames, coverage(w>0.5)=1.000
+  saved citynight: bb=[896, 1336, 2049, 1640] acc=187 frames, coverage(w>0.5)=0.964
+j=5040 t=210.0s  268s elapsed
+  saved ai: bb=[867, 1303, 2077, 1656] acc=153 frames, coverage(w>0.5)=0.986
+j=5280 t=220.0s  279s elapsed
+  saved gene: bb=[632, 1300, 2312, 1610] acc=144 frames, coverage(w>0.5)=1.000
+  saved robot: bb=[669, 1308, 2275, 1576] acc=135 frames, coverage(w>0.5)=0.955
+  saved moon: bb=[492, 1321, 2393, 1589] acc=144 frames, coverage(w>0.5)=0.970
+j=5760 t=240.0s  305s elapsed
+  saved mars: bb=[583, 1345, 2360, 1625] acc=144 frames, coverage(w>0.5)=0.960
+j=6240 t=260.0s  323s elapsed
+  saved station: bb=[941, 1117, 1886, 1561] acc=321 frames, coverage(w>0.5)=1.000
+done 332.47687244415283
