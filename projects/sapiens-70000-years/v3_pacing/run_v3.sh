@@ -7,7 +7,7 @@ mkdir -p segs audio out vo/clips
 python3 warp.py                                        # print the pacing blocks
 # narration: v2 clips + re-synthesized line 37 (same voice / params as lines.json #37)
 python3 -c "import json;json.dump([x for x in json.load(open('vo/lines.json',encoding='utf-8')) if x['i']==37],open('vo/l37.json','w',encoding='utf-8'),ensure_ascii=False)"
-python3 ../voiceover/v2/tts_line.py vo/l37.json vo/t37 --total 300 && cp vo/t37/37.wav vo/clips/37.wav   # other clips: ../voiceover/v2 clips
+python3 ../voiceover/v2/tts_line.py vo/l37.json vo/t37 --total 300 && ffmpeg -v error -y -i vo/t37/37.wav -af volume=0.4dB -c:a pcm_s16le vo/clips/37.wav   # +0.4 dB = old line loudness; other clips: ../voiceover/v2 clips
 python3 timeline_v3.py                                 # VO starts, retimed subtitles, srt files
 python3 mk_music_v3.py && python3 music_v3.py audio/score_v3.wav   # score re-timed at note level
 CRF=18 python3 render_v3.py $(seq 0 7) & CRF=18 python3 render_v3.py $(seq 15 -1 8); wait
