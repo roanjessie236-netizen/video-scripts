@@ -11,4 +11,6 @@ python3 pause_fit.py lines.json subs.json clips clips_fit              # 6 组�
 python3 en_overlay.py "$SRC" subs.json ../../out/21_lessons_ai_era_2K_en.mp4 --crf 18   # 英文字幕（v2 排版）
 python3 mix_tl.py ../../out/21_lessons_ai_era_2K_en.mp4 vo_starts.srt clips_fit ../../out/21_lessons_ai_era_2K_v2.mp4 \
   --fit clips_fit/fit.json --music-db -5 --duck-thr 0.05 --duck-ratio 3 --voice-lufs -16 --target-lufs -14 --min-vmr 12 --max-ride 7
+# 全流程重跑已包含 v2.1 的第 5 句（lines.json 的 ctx）。交付的 v2.1 是在已交付的 v2 成片上只换第 5 句：
+#   python3 replace_l5.py V2_DELIVERED.mp4 ../../out/21_lessons_ai_era_2K_v2_work/mix_final.wav ../../out/21_lessons_ai_era_2K_v2.1.mp4
 echo "done -> out/21_lessons_ai_era_2K_v2.mp4"

@@ -35,6 +35,8 @@ U=[([1],-6,-2,0,'低沉、平静，开篇第一句'),([2],-6,-1,0,'与上句平�
 ([42],-15,-1,0,'片尾字幕：轻、慢、温柔'),([43],-15,-2,0,'片尾字幕：更轻，余韵')]
 # burned subtitles cannot move: these two lines start a little earlier so they end with their subtitle
 SHIFT={4:(11.25,'VO 提前 0.10 s（字幕后 0.05 s）以免超出烧录字幕'),27:(142.75,'VO 与字幕同时起（-0.05 s）以免超出烧录字幕')}
+# #5: a 2-character standalone take came out creaky / mispronounced (Whisper: 「复刻」) -> synthesize it after the end of #4
+CTX={5:('更深层的东西——','单独合成「思考。」两字时发音含混、偏沙哑（Whisper 识别为「复刻」）；改为与上句同语境「更深层的东西——思考。」一次合成，只保留「思考」')}
 L=[]
 for subs,r,p,v,c in U:
     i=subs[0]; cap=i>=42
@@ -42,6 +44,7 @@ for subs,r,p,v,c in U:
     L.append(dict(i=i,subs=subs,s=round(S[i]['s']+(0.6 if cap else 0.15),2),t=t,parts=[S[k]['zh'] for k in subs],
       en=' '.join(EN[k] for k in subs),rate=r,pitch='%+dHz'%p,vol='%+d%%'%v,cue=c,**({'cap':1} if cap else {})))
     if i in SHIFT: L[-1]['s'],L[-1]['note']=SHIFT[i]
+    if i in CTX: L[-1]['ctx'],L[-1]['note']=CTX[i]
 json.dump(L,open(OUT,'w',encoding='utf-8'),ensure_ascii=False,indent=1)
 json.dump({k:dict(S[k],en=EN[k]) for k in S},open(OUTS,'w',encoding='utf-8'),ensure_ascii=False,indent=1)
 print(len(L)); [print(x['i'],x['s'],x['t']) for x in L if len(x['subs'])>1]

@@ -1,10 +1,14 @@
 """今日简史 v2 TTS — same engine/rules as Sapiens v2 tts_line.py (one edge-tts call per sentence, no splicing),
 plus WordBoundary capture so merged sentences can be checked against the burned subtitle of their 2nd half.
+A line may carry "ctx" (text spoken before it in the same take): the take is synthesized as ctx+t and cut at the
+quietest point of the pause before t — used for #5「思考。」, which as a 2-character standalone input came out
+creaky / mispronounced (Whisper heard it as「复刻」); after「更深层的东西——」it is read as the natural answer to the dash.
 Usage: python3 tts_line.py lines.json OUT_DIR [--voice zh-CN-YunjianNeural] [--total 224]
 Writes OUT/NN.wav (48k mono, trimmed), OUT/durs.json, OUT/bounds.json (word onsets in trimmed clip), OUT/fit.json."""
-import argparse, asyncio, hashlib, json, os, subprocess
+import argparse, asyncio, hashlib, json, os, re, subprocess
 import numpy as np, edge_tts
 SR = 48000
+PUNCT = r'[，。？！、—“”：；…\s]'
 def decode(p):
     raw = subprocess.check_output(['ffmpeg','-v','error','-i',p,'-ac','1','-ar',str(SR),'-f','f32le','pipe:'])
     return np.frombuffer(raw, np.float32).copy()
@@ -15,12 +19,13 @@ def trim(x, thr_db=-45, pad=0.03):
 async def one(L, a, sem):
     async with sem:
         rate = L['rate'] + a.rate_offset + L.get('radj', 0)
-        key = hashlib.md5(('%s|%s|%d|%s|%s' % (L['t'], a.voice, rate, L['pitch'], L['vol'])).encode()).hexdigest()[:10]
+        text = L.get('ctx', '') + L['t']
+        key = hashlib.md5(('%s|%s|%d|%s|%s' % (text, a.voice, rate, L['pitch'], L['vol'])).encode()).hexdigest()[:10]
         mp = os.path.join(a.out, '_tmp', '%02d_%s.mp3' % (L['i'], key)); bj = mp[:-4] + '.json'
         for k in range(6):
             if os.path.exists(mp) and os.path.getsize(mp) > 1000 and os.path.exists(bj): break
             try:
-                c = edge_tts.Communicate(L['t'], a.voice, rate='%+d%%' % rate, pitch=L['pitch'], volume=L['vol'], boundary='WordBoundary')
+                c = edge_tts.Communicate(text, a.voice, rate='%+d%%' % rate, pitch=L['pitch'], volume=L['vol'], boundary='WordBoundary')
                 audio = bytearray(); B = []
                 async for ch in c.stream():
                     if ch['type'] == 'audio': audio += ch['data']
@@ -28,7 +33,14 @@ async def one(L, a, sem):
                 open(mp, 'wb').write(audio); json.dump(B, open(bj, 'w'), ensure_ascii=False)
             except Exception as e:
                 print('retry', L['i'], e, flush=True); await asyncio.sleep(2 + 2*k)
-        x, off = trim(decode(mp)); B = [[round(o-off, 3), round(d, 3), w] for o, d, w in json.load(open(bj))]
+        x = decode(mp); B0 = json.load(open(bj)); c0 = 0.0
+        if L.get('ctx'):  # cut off the context: quietest 10 ms point between the last ctx word and the first word of t
+            n = len(re.sub(PUNCT, '', L['ctx'])); k = 0
+            while n > 0: n -= len(re.sub(PUNCT, '', B0[k][2])); k += 1
+            e1, o = B0[k-1][0] + B0[k-1][1], B0[k][0]; w10 = int(0.01*SR)
+            env = np.sqrt(np.convolve(x*x, np.ones(w10)/w10, mode='same')); lo = int(e1*SR)
+            c = lo + int(np.argmin(env[lo:int(o*SR)])); x = x[c:]; c0 = c/SR; B0 = B0[k:]
+        x, off = trim(x); B = [[round(o-c0-off, 3), round(d, 3), w] for o, d, w in B0]
         subprocess.run(['ffmpeg','-v','error','-y','-f','f32le','-ar',str(SR),'-ac','1','-i','pipe:', os.path.join(a.out, '%02d.wav' % L['i'])], input=x.tobytes(), check=True)
         return L['i'], round(len(x)/SR, 3), rate, B
 async def main():
