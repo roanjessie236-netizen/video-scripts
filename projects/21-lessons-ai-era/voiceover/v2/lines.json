@@ -1,0 +1,610 @@
+[
+ {
+  "i": 1,
+  "subs": [
+   1
+  ],
+  "s": 0.75,
+  "t": "火，改变了我们的生存。",
+  "parts": [
+   "火，改变了我们的生存。"
+  ],
+  "en": "Fire changed how we survive.",
+  "rate": -6,
+  "pitch": "-2Hz",
+  "vol": "+0%",
+  "cue": "低沉、平静，开篇第一句"
+ },
+ {
+  "i": 2,
+  "subs": [
+   2
+  ],
+  "s": 4.15,
+  "t": "文字，延伸了我们的记忆。",
+  "parts": [
+   "文字，延伸了我们的记忆。"
+  ],
+  "en": "Writing extended our memory.",
+  "rate": -6,
+  "pitch": "-1Hz",
+  "vol": "+0%",
+  "cue": "与上句平行"
+ },
+ {
+  "i": 3,
+  "subs": [
+   3
+  ],
+  "s": 7.75,
+  "t": "机器，放大了我们的力量。",
+  "parts": [
+   "机器，放大了我们的力量。"
+  ],
+  "en": "Machines amplified our strength.",
+  "rate": -5,
+  "pitch": "+0Hz",
+  "vol": "+3%",
+  "cue": "排比第三句，略抬"
+ },
+ {
+  "i": 4,
+  "subs": [
+   4
+  ],
+  "s": 11.25,
+  "t": "而人工智能，正在改变一种更深层的东西——",
+  "parts": [
+   "而人工智能，正在改变一种更深层的东西——"
+  ],
+  "en": "And artificial intelligence is changing something deeper—",
+  "rate": -4,
+  "pitch": "-1Hz",
+  "vol": "+0%",
+  "cue": "转折，破折号处悬停",
+  "note": "VO 提前 0.10 s（字幕后 0.05 s）以免超出烧录字幕"
+ },
+ {
+  "i": 5,
+  "subs": [
+   5
+  ],
+  "s": 15.95,
+  "t": "思考。",
+  "parts": [
+   "思考。"
+  ],
+  "en": "Thinking.",
+  "rate": -8,
+  "pitch": "-2Hz",
+  "vol": "+3%",
+  "cue": "单词落点，慢、重"
+ },
+ {
+  "i": 6,
+  "subs": [
+   6
+  ],
+  "s": 27.95,
+  "t": "过去的机器，延伸人的双手。",
+  "parts": [
+   "过去的机器，延伸人的双手。"
+  ],
+  "en": "The machines of the past extended our hands.",
+  "rate": -6,
+  "pitch": "-1Hz",
+  "vol": "+0%",
+  "cue": "回望过去，平稳"
+ },
+ {
+  "i": 7,
+  "subs": [
+   7
+  ],
+  "s": 31.95,
+  "t": "今天的机器，开始参与创造、设计与发现。",
+  "parts": [
+   "今天的机器，开始参与创造、设计与发现。"
+  ],
+  "en": "Today's machines are starting to take part in creation, design and discovery.",
+  "rate": -5,
+  "pitch": "+1Hz",
+  "vol": "+3%",
+  "cue": "当下，三个动词递进"
+ },
+ {
+  "i": 8,
+  "subs": [
+   8,
+   9
+  ],
+  "s": 38.95,
+  "t": "那些曾被视为人类独有的能力，正在被重新审视。",
+  "parts": [
+   "那些曾被视为人类独有的能力，",
+   "正在被重新审视。"
+  ],
+  "en": "Abilities once thought to be uniquely human are being re-examined.",
+  "rate": -5,
+  "pitch": "+0Hz",
+  "vol": "+0%",
+  "cue": "一口气说完，逗号处轻停"
+ },
+ {
+  "i": 10,
+  "subs": [
+   10,
+   11
+  ],
+  "s": 48.15,
+  "t": "当智能走出实验室，进入每个人的生活，人类的位置，也开始发生变化。",
+  "parts": [
+   "当智能走出实验室，进入每个人的生活，",
+   "人类的位置，也开始发生变化。"
+  ],
+  "en": "As intelligence leaves the lab and enters everyone's life, humanity's place is beginning to shift.",
+  "rate": -6,
+  "pitch": "-1Hz",
+  "vol": "+0%",
+  "cue": "叙述，后半句下沉"
+ },
+ {
+  "i": 12,
+  "subs": [
+   12,
+   13
+  ],
+  "s": 69.95,
+  "t": "新的工作可能诞生，旧的技能也可能迅速贬值。",
+  "parts": [
+   "新的工作可能诞生，",
+   "旧的技能也可能迅速贬值。"
+  ],
+  "en": "New jobs may emerge, while old skills may quickly lose their value.",
+  "rate": -5,
+  "pitch": "+0Hz",
+  "vol": "+0%",
+  "cue": "对比：诞生 / 贬值"
+ },
+ {
+  "i": 14,
+  "subs": [
+   14,
+   15
+  ],
+  "s": 76.55,
+  "t": "赫拉利担忧，一些人可能长期难以在经济体系中重新找到位置——这就是“无用阶级”的风险。",
+  "parts": [
+   "赫拉利担忧，一些人可能长期难以在经济体系中重新找到位置",
+   "——这就是“无用阶级”的风险。"
+  ],
+  "en": "Harari worries that some people may struggle for a long time to find a place in the economy — the risk of a \"useless class.\"",
+  "rate": -4,
+  "pitch": "+0Hz",
+  "vol": "+0%",
+  "cue": "长句，破折号后点出“无用阶级”"
+ },
+ {
+  "i": 16,
+  "subs": [
+   16
+  ],
+  "s": 86.75,
+  "t": "劳动不再被需要，绝不意味着一个人失去了价值。",
+  "parts": [
+   "劳动不再被需要，绝不意味着一个人失去了价值。"
+  ],
+  "en": "No longer being needed for work never means a person has lost their worth.",
+  "rate": -5,
+  "pitch": "+1Hz",
+  "vol": "+3%",
+  "cue": "坚定，强调“绝不”"
+ },
+ {
+  "i": 17,
+  "subs": [
+   17,
+   18
+  ],
+  "s": 92.75,
+  "t": "持续学习需要机会，技术创造的财富也需要被分享。",
+  "parts": [
+   "持续学习需要机会，",
+   "技术创造的财富也需要被分享。"
+  ],
+  "en": "Lifelong learning needs opportunity, and the wealth technology creates must be shared.",
+  "rate": -5,
+  "pitch": "+0Hz",
+  "vol": "+3%",
+  "cue": "两个“需要”并列"
+ },
+ {
+  "i": 19,
+  "subs": [
+   19
+  ],
+  "s": 99.75,
+  "t": "当工作发生改变，我们将如何重新理解自身的价值？",
+  "parts": [
+   "当工作发生改变，我们将如何重新理解自身的价值？"
+  ],
+  "en": "As work changes, how will we rethink our own worth?",
+  "rate": -6,
+  "pitch": "+0Hz",
+  "vol": "+0%",
+  "cue": "设问，留白"
+ },
+ {
+  "i": 20,
+  "subs": [
+   20
+  ],
+  "s": 110.15,
+  "t": "如果机器可以写诗。",
+  "parts": [
+   "如果机器可以写诗。"
+  ],
+  "en": "If machines can write poetry,",
+  "rate": -7,
+  "pitch": "-1Hz",
+  "vol": "+0%",
+  "cue": "假设，轻起"
+ },
+ {
+  "i": 21,
+  "subs": [
+   21
+  ],
+  "s": 113.55,
+  "t": "可以绘画。",
+  "parts": [
+   "可以绘画。"
+  ],
+  "en": "can paint,",
+  "rate": -6,
+  "pitch": "+0Hz",
+  "vol": "+0%",
+  "cue": "短促递进"
+ },
+ {
+  "i": 22,
+  "subs": [
+   22
+  ],
+  "s": 116.55,
+  "t": "甚至帮助我们发现新的知识。",
+  "parts": [
+   "甚至帮助我们发现新的知识。"
+  ],
+  "en": "can even help us discover new knowledge,",
+  "rate": -5,
+  "pitch": "+1Hz",
+  "vol": "+3%",
+  "cue": "递进到高点"
+ },
+ {
+  "i": 23,
+  "subs": [
+   23
+  ],
+  "s": 121.15,
+  "t": "那么，创造力还是人类的专属吗？",
+  "parts": [
+   "那么，创造力还是人类的专属吗？"
+  ],
+  "en": "then is creativity still uniquely human?",
+  "rate": -7,
+  "pitch": "-1Hz",
+  "vol": "+0%",
+  "cue": "发问，放慢"
+ },
+ {
+  "i": 24,
+  "subs": [
+   24
+  ],
+  "s": 128.75,
+  "t": "也许，我们需要重新理解创造。",
+  "parts": [
+   "也许，我们需要重新理解创造。"
+  ],
+  "en": "Perhaps we need to rethink what creation means.",
+  "rate": -7,
+  "pitch": "-1Hz",
+  "vol": "+0%",
+  "cue": "转入沉思"
+ },
+ {
+  "i": 25,
+  "subs": [
+   25
+  ],
+  "s": 133.15,
+  "t": "一首歌，可以承载一个人的思念。",
+  "parts": [
+   "一首歌，可以承载一个人的思念。"
+  ],
+  "en": "A song can carry one person's longing.",
+  "rate": -7,
+  "pitch": "-1Hz",
+  "vol": "+0%",
+  "cue": "温柔"
+ },
+ {
+  "i": 26,
+  "subs": [
+   26
+  ],
+  "s": 137.95,
+  "t": "一幅画，可以留下一个时代的追问。",
+  "parts": [
+   "一幅画，可以留下一个时代的追问。"
+  ],
+  "en": "A painting can preserve the questions of an era.",
+  "rate": -7,
+  "pitch": "+0Hz",
+  "vol": "+0%",
+  "cue": "与上句平行"
+ },
+ {
+  "i": 27,
+  "subs": [
+   27
+  ],
+  "s": 142.75,
+  "t": "未来的创造，也将发生在人与新的智能之间。",
+  "parts": [
+   "未来的创造，也将发生在人与新的智能之间。"
+  ],
+  "en": "Future creation will also happen between humans and new forms of intelligence.",
+  "rate": -4,
+  "pitch": "+1Hz",
+  "vol": "+0%",
+  "cue": "展望",
+  "note": "VO 与字幕同时起（-0.05 s）以免超出烧录字幕"
+ },
+ {
+  "i": 28,
+  "subs": [
+   28
+  ],
+  "s": 148.35,
+  "t": "而我们，仍要寻找自己真正想表达的东西。",
+  "parts": [
+   "而我们，仍要寻找自己真正想表达的东西。"
+  ],
+  "en": "And we must still find what we truly want to express.",
+  "rate": -7,
+  "pitch": "-2Hz",
+  "vol": "+3%",
+  "cue": "回到自身，沉稳"
+ },
+ {
+  "i": 29,
+  "subs": [
+   29
+  ],
+  "s": 161.15,
+  "t": "人工智能可能改变世界。",
+  "parts": [
+   "人工智能可能改变世界。"
+  ],
+  "en": "Artificial intelligence may change the world.",
+  "rate": -5,
+  "pitch": "+0Hz",
+  "vol": "+0%",
+  "cue": "陈述"
+ },
+ {
+  "i": 30,
+  "subs": [
+   30
+  ],
+  "s": 164.75,
+  "t": "但它无法替代人类提出的问题。",
+  "parts": [
+   "但它无法替代人类提出的问题。"
+  ],
+  "en": "But it cannot replace the questions humans ask.",
+  "rate": -7,
+  "pitch": "+1Hz",
+  "vol": "+3%",
+  "cue": "转折，坚定"
+ },
+ {
+  "i": 31,
+  "subs": [
+   31
+  ],
+  "s": 169.75,
+  "t": "我们为什么存在？",
+  "parts": [
+   "我们为什么存在？"
+  ],
+  "en": "Why do we exist?",
+  "rate": -8,
+  "pitch": "-1Hz",
+  "vol": "+0%",
+  "cue": "根本之问，慢"
+ },
+ {
+  "i": 32,
+  "subs": [
+   32
+  ],
+  "s": 173.55,
+  "t": "我们希望创造怎样的未来？",
+  "parts": [
+   "我们希望创造怎样的未来？"
+  ],
+  "en": "What kind of future do we want to create?",
+  "rate": -6,
+  "pitch": "+1Hz",
+  "vol": "+0%",
+  "cue": "第二问，向前"
+ },
+ {
+  "i": 33,
+  "subs": [
+   33,
+   34
+  ],
+  "s": 179.15,
+  "t": "当算法越来越了解我们，我们也需要重新认识自己。",
+  "parts": [
+   "当算法越来越了解我们，",
+   "我们也需要重新认识自己。"
+  ],
+  "en": "As algorithms come to know us better and better, we, too, must come to know ourselves anew.",
+  "rate": -6,
+  "pitch": "-1Hz",
+  "vol": "+0%",
+  "cue": "对照：了解我们 / 认识自己"
+ },
+ {
+  "i": 35,
+  "subs": [
+   35
+  ],
+  "s": 186.55,
+  "t": "我们真正渴望什么？",
+  "parts": [
+   "我们真正渴望什么？"
+  ],
+  "en": "What do we truly long for?",
+  "rate": -8,
+  "pitch": "-1Hz",
+  "vol": "+0%",
+  "cue": "内省之问"
+ },
+ {
+  "i": 36,
+  "subs": [
+   36
+  ],
+  "s": 190.35,
+  "t": "又愿意为了怎样的未来，承担责任？",
+  "parts": [
+   "又愿意为了怎样的未来，承担责任？"
+  ],
+  "en": "And for what kind of future are we willing to take responsibility?",
+  "rate": -6,
+  "pitch": "+0Hz",
+  "vol": "+3%",
+  "cue": "责任，加重"
+ },
+ {
+  "i": 37,
+  "subs": [
+   37
+  ],
+  "s": 195.75,
+  "t": "人类真正的优势。",
+  "parts": [
+   "人类真正的优势。"
+  ],
+  "en": "Our true advantage as humans",
+  "rate": -6,
+  "pitch": "-1Hz",
+  "vol": "+0%",
+  "cue": "收束开始，沉"
+ },
+ {
+  "i": 38,
+  "subs": [
+   38
+  ],
+  "s": 198.75,
+  "t": "从来不是比机器更快。",
+  "parts": [
+   "从来不是比机器更快。"
+  ],
+  "en": "was never being faster than machines—",
+  "rate": -7,
+  "pitch": "+0Hz",
+  "vol": "+0%",
+  "cue": "否定句"
+ },
+ {
+  "i": 39,
+  "subs": [
+   39
+  ],
+  "s": 202.15,
+  "t": "而是拥有梦想。",
+  "parts": [
+   "而是拥有梦想。"
+  ],
+  "en": "it is having dreams,",
+  "rate": -6,
+  "pitch": "+1Hz",
+  "vol": "+3%",
+  "cue": "“梦想”抬起"
+ },
+ {
+  "i": 40,
+  "subs": [
+   40
+  ],
+  "s": 205.35,
+  "t": "拥有爱。",
+  "parts": [
+   "拥有爱。"
+  ],
+  "en": "having love,",
+  "rate": -8,
+  "pitch": "+0Hz",
+  "vol": "+3%",
+  "cue": "短，温暖"
+ },
+ {
+  "i": 41,
+  "subs": [
+   41
+  ],
+  "s": 208.35,
+  "t": "拥有选择未来的能力。",
+  "parts": [
+   "拥有选择未来的能力。"
+  ],
+  "en": "having the power to choose the future.",
+  "rate": -6,
+  "pitch": "+1Hz",
+  "vol": "+5%",
+  "cue": "全片高点，坚定"
+ },
+ {
+  "i": 42,
+  "subs": [
+   42
+  ],
+  "s": 213.2,
+  "t": "未来尚未写定。",
+  "parts": [
+   "未来尚未写定。"
+  ],
+  "en": "The future is not yet written.",
+  "rate": -15,
+  "pitch": "-1Hz",
+  "vol": "+0%",
+  "cue": "片尾字幕：轻、慢、温柔",
+  "cap": 1
+ },
+ {
+  "i": 43,
+  "subs": [
+   43
+  ],
+  "s": 217.0,
+  "t": "我们的选择，正在成为历史。",
+  "parts": [
+   "我们的选择，正在成为历史。"
+  ],
+  "en": "Our choices are becoming history.",
+  "rate": -15,
+  "pitch": "-2Hz",
+  "vol": "+0%",
+  "cue": "片尾字幕：更轻，余韵",
+  "cap": 1
+ }
+]

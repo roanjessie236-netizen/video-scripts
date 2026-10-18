@@ -2,6 +2,8 @@
 
 状态：**已完成剪辑 v1**（2026-10-15）· 224.0 s（3:44）· 2560×1440 · 24 fps · H.264 + AAC 立体声 · 字幕烧录，另附 `narration.srt`
 
+**v2（2026-10-18）：中文旁白 + 英文字幕** · 音色、节奏与混音同《人类简史》v2 · `out/21_lessons_ai_era_2K_v2.mp4`，详见 `voiceover/v2/README.md`
+
 分工：剪辑端（Notion AI）负责脚本、素材需求表、剪辑、调色、字幕、配乐与合成；素材端（GPT）按固定编号 S001–S056 生成图片。
 
 ## 结构
@@ -28,6 +30,7 @@
 | `tools/patch_tl.py` | 把 homo-deus-future 的渲染引擎改造成本片版本（只需运行一次） |
 | `tools/score_tl.py` | 配乐编排：各段乐器、停顿、高潮与尾声 |
 | `tools/build_tl_music.py` | 把 `score_tl.py` 与 homo-deus-future 的音乐库合成为 `music.py` |
+| `voiceover/v2/` | v2 旁白（zh-CN-YunjianNeural，每句一次合成）+ 英文字幕烧录 + 混音，含双语 / 英文 SRT 与混音报告 |
 | `seg_render.sh` | 分 4 段渲染（0–60 / 60–120 / 120–180 / 180–224 s），可断点续跑；有 `out/score.wav` 时自动合成成片 |
 
 ## 构建
@@ -39,6 +42,7 @@ python3 tools/build_tl_music.py
 ./seg_render.sh            # 渲染画面
 python3 music.py           # 生成 out/score.wav（不要与渲染同时运行，内存不够）
 ./seg_render.sh            # 合成 → out/21_lessons_ai_era_2K.mp4
+bash voiceover/v2/run_v2.sh   # v2：旁白 + 英文字幕 → out/21_lessons_ai_era_2K_v2.mp4
 ```
 
 - 图片放在 `assets/`，文件名见 `assets_manifest.csv`（图片不入库）
@@ -55,6 +59,6 @@ python3 music.py           # 生成 out/score.wav（不要与渲染同时运行�
 
 ## 已知限制
 
-- 无配音，旁白以字幕呈现
+- v1 无配音；v2 旁白为 edge-tts 神经语音（zh-CN-YunjianNeural）合成，中文字幕沿用 v1 烧录时间，英文字幕为新烧录
 - 配乐为程序合成
 - 图片为 1672×941，v1 升采样到 2K；高清返修见 `reorder.md` 第 1 轮

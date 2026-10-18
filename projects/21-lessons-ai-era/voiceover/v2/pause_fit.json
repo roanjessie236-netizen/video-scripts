@@ -1,0 +1,41 @@
+{
+ "8": {
+  "pause_in": 0.237,
+  "delta": 0.562,
+  "pause_out": 0.799,
+  "cut_s": 2.627,
+  "cut_level_db": -66.8
+ },
+ "10": {
+  "pause_in": 0.24,
+  "delta": 0.904,
+  "pause_out": 1.144,
+  "cut_s": 3.49,
+  "cut_level_db": -64.2
+ },
+ "12": {
+  "pause_in": 0.198,
+  "delta": 1.052,
+  "pause_out": 1.25,
+  "cut_s": 1.617,
+  "cut_level_db": -68.1
+ },
+ "14": {
+  "pause": 0.312,
+  "delta": 0
+ },
+ "17": {
+  "pause_in": 0.237,
+  "delta": 0.729,
+  "pause_out": 0.966,
+  "cut_s": 1.869,
+  "cut_level_db": -68.7
+ },
+ "33": {
+  "pause_in": 0.292,
+  "delta": 0.852,
+  "pause_out": 1.144,
+  "cut_s": 2.037,
+  "cut_level_db": -68.6
+ }
+}
