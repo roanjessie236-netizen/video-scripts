@@ -356,7 +356,7 @@ def font(weight, size):
     return _fc[k]
 
 
-def text_layer(text, fnt, color=(255, 255, 255), tracking=0, grad=None, glow=None, shadow=None):
+def text_layer(text, fnt, color=(255, 255, 255), tracking=0, grad=None, glow=None, shadow=None, whole=False):
     pad = int(fnt.size * 0.6)
     if glow:
         pad = max(pad, int(glow[1] * 3))
@@ -364,14 +364,19 @@ def text_layer(text, fnt, color=(255, 255, 255), tracking=0, grad=None, glow=Non
         pad = max(pad, int(shadow[0] * 3 + shadow[2]))
     widths = [fnt.getlength(c) for c in text]
     tw = sum(widths) + tracking * max(0, len(text) - 1)
+    if whole:  # draw the run in one call so Latin text keeps its kerning
+        tw = fnt.getlength(text)
     asc, desc = fnt.getmetrics()
     w, h = int(math.ceil(tw)) + 2 * pad, asc + desc + 2 * pad
     m = Image.new('L', (w, h), 0)
     d = ImageDraw.Draw(m)
     x = pad
-    for c, cw in zip(text, widths):
-        d.text((x, pad), c, font=fnt, fill=255)
-        x += cw + tracking
+    if whole:
+        d.text((x, pad), text, font=fnt, fill=255)
+    else:
+        for c, cw in zip(text, widths):
+            d.text((x, pad), c, font=fnt, fill=255)
+            x += cw + tracking
     a = np.asarray(m, np.float32) / 255
     if grad:
         rows = np.nonzero(a.max(axis=1) > 0.1)[0]
@@ -456,8 +461,18 @@ def cached(key, fn):
     return _lc[key]
 
 
-def subtitle_layer(text):
-    return cached(('sub', text), lambda: text_layer(text, font('Medium', 56), WARMW, tracking=3, shadow=(7, 0.9, 3)))
+EN_SUB = (226, 218, 202)
+
+
+def subtitle_layer(text, en=''):
+    # Chinese line on top, English translation underneath (bilingual subtitles, v2)
+    def mk():
+        zh = text_layer(text, font('Medium', 56), WARMW, tracking=3, shadow=(7, 0.9, 3))
+        if not en:
+            return zh
+        e = text_layer(en, font('Regular', 36), EN_SUB, shadow=(6, 0.9, 2), whole=True)
+        return stack([zh, e], [-50])
+    return cached(('sub', text, en), mk)
 
 
 def chapter_layer(num, name, eng):
@@ -485,7 +500,13 @@ def title_layer():
     return cached(('title',), mk)
 
 
-def caption_layer(text):
+def caption_layer(text, en=''):
+    if en:
+        def mk2():
+            zh = caption_layer(text)
+            e = text_layer(en, font('Light', 42), (214, 222, 236), shadow=(8, 0.8, 2), whole=True)
+            return stack([zh, e], [-int(zh.shape[0] * 0.22) - int(e.shape[0] * 0.25)])
+        return cached(('cap2', text, en), mk2)
     return cached(('cap', text), lambda: text_layer(text, font('Light', 92), (238, 242, 250), tracking=30,
                                                     glow=((150, 190, 255), 22, 0.32), shadow=(12, 0.5, 5)))
 

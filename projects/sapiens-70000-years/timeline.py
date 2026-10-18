@@ -97,37 +97,50 @@ shot('futurecity', '35_futurecity.jpg', 243.6, 252.6, [[1.0, .5, .5, 0], [1.2, .
      desc='Wandering-Earth-scale megastructures rising above the clouds')
 shot('station', '36_station.jpg', 251.6, 267.0, [[1.35, .5, .37, 0], [1.35, .46, .63, 0]], 'future',
      desc='Astronaut at a porthole facing a giant ring station, Earth below with sunrise flare')
-shot('child', '37_child.jpg', 266.0, 293.5, [[1.0, .52, .5, 0], [1.2, .53, .42, 0]], 'future',
+shot('child', '37_child.jpg', 266.0, 280.5, [[1.0, .52, .5, 0], [1.11, .525, .46, 0]], 'future',
      desc='A child on a rooftop of a future city looking up at the Milky Way')
-shot('end', '01_galaxy.jpg', 292.0, 300.0, [[1.2, .5, .5, 0], [1.32, .5, .5, 1.0]], 'cosmos',
+shot('end', '01_galaxy.jpg', 279.0, 287.0, [[1.2, .5, .5, 0], [1.32, .5, .5, 1.0]], 'cosmos',
      fx={'stars3d': {'k1': 0.01, 'k2': 0.0}, 'dim': 0.45}, desc='End card over the Milky Way')
 
-SUBS = [  # [start, end, text, source]  source: 'brief' = user's script, 'added' = added line based on Sapiens
-    [2.6, 6.4, '七万年前，他们只是地球上不起眼的一群动物。', 'brief'],
-    [7.2, 10.8, '没有锋利的爪牙，没有强壮的身体。', 'brief'],
-    [12.2, 16.6, '但他们拥有一种力量——创造不存在的世界。', 'brief'],
-    [26.6, 30.8, '大约七万年前，智人的大脑里发生了一场无声的革命。', 'added'],
-    [31.4, 34.8, '语言让陌生人成为伙伴。', 'brief'],
-    [36.6, 40.6, '他们开始谈论从未见过的事物——神灵、祖先与传说。', 'added'],
-    [50.4, 54.6, '共同的故事，让数万人能够共同合作。', 'brief'],
-    [56.2, 60.2, '从非洲出发，他们走遍了整个世界。', 'added'],
-    [64.2, 69.4, '神话、国家、文明，都诞生于人类共同相信的想象。', 'brief'],
-    [78.2, 81.0, '人类驯服了植物。', 'brief'],
-    [81.6, 86.2, '我们以为驯化了小麦，其实是小麦驯化了我们。', 'added'],
-    [90.2, 94.4, '文字诞生了——人类第一次把想象刻进泥土。', 'added'],
-    [96.0, 100.6, '村落变成城市，城市变成王国，王国变成帝国。', 'added'],
-    [111.8, 116.8, '却也开始被自己创造的秩序束缚。', 'brief'],
-    [126.6, 131.4, '金钱、帝国与宗教，把陌生人联结成一个全球网络。', 'added'],
-    [132.4, 136.0, '人类不断突破自己的边界。', 'brief'],
-    [138.4, 143.6, '科学革命始于一个伟大的发现——承认我们的无知。', 'added'],
-    [146.2, 150.8, '从相信神明，到探索宇宙。', 'brief'],
-    [155.2, 159.8, '科学、帝国与资本结盟，世界开始加速运转。', 'added'],
-    [189.8, 195.2, '从仰望星空，到成为改变星球的力量。', 'brief'],
-    [206.0, 209.8, '过去七万年，我们改变了世界。', 'brief'],
-    [211.4, 215.8, '但未来，我们是否还能理解自己？', 'brief'],
-    [218.4, 224.6, '当人工智能、基因技术和宇宙探索改变生命本身……', 'brief'],
-    [231.6, 237.2, '我们正获得近乎神的力量，却仍不清楚自己想要什么。', 'added'],
-    [256.6, 262.0, '下一章人类历史，将由谁书写？', 'brief'],
+SUBS = [  # [start, end, text, source, english]  source: 'brief' = user's script, 'added' = added line based on Sapiens
+    [2.25, 6.95, "七万年前，他们只是地球上不起眼的一群动物。", 'brief', "Seventy thousand years ago, they were just an insignificant group of animals on Earth."],
+    [7.05, 10.83, "没有锋利的爪牙，没有强壮的身体。", 'brief', "No sharp claws or fangs, no powerful bodies."],
+    [12.05, 16.31, "但他们拥有一种力量——创造不存在的世界。", 'brief', "But they had one power: to create worlds that do not exist."],
+    [26.45, 31.75, "大约七万年前，智人的大脑里发生了一场无声的革命。", 'added', "About 70,000 years ago, a silent revolution took place in the minds of Homo sapiens."],
+    [31.85, 36.65, "靠着闲谈“八卦”，一个部落能凝聚约一百五十人。", 'added', "Through gossip, a tribe could hold together about 150 people."],
+    [36.75, 42.85, "更神奇的是，他们能谈论不存在的事物——神灵、祖先与传说。", 'added', "Even more remarkably, they could talk about things that do not exist: gods, ancestors and legends."],
+    [43.25, 49.46, "你无法说服猴子交出香蕉，哪怕许诺它死后有吃不完的香蕉。", 'added', "You could never convince a monkey to give you a banana by promising it unlimited bananas after death."],
+    [50.25, 56.55, "只有智人会相信。共同的故事，让数万人能够共同合作。", 'added', "Only Sapiens believe such things. Shared stories let tens of thousands work together."],
+    [56.65, 63.17, "从非洲出发，他们走遍了整个世界；所到之处，大型动物纷纷灭绝。", 'added', "Out of Africa, they spread across the whole world, and wherever they went, large animals vanished."],
+    [64.05, 69.79, "神话、国家、文明，都诞生于人类共同相信的想象。", 'brief', "Myths, nations, civilizations: all were born from imagination that humans share."],
+    [76.05, 80.05, "约一万两千年前，人类驯服了植物。", 'added', "About 12,000 years ago, humans tamed plants."],
+    [80.15, 84.61, "我们以为驯化了小麦，其实是小麦驯化了我们。", 'added', "We thought we domesticated wheat. In fact, wheat domesticated us."],
+    [85.45, 91.05, "农民更辛苦，吃得更差——赫拉利称之为“史上最大的骗局”。", 'added', "Farmers worked harder and ate worse. Harari calls it \"history's biggest fraud.\""],
+    [91.15, 96.75, "文字诞生了，但最早的文字不为写诗，只为记账。", 'added', "Writing was born, not for poetry, but for keeping accounts."],
+    [96.85, 101.97, "村落变成城市，城市变成王国，王国变成帝国。", 'added', "Villages became cities, cities became kingdoms, kingdoms became empires."],
+    [102.25, 108.05, "支撑帝国的，是法律、等级与王权——一种想象的秩序。", 'added', "Empires rested on laws, hierarchies and kingship: an imagined order."],
+    [108.15, 112.86, "只要足够多的人相信，想象的秩序就坚不可摧。", 'added', "As long as enough people believe in it, an imagined order is unbreakable."],
+    [113.65, 117.89, "而人类，也开始被自己创造的秩序束缚。", 'added', "And humans began to be bound by the very order they created."],
+    [126.45, 131.15, "金钱，是人类最普遍、也最有效的互信系统。", 'added', "Money is the most universal and most efficient system of mutual trust ever devised."],
+    [131.25, 136.45, "帝国，则是过去两千五百年最常见的政治形态。", 'added', "Empire has been the most common political form of the past 2,500 years."],
+    [137.05, 141.82, "人类不断突破自己的边界，驶向地图上的空白。", 'added', "Humans kept pushing past their limits, sailing toward the blank spaces on the map."],
+    [144.25, 150.26, "大约五百年前，科学革命始于一个伟大的发现——承认我们的无知。", 'added', "About 500 years ago, the Scientific Revolution began with a great discovery: admitting our ignorance."],
+    [150.45, 153.91, "从相信神明，到探索宇宙。", 'brief', "From believing in gods to exploring the universe."],
+    [154.25, 159.71, "科学、帝国与资本结盟，信用让人们敢于投资未来。", 'added', "Science, empire and capital joined forces, and credit gave people the courage to invest in the future."],
+    [159.85, 164.15, "工业革命的本质，是一场能量转换的革命。", 'added', "At its core, the Industrial Revolution was a revolution in energy conversion."],
+    [164.25, 168.89, "火车时刻表，让整个国家第一次对准同一座钟。", 'added', "Train timetables set an entire nation to one clock for the first time."],
+    [169.25, 174.88, "五百年间，人口增长约十四倍，产出增长约二百四十倍。", 'added', "In 500 years, population grew about fourteen-fold, and production about 240-fold."],
+    [180.85, 184.64, "一九六九年，人类第一次登上月球。", 'added', "In 1969, humans set foot on the Moon for the first time."],
+    [189.65, 193.73, "从仰望星空，到成为改变星球的力量。", 'brief', "From gazing at the stars to becoming a force that reshapes the planet."],
+    [194.85, 199.76, "我们比祖先强大千百倍，却未必比他们更快乐。", 'added', "We are a thousand times more powerful than our ancestors, but not necessarily happier."],
+    [205.85, 209.06, "过去七万年，我们改变了世界。", 'brief', "Over the past 70,000 years, we have changed the world."],
+    [211.25, 214.81, "但未来，我们是否还能理解自己？", 'brief', "But in the future, will we still understand ourselves?"],
+    [218.25, 223.75, "当人工智能、基因技术和宇宙探索改变生命本身……", 'brief', "As AI, genetic engineering and space exploration transform life itself..."],
+    [224.85, 229.81, "四十亿年来第一次，智能设计正在取代自然选择。", 'added', "For the first time in four billion years, intelligent design is replacing natural selection."],
+    [231.45, 236.64, "我们正获得近乎神的力量，却仍不清楚自己想要什么。", 'added', "We are gaining almost godlike powers, yet we still don't know what we want."],
+    [238.85, 243.13, "我们甚至开始挑战最古老的敌人——死亡。", 'added', "We have even begun to challenge our oldest enemy: death."],
+    [244.45, 250.27, "真正的问题不是我们想成为什么，而是——我们想要“想要”什么？", 'added', "The real question is not what we want to become, but what we want to want."],
+    [256.45, 259.99, "下一章人类历史，将由谁书写？", 'brief', "Who will write the next chapter of human history?"],
 ]
 CHAPTERS = [
     [21.8, 26.0, '第一章', '认知革命', 'THE COGNITIVE REVOLUTION'],
@@ -176,12 +189,15 @@ ROUTES = [
                   [272, 302], [332, 372], [400, 432], [440, 500], [420, 582]], '美洲 · 约1.6万年前', [30, 10], 'end'],
 ]
 TITLE = [17.6, 21.3]
-CAPTIONS = [[274.0, 279.6, '我们从哪里来？'], [281.0, 287.6, '我们将走向哪里？']]
-ENDCARD = [292.8, 299.2]
-PARCHMENT = [[0, 0.0], [10.8, 0.0], [11.6, 0.34], [70, 0.3], [120, 0.22], [152, 0.12], [200, 0.05], [300, 0.0]]
+CAPTIONS = [  # [start, end, text, english]
+    [267.60, 272.40, "我们从哪里来？", "Where do we come from?"],
+    [273.20, 278.40, "我们将走向哪里？", "Where are we going?"],
+]
+ENDCARD = [279.8, 286.2]
+PARCHMENT = [[0, 0.0], [10.8, 0.0], [11.6, 0.34], [70, 0.3], [120, 0.22], [152, 0.12], [200, 0.05], [287.0, 0.0]]
 FLASHES = [[11.0, 1.0, 0.16], [17.6, 0.35, 0.35], [70.0, 0.12, 0.3], [120.0, 0.22, 0.3], [177.6, 0.3, 0.45], [252.0, 0.18, 0.4]]
 
-DATA = dict(title='人类简史：七万年的文明觉醒', width=2560, height=1440, fps=24, duration=300.0,
+DATA = dict(title='人类简史：七万年的文明觉醒', width=2560, height=1440, fps=24, duration=287.0,
             shots=S, subtitles=SUBS, chapters=CHAPTERS, labels=LABELS, ticker=TICKER, routes=ROUTES,
             title_card=TITLE, captions=CAPTIONS, endcard=ENDCARD, parchment=PARCHMENT, flashes=FLASHES)
 

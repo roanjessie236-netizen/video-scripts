@@ -7,13 +7,13 @@ Sections (seconds) follow the picture edit in shotlist.json:
   21-70   act 1     : frame drums 72 BPM + dizi-like flute + drone, building
   70-120  act 2     : strings Dm-Bb-F-C + guzheng-like plucks + timpani, braam at 106
   120-200 act 3     : 100 BPM spiccato ostinato, brass from 148.8, climax 168-187
-  200-300 act 4     : felt-piano pulse, build w/ choir, grand climax 252-266, choir alone 266-300
+  200-300 act 4     : felt-piano pulse, build w/ choir, grand climax 252-266, choir alone 266-287 (v2)
 Usage: python3 music.py [out.wav]
 """
 import numpy as np, wave, sys, time
 
 SR = 44100
-DUR = 300.0
+DUR = 287.0  # v2: child shot cut by 13 s
 N = int(SR * DUR)
 rng = np.random.default_rng(70000)
 OUT = sys.argv[1] if len(sys.argv) > 1 else '/data/video/out/score.wav'
@@ -650,7 +650,7 @@ PIANO = {'Dm': [62, 65, 69, 74], 'Bb': [58, 62, 65, 70], 'Gm': [55, 58, 62, 67],
 ppat = [0, 1, 2, 1, 3, 1, 2, 1]
 timp(200.0, 38, 0.25)
 place(ensemble('saw', 26, 26, p=2.5, voices=4, cents=7, vib=0, att=4, rel=4, width=0.8), 200, 0.22, hall=0.2, cath=0.4)
-ambience(200, 100, 0.1, fin=6, fout=6, wind=0.35, shimmer=1.0)
+ambience(200, DUR - 200, 0.1, fin=6, fout=6, wind=0.35, shimmer=1.0)
 for t0, d, ch in prog4:
     if t0 < 228:
         g, p = 0.09, 3.5
@@ -702,15 +702,16 @@ place(CRASH, 266.0, 0.16, hall=0.3, cath=0.5)
 timp(266.0, 38, 0.25)
 place(BOOM, 266.0, 0.3, hall=0.1, cath=0.4)
 log('ending choir')
-choir(266.0, CH['Dsus2'][1:], 10.0, 0.2, att=2.5, rel=3.0, hall=0.2, cath=0.8)
-choir(276.0, CH['Bbadd9'][1:], 10.0, 0.19, att=3.0, rel=3.0, hall=0.2, cath=0.8)
-choir(286.0, CH['Dsus2'][1:], 7.5, 0.19, att=3.0, rel=6.0, hall=0.2, cath=0.8)
-t = 268.0
-for m, d in [(81, 4.0), (79, 2.0), (77, 4.5), (74, 6.0), (81, 7.0)]:
-    rl = 4.0 if t > 285 else 1.4
+# v2: the child shot is 13 s shorter -> choir + solo line compressed into 266-287
+choir(266.0, CH['Dsus2'][1:], 7.5, 0.2, att=2.5, rel=3.0, hall=0.2, cath=0.8)
+choir(273.0, CH['Bbadd9'][1:], 7.0, 0.19, att=2.5, rel=3.0, hall=0.2, cath=0.8)
+choir(279.5, CH['Dsus2'][1:], 6.5, 0.19, att=2.5, rel=5.0, hall=0.2, cath=0.8)
+t = 267.5
+for m, d in [(81, 3.0), (79, 1.5), (77, 3.0), (74, 4.0), (81, 5.0)]:
+    rl = 4.0 if t > 279 else 1.4
     s = ensemble('u', m, d, voices=3, cents=6, vib=0.005, vibrate=5.2, att=0.9, rel=rl, width=0.5)
     place(s, t, 0.09, hall=0.2, cath=0.9)
-    t += d + (0.5 if d >= 4 else 0)
+    t += d + (0.4 if d >= 3 else 0)
 
 # ================================================================== REVERB + MASTER
 log('reverb')
@@ -780,7 +781,7 @@ fi = int(0.02 * SR)
 mix[:, :fi] *= np.linspace(0, 1, fi).astype(np.float32)
 mix = norm(mix, 0.94)
 print('section loudness (start s, RMS dBFS, peak dBFS):')
-for s in range(0, 300, 10):
+for s in range(0, int(DUR), 10):
     seg = mix[:, s * SR:(s + 10) * SR]
     print(f'  {s:3d}  {20 * np.log10(np.sqrt(np.mean(seg ** 2)) + 1e-9):6.1f}  {20 * np.log10(np.max(np.abs(seg)) + 1e-9):6.1f}')
 pcm = (np.clip(mix.T, -1, 1) * 32767).astype('<i2')

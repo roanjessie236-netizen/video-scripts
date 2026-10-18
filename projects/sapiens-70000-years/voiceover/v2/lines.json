@@ -1,0 +1,406 @@
+[
+{
+"i": 1,
+"s": 2.4,
+"t": "七万年前，他们只是地球上不起眼的一群动物。",
+"en": "Seventy thousand years ago, they were just an insignificant group of animals on Earth.",
+"rate": -6,
+"pitch": "-2Hz",
+"vol": "+0%",
+"cue": "低沉、平静，像在讲一个古老的秘密"
+},
+{
+"i": 2,
+"s": 7.2,
+"t": "没有锋利的爪牙，没有强壮的身体。",
+"en": "No sharp claws or fangs, no powerful bodies.",
+"rate": -6,
+"pitch": "-2Hz",
+"vol": "+0%",
+"cue": "克制，两个“没有”平行"
+},
+{
+"i": 3,
+"s": 12.2,
+"t": "但他们拥有一种力量——创造不存在的世界。",
+"en": "But they had one power: to create worlds that do not exist.",
+"rate": -7,
+"pitch": "+0Hz",
+"vol": "+5%",
+"cue": "转折，抬起来，破折号后放慢"
+},
+{
+"i": 4,
+"s": 26.6,
+"t": "大约七万年前，智人的大脑里发生了一场无声的革命。",
+"en": "About 70,000 years ago, a silent revolution took place in the minds of Homo sapiens.",
+"rate": -5,
+"pitch": "-1Hz",
+"vol": "+0%",
+"cue": "叙述，带神秘感"
+},
+{
+"i": 5,
+"s": 32.0,
+"t": "靠着闲谈“八卦”，一个部落能凝聚约一百五十人。",
+"en": "Through gossip, a tribe could hold together about 150 people.",
+"rate": -5,
+"pitch": "+0Hz",
+"vol": "+0%",
+"cue": "轻松一点，“八卦”略带笑意"
+},
+{
+"i": 6,
+"s": 36.9,
+"t": "更神奇的是，他们能谈论不存在的事物——神灵、祖先与传说。",
+"en": "Even more remarkably, they could talk about things that do not exist: gods, ancestors and legends.",
+"rate": -5,
+"pitch": "+1Hz",
+"vol": "+0%",
+"cue": "惊叹，列举时放缓"
+},
+{
+"i": 7,
+"s": 43.4,
+"t": "你无法说服猴子交出香蕉，哪怕许诺它死后有吃不完的香蕉。",
+"en": "You could never convince a monkey to give you a banana by promising it unlimited bananas after death.",
+"rate": -5,
+"pitch": "+0Hz",
+"vol": "+0%",
+"cue": "略带幽默"
+},
+{
+"i": 8,
+"s": 50.4,
+"t": "只有智人会相信。共同的故事，让数万人能够共同合作。",
+"en": "Only Sapiens believe such things. Shared stories let tens of thousands work together.",
+"rate": -5,
+"pitch": "+0Hz",
+"vol": "+3%",
+"cue": "笃定，点题"
+},
+{
+"i": 9,
+"s": 56.8,
+"t": "从非洲出发，他们走遍了整个世界；所到之处，大型动物纷纷灭绝。",
+"en": "Out of Africa, they spread across the whole world, and wherever they went, large animals vanished.",
+"rate": -4,
+"pitch": "+0Hz",
+"vol": "+0%",
+"cue": "史诗感，后半句沉下来"
+},
+{
+"i": 10,
+"s": 64.2,
+"t": "神话、国家、文明，都诞生于人类共同相信的想象。",
+"en": "Myths, nations, civilizations: all were born from imagination that humans share.",
+"rate": -6,
+"pitch": "+1Hz",
+"vol": "+5%",
+"cue": "第一章收束，庄重"
+},
+{
+"i": 11,
+"s": 76.2,
+"t": "约一万两千年前，人类驯服了植物。",
+"en": "About 12,000 years ago, humans tamed plants.",
+"rate": -6,
+"pitch": "-1Hz",
+"vol": "+0%",
+"cue": "新篇章，平稳开启"
+},
+{
+"i": 12,
+"s": 80.3,
+"t": "我们以为驯化了小麦，其实是小麦驯化了我们。",
+"en": "We thought we domesticated wheat. In fact, wheat domesticated us.",
+"rate": -5,
+"pitch": "+0Hz",
+"vol": "+0%",
+"cue": "反转，后半句加重"
+},
+{
+"i": 13,
+"s": 85.6,
+"t": "农民更辛苦，吃得更差——赫拉利称之为“史上最大的骗局”。",
+"en": "Farmers worked harder and ate worse. Harari calls it \"history's biggest fraud.\"",
+"rate": -4,
+"pitch": "+0Hz",
+"vol": "+0%",
+"cue": "带点讽刺"
+},
+{
+"i": 14,
+"s": 91.3,
+"t": "文字诞生了，但最早的文字不为写诗，只为记账。",
+"en": "Writing was born, not for poetry, but for keeping accounts.",
+"rate": -5,
+"pitch": "+0Hz",
+"vol": "+0%",
+"cue": "意外感"
+},
+{
+"i": 15,
+"s": 97.0,
+"t": "村落变成城市，城市变成王国，王国变成帝国。",
+"en": "Villages became cities, cities became kingdoms, kingdoms became empires.",
+"rate": -5,
+"pitch": "+1Hz",
+"vol": "+5%",
+"cue": "排比递进，逐渐有力"
+},
+{
+"i": 16,
+"s": 102.4,
+"t": "支撑帝国的，是法律、等级与王权——一种想象的秩序。",
+"en": "Empires rested on laws, hierarchies and kingship: an imagined order.",
+"rate": -5,
+"pitch": "+0Hz",
+"vol": "+0%",
+"cue": "沉稳，点出概念"
+},
+{
+"i": 17,
+"s": 108.3,
+"t": "只要足够多的人相信，想象的秩序就坚不可摧。",
+"en": "As long as enough people believe in it, an imagined order is unbreakable.",
+"rate": -5,
+"pitch": "+0Hz",
+"vol": "+3%",
+"cue": "有力"
+},
+{
+"i": 18,
+"s": 113.8,
+"t": "而人类，也开始被自己创造的秩序束缚。",
+"en": "And humans began to be bound by the very order they created.",
+"rate": -7,
+"pitch": "-2Hz",
+"vol": "+0%",
+"cue": "低沉、反思，第二章收束"
+},
+{
+"i": 19,
+"s": 126.6,
+"t": "金钱，是人类最普遍、也最有效的互信系统。",
+"en": "Money is the most universal and most efficient system of mutual trust ever devised.",
+"rate": -5,
+"pitch": "+0Hz",
+"vol": "+0%",
+"cue": "新章，清晰有力"
+},
+{
+"i": 20,
+"s": 131.4,
+"t": "帝国，则是过去两千五百年最常见的政治形态。",
+"en": "Empire has been the most common political form of the past 2,500 years.",
+"rate": -5,
+"pitch": "+0Hz",
+"vol": "+0%",
+"cue": "陈述"
+},
+{
+"i": 21,
+"s": 137.2,
+"t": "人类不断突破自己的边界，驶向地图上的空白。",
+"en": "Humans kept pushing past their limits, sailing toward the blank spaces on the map.",
+"rate": -5,
+"pitch": "+1Hz",
+"vol": "+3%",
+"cue": "开阔、向往"
+},
+{
+"i": 22,
+"s": 144.4,
+"t": "大约五百年前，科学革命始于一个伟大的发现——承认我们的无知。",
+"en": "About 500 years ago, the Scientific Revolution began with a great discovery: admitting our ignorance.",
+"rate": -4,
+"pitch": "+0Hz",
+"vol": "+0%",
+"cue": "郑重，破折号后放慢"
+},
+{
+"i": 23,
+"s": 150.6,
+"t": "从相信神明，到探索宇宙。",
+"en": "From believing in gods to exploring the universe.",
+"rate": -7,
+"pitch": "+1Hz",
+"vol": "+3%",
+"cue": "开阔"
+},
+{
+"i": 24,
+"s": 154.4,
+"t": "科学、帝国与资本结盟，信用让人们敢于投资未来。",
+"en": "Science, empire and capital joined forces, and credit gave people the courage to invest in the future.",
+"rate": -4,
+"pitch": "+0Hz",
+"vol": "+0%",
+"cue": "推进感"
+},
+{
+"i": 25,
+"s": 160.0,
+"t": "工业革命的本质，是一场能量转换的革命。",
+"en": "At its core, the Industrial Revolution was a revolution in energy conversion.",
+"rate": -5,
+"pitch": "+0Hz",
+"vol": "+0%",
+"cue": "清晰"
+},
+{
+"i": 26,
+"s": 164.4,
+"t": "火车时刻表，让整个国家第一次对准同一座钟。",
+"en": "Train timetables set an entire nation to one clock for the first time.",
+"rate": -5,
+"pitch": "+0Hz",
+"vol": "+0%",
+"cue": "轻快"
+},
+{
+"i": 27,
+"s": 169.4,
+"t": "五百年间，人口增长约十四倍，产出增长约二百四十倍。",
+"en": "In 500 years, population grew about fourteen-fold, and production about 240-fold.",
+"rate": -4,
+"pitch": "+1Hz",
+"vol": "+3%",
+"cue": "递进，数字清楚"
+},
+{
+"i": 28,
+"s": 181.0,
+"t": "一九六九年，人类第一次登上月球。",
+"en": "In 1969, humans set foot on the Moon for the first time.",
+"rate": -7,
+"pitch": "+1Hz",
+"vol": "+5%",
+"cue": "激动但克制"
+},
+{
+"i": 29,
+"s": 189.8,
+"t": "从仰望星空，到成为改变星球的力量。",
+"en": "From gazing at the stars to becoming a force that reshapes the planet.",
+"rate": -6,
+"pitch": "+1Hz",
+"vol": "+3%",
+"cue": "自豪"
+},
+{
+"i": 30,
+"s": 195.0,
+"t": "我们比祖先强大千百倍，却未必比他们更快乐。",
+"en": "We are a thousand times more powerful than our ancestors, but not necessarily happier.",
+"rate": -7,
+"pitch": "-2Hz",
+"vol": "+0%",
+"cue": "转折，沉下来、带思考"
+},
+{
+"i": 31,
+"s": 206.0,
+"t": "过去七万年，我们改变了世界。",
+"en": "Over the past 70,000 years, we have changed the world.",
+"rate": -7,
+"pitch": "+0Hz",
+"vol": "+0%",
+"cue": "回望"
+},
+{
+"i": 32,
+"s": 211.4,
+"t": "但未来，我们是否还能理解自己？",
+"en": "But in the future, will we still understand ourselves?",
+"rate": -7,
+"pitch": "-1Hz",
+"vol": "+0%",
+"cue": "疑问，留白"
+},
+{
+"i": 33,
+"s": 218.4,
+"t": "当人工智能、基因技术和宇宙探索改变生命本身……",
+"en": "As AI, genetic engineering and space exploration transform life itself...",
+"rate": -5,
+"pitch": "+0Hz",
+"vol": "+0%",
+"cue": "悬念，句尾不落"
+},
+{
+"i": 34,
+"s": 225.0,
+"t": "四十亿年来第一次，智能设计正在取代自然选择。",
+"en": "For the first time in four billion years, intelligent design is replacing natural selection.",
+"rate": -5,
+"pitch": "+0Hz",
+"vol": "+3%",
+"cue": "震撼，郑重"
+},
+{
+"i": 35,
+"s": 231.6,
+"t": "我们正获得近乎神的力量，却仍不清楚自己想要什么。",
+"en": "We are gaining almost godlike powers, yet we still don't know what we want.",
+"rate": -5,
+"pitch": "+0Hz",
+"vol": "+0%",
+"cue": "矛盾感"
+},
+{
+"i": 36,
+"s": 239.0,
+"t": "我们甚至开始挑战最古老的敌人——死亡。",
+"en": "We have even begun to challenge our oldest enemy: death.",
+"rate": -6,
+"pitch": "-1Hz",
+"vol": "+3%",
+"cue": "破折号后停顿，“死亡”沉重"
+},
+{
+"i": 37,
+"s": 244.6,
+"t": "真正的问题不是我们想成为什么，而是——我们想要“想要”什么？",
+"en": "The real question is not what we want to become, but what we want to want.",
+"rate": -5,
+"pitch": "+0Hz",
+"vol": "+3%",
+"cue": "全片核心之问，层层推进"
+},
+{
+"i": 38,
+"s": 256.6,
+"t": "下一章人类历史，将由谁书写？",
+"en": "Who will write the next chapter of human history?",
+"rate": -8,
+"pitch": "+0Hz",
+"vol": "+5%",
+"cue": "高潮中的发问，坚定"
+},
+{
+"i": 39,
+"s": 268.2,
+"t": "我们，从哪里来？",
+"en": "Where do we come from?",
+"rate": -15,
+"pitch": "-1Hz",
+"vol": "+0%",
+"cue": "轻、慢、温柔",
+"cap": 1,
+"sub": "我们从哪里来？"
+},
+{
+"i": 40,
+"s": 273.8,
+"t": "我们，将走向哪里？",
+"en": "Where are we going?",
+"rate": -15,
+"pitch": "-2Hz",
+"vol": "+0%",
+"cue": "更轻，余韵",
+"cap": 1,
+"sub": "我们将走向哪里？"
+}
+]

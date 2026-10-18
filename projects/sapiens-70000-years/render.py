@@ -248,16 +248,16 @@ def post(frame, t, fidx):
     g, beta = 1.0, 0.0
     if t < 2.0:
         g *= smooth(t / 2.0)
-    if t > 297.0:
-        g *= 1 - smooth((t - 297.0) / 3.0)
+    if t > DUR - 3.0:
+        g *= 1 - smooth((t - (DUR - 3.0)) / 3.0)
     ach = max([window(t, c[0], c[1], 0.8, 0.8) for c in TL['chapters']] + [0])
     ati = window(t, TL['title_card'][0], TL['title_card'][1], 0.5, 0.9)
     aen = window(t, TL['endcard'][0], TL['endcard'][1], 1.2, 1.5)
     g *= (1 - 0.14 * ach) * (1 - 0.18 * ati)
     alow = max([window(t, s, e, 0.6, 0.6) for s, e, _, _ in TL['labels']] +
                [window(t, wa, wb, 0.8, 0.8) for wa, wb in TL['ticker']['windows']] + [0])
-    acap = max([window(t, s, e, 1.0, 1.0) for s, e, _ in TL['captions']] + [0])
-    asub = max([window(t, s, e, 0.35, 0.35) for s, e, _, _ in TL['subtitles']] + [0])
+    acap = max([window(t, s, e, 1.0, 1.0) for s, e, *_ in TL['captions']] + [0])
+    asub = max([window(t, s, e, 0.35, 0.35) for s, e, *_ in TL['subtitles']] + [0])
     sc, sl, st = max(0.62 * ach, 0.62 * ati, 0.3 * aen), 0.5 * alow, 0.35 * acap
     sb = 0.3 * asub
     for tf, amp, tau in TL['flashes']:
@@ -270,10 +270,11 @@ def post(frame, t, fidx):
         frame = cv2.convertScaleAbs(frame, alpha=g, beta=beta)
     frame = cv2.multiply(frame, mulmap(interp(TL['parchment'], t), sc, sl, st, sb), scale=1 / 255)
     # ---- typography
-    for s, e, text, _ in TL['subtitles']:
+    for s, e, text, _, *en in TL['subtitles']:
         a = window(t, s, e, 0.35, 0.35)
         if a:
-            blit_center(frame, subtitle_layer(text), W / 2, H - 150, a)
+            Ls = subtitle_layer(text, en[0] if en else '')
+            blit(frame, Ls, W / 2 - Ls.shape[1] / 2, H - 150 - SUB_ZH_H / 2, a)
     for s, e, num, name, eng in TL['chapters']:
         a = window(t, s, e, 0.8, 0.8)
         if a:
@@ -287,10 +288,11 @@ def post(frame, t, fidx):
         if a:
             draw_lower(frame, lower_layer(l1, l2), a)
     draw_ticker(frame, t)
-    for s, e, text in TL['captions']:
+    for s, e, text, *en in TL['captions']:
         a = window(t, s, e, 1.0, 1.0)
         if a:
-            blit_center(frame, caption_layer(text), W / 2, H * 0.27, a)
+            Lc = caption_layer(text, en[0] if en else '')
+            blit(frame, Lc, W / 2 - Lc.shape[1] / 2, H * 0.27 - CAP_ZH_H / 2, a)
     es, ee = TL['endcard']
     a = window(t, es, ee, 1.2, 1.5)
     if a:
@@ -363,6 +365,10 @@ def main():
         pr.stdin.close()
         pr.wait()
         print('done', a.video, 'rc', pr.returncode, flush=True)
+
+
+SUB_ZH_H = subtitle_layer('字').shape[0]
+CAP_ZH_H = caption_layer('字').shape[0]
 
 
 if __name__ == '__main__':
