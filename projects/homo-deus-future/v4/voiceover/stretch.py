@@ -6,7 +6,7 @@ Usage: python3 stretch.py clips clips_v4"""
 import json, os, shutil, subprocess, sys
 import numpy as np
 SR = 48000
-SPEC = {3: [("饥荒", 0.30), ("瘟疫", 0.45)],
+SPEC = {3: [("饥荒", 0.15)],          # v4.1: no splice between 瘟疫|和 (only 27 ms apart - it sounded like a stutter)
         9: [("长生不死", 0.15), ("快乐", 0.15)]}
 src, dst = sys.argv[1:3]
 os.makedirs(dst, exist_ok=True)

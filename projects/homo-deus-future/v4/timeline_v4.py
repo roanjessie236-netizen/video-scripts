@@ -104,7 +104,7 @@ shot('drones', '05_drones.jpg', TITLE[0], pan(1.1, 0.012), ease='lin', desc='Unc
 # ---- 第一章 新的人类议程
 shot('famine', '43_famine.jpg', st(3) - 2.5, push(1.03, 0.02, cy=.52), grade='ash', trans='fade', tdur=0.8,
      desc='1690s famine: parched farmland, emaciated farmer, empty bowl')
-shot('plague', '44_plague.jpg', w(3, '瘟疫') - 0.04, push(1.06, 0.03), grade='ash', desc='Black Death: foggy medieval alley, plague doctor')
+shot('plague', '44_plague.jpg', w(3, '瘟疫') - 0.18, push(1.06, 0.03), grade='ash', desc='Black Death: foggy medieval alley, plague doctor')
 shot('war', '45_war.jpg', w(3, '战争') - 0.04, pan(1.1, 0.01, left=True), grade='ash', desc='Ancient battlefield at sunset, smoke, banners')
 shot('abundance', '46_abundance.jpg', st(4) - 0.1, push(1.03, 0.022), grade='sodium',
      desc='Endless supermarket aisle of sugary drinks / fast food, lone shopper')
@@ -246,15 +246,14 @@ CHAPTERS = [
 ]
 CHAPTERS = [[round(a, 3), round(b, 3), *r] for a, b, *r in CHAPTERS]
 LABELS = [  # documentary lower-left labels (facts from Homo Deus, ch. 1) [start, end, line1, line2, fade]
-    [st(3) + 0.15, w(3, '瘟疫') - 0.1, '1692–1694 · 法国大饥荒 · 约 280 万人饿死', 'FRANCE · c. 2.8 MILLION STARVED · 15% OF THE POPULATION', 0.35],
-    [w(3, '瘟疫') + 0.02, w(3, '战争') - 0.08, '黑死病 · 7500 万至 2 亿人死亡', 'THE BLACK DEATH · 75–200 MILLION DEAD', 0.2],
+    [st(3) + 0.15, w(3, '瘟疫') - 0.3, '1692–1694 · 法国大饥荒 · 约 280 万人饿死', 'FRANCE · c. 2.8 MILLION STARVED · 15% OF THE POPULATION', 0.35],
     [w(3, '战争') + 0.08, en(3) + 0.5, '古代农业社会 · 约 15% 的死亡源于暴力', 'ANCIENT FARMING SOCIETIES · c. 15% OF ALL DEATHS · TODAY ≈ 1%', 0.4],
     [st(4) + 0.5, en(4) + 0.2, '2014 · 超重 21 亿人 · 营养不良 8.5 亿人', '2.1 BILLION OVERWEIGHT · 850 MILLION MALNOURISHED', 0.5],
     [st(6) + 0.6, en(6) + 0.2, '2012 · 暴力致死 62 万人 · 自杀 80 万人', 'DEATHS IN 2012 · VIOLENCE 620,000 · SUICIDE 800,000', 0.5],
     [st(7) - 0.2, en(7) + 0.9, '2012 · 糖尿病致死 150 万人 · 战争 12 万人', 'DIABETES 1.5 MILLION · WAR 120,000', 0.5],
 ]
 LABELS = [[round(a, 3), round(b, 3), *r] for a, b, *r in LABELS]
-FLASHES = [[TITLE[0], 0.35, 0.3], [w(3, '瘟疫') - 0.04, 0.10, 0.2], [w(3, '战争') - 0.04, 0.14, 0.22],
+FLASHES = [[TITLE[0], 0.35, 0.3], [w(3, '瘟疫') - 0.18, 0.10, 0.2], [w(3, '战争') - 0.04, 0.14, 0.22],
            [w(9, '神'), 0.45, 0.4], [st(19) - 2.8 + 0.25, 0.22, 0.3], [st(26) - 0.04, 0.28, 0.3]]
 FLASHES = [[round(a, 3), b, c] for a, b, c in FLASHES]
 MARKS = dict(L={i: [st(i), en(i)] for i in LN}, title=TITLE[0], sil=SIL, end=DUR, endcard=ENDCARD[0],

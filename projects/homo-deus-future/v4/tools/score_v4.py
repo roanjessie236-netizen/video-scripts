@@ -298,18 +298,25 @@ for t in (T_FE, SH['moonbase'], SH['marscity']):
     taiko_bar(t, ramp(t, [(T_FE, 0.35), (SH['marscity'], 0.45)]))
 k = 0
 for t in np.arange(T_ST, SIL - 0.05, 0.125):                     # taiko roll into the cut
-    taiko(t, ramp(t, [(T_ST, 0.22), (SIL, 0.6)]), pan=0.25 * (-1) ** k)
+    taiko(t, ramp(t, [(T_ST, 0.22), (SIL, 0.45)]), pan=0.25 * (-1) ** k)
     k += 1
 timp_roll(T_ST, SIL - T_ST, 40, 0.2, 0.7)
 place(riser(SIL - T_ST + 0.2, 160.0, 3.0), T_ST - 0.2, 0.17, hall=0.2)
 place(CRASH, T_ST, 0.12, hall=0.3, cath=0.3)
-mute(SIL, SH['spaceport'] - 0.1)                               # 「是否仍然知道，如何成为人？」 in silence
+# v4.1: no hard mute any more - the build lands on Am (E -> Am cadence) and rings out under the question
+# 「是否仍然知道如何成为人？」 over a quiet Am bed that carries on into the spaceport section.
+impact(SIL, 0.4, with_braam=True, notes=(33, 45, 52))
+_i0, _i1, _i2 = int((SIL + 0.4) * SR), int((SIL + 2.2) * SR), int((SH['spaceport'] + 1.5) * SR)
+GAINENV[_i0:_i1] *= np.linspace(1.0, 0.6, _i1 - _i0, dtype=np.float32)        # gentle dip, never silent
+GAINENV[_i1:int((SH['spaceport'] - 0.5) * SR)] *= 0.6
+_i3 = int((SH['spaceport'] - 0.5) * SR)
+GAINENV[_i3:_i2] *= np.linspace(0.6, 1.0, _i2 - _i3, dtype=np.float32)
 
 # ------------------------------------------------------------------ after the silence -> ending
 log('ending')
 T_SP, T_CH = SH['spaceport'], SH['child']
-choir(T_SP, [57, 60, 64], T_CH - T_SP, 0.05, att=2.5, rel=1.8, vowels=('o',))
-pad(T_SP, T_CH - T_SP, 'Am', gain=0.04, p=2.0, att=2.5, rel=1.5, hall=0.4, cath=0.4, bassgain=0.5)
+choir(SIL + 0.3, [57, 60, 64], T_CH - SIL - 0.3, 0.05, att=2.0, rel=1.8, vowels=('o',))     # bed from the landing on
+pad(SIL + 0.2, T_CH - SIL - 0.2, 'Am', gain=0.04, p=2.0, att=1.5, rel=1.5, hall=0.4, cath=0.4, bassgain=0.5)
 celesta(w(41, '神人'), 84, 0.035, pan=0.3)
 piano(w(41, '神人'), 72, 0.05)
 T_DM, T_GS, T_F2, T_C9 = LL[44][0] + 0.9, LL[45][0] + 1.2, LL[46][0] + 2.9, LL[48][0]   # ending harmony follows the VO
