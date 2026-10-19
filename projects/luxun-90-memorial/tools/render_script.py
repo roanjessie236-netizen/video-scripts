@@ -58,8 +58,13 @@ def quotes_md():
     ok = sum(1 for r in Q.values() if r[5].startswith('✅'))
     L = [f"## 引文核对表（{ok}/{len(Q)} 条与《鲁迅全集》2005年修订版原文一致）", "",
          "核对方法：`tools/verify_quotes.py` 将全集 PDF 抽成文本，去除空白与注释角标后逐字精确匹配；页码为全集 PDF 页码。", "",
-         "| 编号 | 原文 | 出处 | 收录 | 用于 | 结果 | 全集PDF页 |", "|---|---|---|---|---|---|---|"]
-    for r in Q.values(): L.append('| ' + ' | '.join(r) + ' |')
+         "| 编号 | 原文 | 出处 | 收录 | 用于镜头 | 结果 | 全集PDF页 |", "|---|---|---|---|---|---|---|"]
+    used = {}
+    for s in shots.values():
+        for a in s['audio']:
+            if 'q' in a: used.setdefault(a['q'], []).append(s['id'])
+    for r in Q.values():
+        L.append('| ' + ' | '.join(r[:4] + ['、'.join(used.get(r[0], [])) or '备用'] + r[5:]) + ' |')
     return '\n'.join(L)
 def script_md(br='<br />'):
     L = [f"# 《{M['title']}》——{M['subtitle']}｜完整分镜脚本 {M['version']}", "",
@@ -104,7 +109,7 @@ def idx_md():
     L += ["", "## W｜需网络搜集（详见 web_research_brief.md）", "", "| 编号 | 素材 | 用于镜头 |", "|---|---|---|"]
     for a in sorted(A['W'], key=key): L.append(f"| {a} | {A['W'][a]['name']} | {'、'.join(use.get(a, ['（核实/备用）']))} |")
     return '\n'.join(L) + '\n'
-PRI = {'P0': 'W01 W02 W11 W14 W16 W18 W19 W22 W24 W25 W28'.split(), 'P2': 'W03 W05 W12 W17 W23 W27'.split()}
+PRI = {'P0': 'W01 W02 W11 W14 W16 W19 W22 W24 W25 W28 W33 W34 W36'.split(), 'P2': 'W03 W05 W12 W17 W18 W23 W27 W37'.split()}
 def pri(w): return 'P0' if w in PRI['P0'] else 'P2' if w in PRI['P2'] else 'P1'
 def brief_md():
     L = ["# 网络素材搜集任务书｜《忘记我——鲁迅逝世九十周年》", "",
@@ -117,7 +122,7 @@ def brief_md():
          "3. **每个文件夹必须有 `sources.md`**，逐个文件记录：文件名｜标题/内容｜来源页面 URL｜原始文件 URL｜作者/摄影者/收藏机构｜授权类型｜可否商用｜获取日期｜备注。",
          "4. **总索引**：同时追加到 `assets/web/index.csv`，表头：`id,file,title,source_url,author_or_holder,license,commercial_ok,grade,retrieved,notes`。",
          "5. **授权分级（grade）**：A＝公有领域/CC0；B＝CC BY 等需署名；C＝需向权利人申请；D＝不可用，仅作参考（不下载，只记链接）。",
-         "6. **核实类任务**（W03、W09、W11、W14、W18、W23、W24、W25、W27）交付 `findings.md`：结论一句话＋至少两个独立可靠来源（附链接与原文摘录/截图）＋可信度判断。",
+         "6. **核实类任务**（W03、W09、W11、W14、W18、W23、W24、W25、W27、W33、W35、W36、W37）交付 `findings.md`：结论一句话＋至少两个独立可靠来源（附链接与原文摘录/截图）＋可信度判断。",
          "7. **大文件**：单个文件超过 25 MB 不上传（GitHub 网页上传上限），视频一律只记链接、片段起止时间码和版权方。",
          "8. **不要**：上传带水印的图库预览图；把 AI 生成或上色修复的图当原始照片；引用来源不明的“鲁迅名言”。", "",
          "## 三、任务清单", "", "优先级：P0＝播出前必须完成；P1＝重要；P2＝可选/补充。", "",
@@ -125,7 +130,7 @@ def brief_md():
     for w in sorted(A['W'], key=key):
         d = A['W'][w]; L.append(f"| {w} | {pri(w)} | {d['name']} | {d['task']} | {'、'.join(use.get(w, ['核实/备用']))} | {d['rule']} |")
     L += ["", "## 四、已有素材（无需再找）", "- 林贤治《鲁迅画传》图文版与《鲁迅全集》2005年版文前彩插中的老照片已在本地抽取，编号见 `assets_index.md`（HZ-p##／QJ-p####）。如网上能找到同一照片更清晰的公有领域版本，可放进对应 W## 文件夹并在 sources.md 注明“替换 HZ-p##”。",
-          "- 片中引用的鲁迅原文 78 条已用《鲁迅全集》逐字核对（`quotes.md`），**不需要**再核对鲁迅原文；只有萧红原话（W18）需要核实。", "",
+          f"- 片中引用的鲁迅原文 {len(Q)} 条已用《鲁迅全集》逐字核对（`quotes.md`），**不需要**再核对鲁迅原文；只有非鲁迅文字（萧红原话 W18、毛泽东评价 W33）需要核实。", "",
           "## 五、完成后", "- 在 `assets/web/STATUS.md` 里列出每个编号的状态：✅ 已完成／⚠️ 部分完成（说明缺什么）／❌ 找不到（说明尝试过的来源）。"]
     return '\n'.join(L) + '\n'
 def extract_sh():
@@ -152,9 +157,11 @@ if '--notion' in sys.argv:
     GH = 'https://github.com/roanjessie236-netizen/video-scripts/tree/main/projects/luxun-90-memorial'
     body = script_md().split('\n')
     body = '\n'.join(body[1:])  # 标题由页面标题承担
-    pend = ["## 播出前待核清单", "- [ ] W18 萧红《回忆鲁迅先生》原句（S6-10）", "- [ ] W11 故居卧室时钟“停在5时25分”说法（S7-05 叠画用；未核实前不用）",
-            "- [ ] W14 五烈士肖像与姓名对应、“均未满三十周岁”（S6-05）", "- [ ] HZ-p24《自题小像》手迹版本（1903／1931重写）字幕标注（S2-03）",
+    pend = ["## 播出前待核清单", "- [ ] W33 毛泽东《新民主主义论》评价原文（S7-06）", "- [ ] W36 杂文集数量、翻译总字数（S6-12）", "- [ ] W18 萧红《回忆鲁迅先生》原句（v2 改为备用镜头）", "- [ ] W11 故居卧室时钟“停在5时25分”说法（S7-05 叠画用；未核实前不用）",
+            "- [ ] W14 五烈士肖像与姓名对应、“均未满三十周岁”（S6-06）", "- [ ] HZ-p24《自题小像》手迹版本（1903／1931重写）字幕标注（S2-03）", "- [ ] W37 参考文章中的轶事（送火腿、方志敏文稿等）——未核实前不进正片",
             "- [ ] W03 送葬人数（片中暂不写数字）", "- [ ] W24 三平台 AI 内容标识要求；片尾与简介加声明", "- [ ] W25／W28 图片、字体授权"]
-    head = [f"<callout icon=\"🎬\" color=\"gray_bg\">\nB站母版 **{tc(TOTAL)}**（20分钟以内）｜抖音合集 8 集｜视频号精华版约 5 分钟。全部 78 条鲁迅原文已用《鲁迅全集》2005年版逐字核对。制作文件存档：[GitHub · projects/luxun-90-memorial]({GH})\n</callout>", ""]
+    head = [f"<callout icon=\"🎬\" color=\"gray_bg\">\nB站母版 **{tc(TOTAL)}**（20分钟以内）｜抖音合集 9 集｜视频号精华版约 5 分钟。全部 {len(Q)} 条鲁迅原文已用《鲁迅全集》2005年版逐字核对。制作文件存档：[GitHub · projects/luxun-90-memorial]({GH})\n</callout>", ""]
+    chg = os.path.join(ROOT, 'notion_changes.md')
+    if os.path.exists(chg): head.append(open(chg, encoding='utf-8').read())
     txt = '\n'.join(head) + body + '\n\n' + cuts_md() + '\n\n' + '\n'.join(pend) + '\n\n' + quotes_md() + '\n'
     open(sys.argv[sys.argv.index('--notion') + 1], 'w', encoding='utf-8').write(txt)
