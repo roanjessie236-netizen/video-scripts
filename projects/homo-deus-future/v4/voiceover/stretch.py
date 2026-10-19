@@ -6,9 +6,8 @@ Usage: python3 stretch.py clips clips_v4"""
 import json, os, shutil, subprocess, sys
 import numpy as np
 SR = 48000
-SPEC = {3: [('饥荒', 0.80), ('瘟疫', 1.00), ('战争', 0.25)],
-        9: [('长生不死', 0.30), ('快乐', 0.30)],
-        13: [('基因', 0.25), ('融合', 0.25)]}
+SPEC = {3: [("饥荒", 0.30), ("瘟疫", 0.45)],
+        9: [("长生不死", 0.15), ("快乐", 0.15)]}
 src, dst = sys.argv[1:3]
 os.makedirs(dst, exist_ok=True)
 D = json.load(open(src + '/durs.json')); B = json.load(open(src + '/bounds.json', encoding='utf-8'))

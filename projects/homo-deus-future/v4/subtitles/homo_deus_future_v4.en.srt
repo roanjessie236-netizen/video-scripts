@@ -1,0 +1,212 @@
+1
+00:00:01,650 --> 00:00:05,711
+In the past, humanity's greatest dream was to change the world.
+
+2
+00:00:05,811 --> 00:00:08,811
+In the future, humanity may begin to change itself.
+
+3
+00:00:13,711 --> 00:00:20,493
+For thousands of years, famine, plague and war were humanity's three greatest enemies.
+
+4
+00:00:20,693 --> 00:00:26,052
+Today, more people die from eating too much than from eating too little;
+
+5
+00:00:26,152 --> 00:00:29,753
+more die of old age than of infectious disease;
+
+6
+00:00:29,853 --> 00:00:35,836
+and more people take their own lives than are killed by soldiers, terrorists and criminals combined.
+
+7
+00:00:35,876 --> 00:00:39,430
+Sugar is now more dangerous than gunpowder.
+
+8
+00:00:39,470 --> 00:00:44,195
+As the old threats recede, humanity is setting itself new goals:
+
+9
+00:00:44,295 --> 00:00:48,686
+immortality, bliss and divinity.
+
+10
+00:00:51,186 --> 00:00:54,228
+In the past, humans accepted the life that nature gave them.
+
+11
+00:00:54,328 --> 00:00:57,136
+In the future, humans may begin to design life.
+
+12
+00:00:57,236 --> 00:00:59,929
+Harari sees three paths to "upgrading" ourselves:
+
+13
+00:01:00,029 --> 00:01:04,416
+rewriting our genes, merging with machines, creating non-organic life.
+
+14
+00:01:04,516 --> 00:01:10,386
+Disease, ageing, even the body itself, may all become things we can edit.
+
+15
+00:01:10,686 --> 00:01:12,713
+If consciousness could be copied,
+
+16
+00:01:12,813 --> 00:01:14,957
+if memories could be preserved,
+
+17
+00:01:15,057 --> 00:01:17,548
+if life could go on forever,
+
+18
+00:01:17,648 --> 00:01:19,942
+would we still be who we were?
+
+19
+00:01:22,442 --> 00:01:25,374
+For the first time, humans have created a new kind of intelligence.
+
+20
+00:01:25,474 --> 00:01:28,199
+It needs no life, yet it can learn.
+
+21
+00:01:28,299 --> 00:01:31,643
+Intelligence is decoupling from consciousness.
+
+22
+00:01:31,743 --> 00:01:33,351
+And the life sciences tell us:
+
+23
+00:01:33,651 --> 00:01:37,652
+organisms are algorithms, and life is data processing.
+
+24
+00:01:37,752 --> 00:01:41,659
+For centuries, humanism has told us: listen to yourself.
+
+25
+00:01:41,759 --> 00:01:44,157
+But when algorithms know you better than you know yourself,
+
+26
+00:01:44,257 --> 00:01:48,707
+from the road you take and the books you read to the person you marry,
+
+27
+00:01:48,807 --> 00:01:52,628
+authority will shift from humans to algorithms.
+
+28
+00:01:52,728 --> 00:01:57,976
+When machines begin to understand the world, what becomes of humanity's place?
+
+29
+00:01:58,376 --> 00:02:02,741
+But one question remains: will such a future belong to everyone?
+
+30
+00:02:02,841 --> 00:02:04,760
+As algorithms take on more and more work,
+
+31
+00:02:05,060 --> 00:02:09,164
+some people may struggle to find a place in the economy.
+
+32
+00:02:09,264 --> 00:02:12,381
+Harari calls this risk "the useless class".
+
+33
+00:02:12,481 --> 00:02:15,244
+"Useless" here means their labour may no longer be needed,
+
+34
+00:02:15,544 --> 00:02:18,484
+never that people have lost their worth.
+
+35
+00:02:18,584 --> 00:02:23,755
+If a few gain the power to upgrade life while many are left behind,
+
+36
+00:02:23,855 --> 00:02:28,291
+humankind may, for the first time, split into biological castes.
+
+37
+00:02:28,391 --> 00:02:30,640
+As we ask what humans can become,
+
+38
+00:02:30,940 --> 00:02:34,358
+we must also ask: who will share this future?
+
+39
+00:02:36,758 --> 00:02:41,532
+Meanwhile, a new creed is rising: Dataism.
+
+40
+00:02:41,632 --> 00:02:44,232
+It holds that the universe consists of data flows,
+
+41
+00:02:44,532 --> 00:02:48,676
+and the value of anything lies in its contribution to data processing.
+
+42
+00:02:48,776 --> 00:02:53,649
+In this vast web, Homo sapiens may be just an obsolete algorithm.
+
+43
+00:02:53,849 --> 00:02:58,033
+The greatest challenge ahead is not whether machines will surpass us,
+
+44
+00:02:58,133 --> 00:03:01,076
+but whether, once we can create gods,
+
+45
+00:03:01,126 --> 00:03:05,273
+will we still know how to be human?
+
+46
+00:03:05,313 --> 00:03:08,399
+Homo sapiens may be on its way to becoming Homo Deus.
+
+47
+00:03:08,899 --> 00:03:11,460
+These are not prophecies, but possibilities.
+
+48
+00:03:11,560 --> 00:03:14,835
+At the end of the book, Harari leaves us three questions:
+
+49
+00:03:14,875 --> 00:03:17,703
+Are organisms really just algorithms?
+
+50
+00:03:17,803 --> 00:03:21,869
+Which is more valuable: intelligence or consciousness?
+
+51
+00:03:21,969 --> 00:03:27,003
+What happens when algorithms know us better than we know ourselves?
+
+52
+00:03:27,103 --> 00:03:29,468
+The next chapter of human history
+
+53
+00:03:29,568 --> 00:03:32,742
+is waiting for us to write.
+

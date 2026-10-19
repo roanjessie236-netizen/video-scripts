@@ -90,6 +90,8 @@ rd = rep(rd, """    for s, e, l1, l2 in TL['labels']:
         fd = fd[0] if fd else 0.6
         a = window(t, s, e, fd, fd)
 """)
+rd = rep(rd, '    sc, sl, st = max(0.62 * ach, 0.62 * ati, 0.3 * aen), 0.5 * alow, 0.35 * acap\n',
+         "    kb = max([k for a_, b_, k in TL.get('scrim_boost', []) if a_ <= t < b_] + [1.0])  # v4: bright plates\n    sc, sl, st = max(0.62 * ach, 0.62 * ati, 0.3 * aen), min(0.95, 0.5 * alow * kb), min(0.95, 0.35 * acap * kb)\n")
 rd += '\n# HOMO-DEUS-V4\n'
 open(rc_p, 'w', encoding='utf-8').write(rc)
 open(rd_p, 'w', encoding='utf-8').write(rd)

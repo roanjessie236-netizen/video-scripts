@@ -132,12 +132,13 @@ choir(GOD, [m + 12 for m in CH['C'][3:]], SH['dna'] - GOD + 0.5, 0.06, att=0.2, 
 # ------------------------------------------------------------------ CH2  redesigning life (strings + celesta DNA)
 log('ch2')
 C2 = CHC[1]
-P2 = chain([(C2, 'Fmaj7'), (C2 + 5, 'C/E'), (C2 + 10, 'Dm'), (C2 + 15, 'Am'), (C2 + 20, 'F')], SH['upload'])
+S2 = (SH['upload'] - C2) / 5                                    # chords evenly spaced across chapter 2 intro
+P2 = chain([(C2, 'Fmaj7'), (C2 + S2, 'C/E'), (C2 + 2 * S2, 'Dm'), (C2 + 3 * S2, 'Am'), (C2 + 4 * S2, 'F')], SH['upload'])
 timp(C2, 41, 0.3)
 place(BOOM, C2, 0.22, hall=0.1, cath=0.3)
 for i, m in enumerate([72, 76, 79, 81, 84, 88]):
     celesta(C2 + 0.2 + i * 0.12, m, 0.05, pan=-0.5 + 0.2 * i)
-pad_prog(P2, [(C2, 0.09), (C2 + 15, 0.12), (SH['upload'], 0.13)], p=3.8, att=1.2, rel=1.2, hall=0.4, cath=0.2)
+pad_prog(P2, [(C2, 0.09), (C2 + 3 * S2, 0.12), (SH['upload'], 0.13)], p=3.8, att=1.2, rel=1.2, hall=0.4, cath=0.2)
 for k, t in enumerate(np.arange(LL[10][0], LL[14][0], 1.25)):  # DNA helix motif
     for j, m in enumerate([81, 76, 72, 76] if k % 2 == 0 else [84, 79, 76, 79]):
         celesta(t + j * 0.156, m, 0.045, pan=(-0.5 if k % 2 == 0 else 0.5) * (1 - j / 3))
@@ -149,8 +150,8 @@ for t, m in [(SH['editing'], 38), (SH['hands'], 41), (SH['artlife'], 45)]:  # �
     taiko(t, 0.18, pan=0.2)
 for t in (SH['nanobots'], SH['cellplanets']):                   # radial transitions
     place(noise_fx(2.0, 300, 4000, 1.5, 0.3), t - 1.5, 0.12, hall=0.2, cath=0.3)
-choir_prog(P2, [(C2 + 15, 0.05), (C2 + 20, 0.08)], att=1.5, rel=1.5, t_lo=C2 + 14.9)
-brass_prog(P2, 0.07, t_lo=C2 + 19.9)
+choir_prog(P2, [(C2 + 3 * S2, 0.05), (C2 + 4 * S2, 0.08)], att=1.5, rel=1.5, t_lo=C2 + 3 * S2 - 0.1)
+brass_prog(P2, 0.07, t_lo=C2 + 4 * S2 - 0.1)
 
 # ------------------------------------------------------------------ 如果 x3 -> 「我们还是原来的自己吗？」
 T_U, T_M = SH['upload'], SH['mirror']
@@ -174,9 +175,10 @@ place(swell(1.0), CHC[2] - 1.0, 0.1, hall=0.3)
 log('ch3')
 C3 = CHC[2]
 T_H, T_BCI, T_ALG, T_AUT = SH['humanism'], SH['bci'], SH['algochoice'], SH['assistant']
-P3 = chain([(C3, 'Am'), (C3 + 5, 'F'), (C3 + 10, 'C'), (C3 + 15, 'G')], T_H)
+S3 = (T_H - C3) / 4
+P3 = chain([(C3, 'Am'), (C3 + S3, 'F'), (C3 + 2 * S3, 'C'), (C3 + 3 * S3, 'G')], T_H)
 impact(C3, 0.6, with_braam=True, notes=(33, 45, 52))
-arp(P3, BEAT / 2, [(C3, 0.035), (C3 + 11, 0.05), (T_H, 0.055)], [0, 1, 2, 3, 1, 2, 3, 2],
+arp(P3, BEAT / 2, [(C3, 0.035), (C3 + 2.2 * S3, 0.05), (T_H, 0.055)], [0, 1, 2, 3, 1, 2, 3, 2],
     bright_pts=[(C3, 0.6), (T_H, 1.2)])
 subpulse(P3, BEAT / 2, [(SH['ainetwork'], 0.035), (T_H, 0.055)], SH['ainetwork'], T_H)
 beat_kit(C3 + 10 * BEAT, T_H - 0.05, [(C3 + 10 * BEAT, 0.09), (T_H, 0.14)])
@@ -223,7 +225,7 @@ PI = chain([(T_CL, 'Am'), (SH['automation'], 'Fmaj7'), (SH['worker2'], 'C/E'), (
 impact(T_CL, 0.22, notes=(33, 45))
 place(ensemble('saw', 33, T_DS - T_CL, p=1.4, voices=4, cents=8, vib=0.0, att=3.0, rel=3.0, width=0.9), T_CL, 0.09,
       hall=0.1, cath=0.5)
-place(ensemble('saw', 45, 22.0, p=1.3, voices=3, cents=14, vib=0.0, att=5.0, rel=4.0, width=1.0), T_CL, 0.03,
+place(ensemble('saw', 45, min(22.0, T_DS - T_CL), p=1.3, voices=3, cents=14, vib=0.0, att=5.0, rel=4.0, width=1.0), T_CL, 0.03,
       hall=0.1, cath=0.6)
 ambience(T_CL, T_DS - T_CL, 0.065, fin=2.5, fout=2.0, wind=0.3, shimmer=0.9)
 pad_prog(PI, [(T_CL, 0.04), (SH['crowdwalk'], 0.05), (T_DS, 0.07)], p=2.0, att=2.2, rel=2.2, hall=0.4, cath=0.35)
@@ -310,21 +312,22 @@ choir(T_SP, [57, 60, 64], T_CH - T_SP, 0.05, att=2.5, rel=1.8, vowels=('o',))
 pad(T_SP, T_CH - T_SP, 'Am', gain=0.04, p=2.0, att=2.5, rel=1.5, hall=0.4, cath=0.4, bassgain=0.5)
 celesta(w(41, '神人'), 84, 0.035, pan=0.3)
 piano(w(41, '神人'), 72, 0.05)
-P5 = chain([(T_CH, 'Fmaj7'), (207.7, 'C/E'), (212.1, 'Dm'), (216.1, 'Gsus'), (219.1, 'G'), (222.1, 'Fmaj7'),
-            (LL[48][0], 'Cadd9')], DUR)
+T_DM, T_GS, T_F2, T_C9 = LL[44][0] + 0.9, LL[45][0] + 1.2, LL[46][0] + 2.9, LL[48][0]   # ending harmony follows the VO
+P5 = chain([(T_CH, 'Fmaj7'), (LL[43][0] + 1.0, 'C/E'), (T_DM, 'Dm'), (T_GS, 'Gsus'), (LL[46][0] - 0.05, 'G'),
+            (T_F2, 'Fmaj7'), (T_C9, 'Cadd9')], DUR)
 pad_prog(P5, [(T_CH, 0.07), (LL[48][0], 0.06)], p=2.2, att=1.6, rel=2.2, hall=0.35, cath=0.35, bassgain=0.5)
 ambience(T_CH, DUR - T_CH, 0.07, fin=3.0, fout=5.0, wind=0.2, shimmer=1.2)
 for s, d, ch in P5[:-1]:
     e = s + d
     notes = [m + 12 for m in CH[ch][2:]]
     piano(s, CH[ch][1], 0.1, pan=-0.1)
-    step = BEAT if s < 216.0 else BEAT / 2
-    g = 0.10 if s < 216.0 else 0.085
+    step = BEAT if s < T_GS - 0.01 else BEAT / 2
+    g = 0.10 if s < T_GS - 0.01 else 0.085
     k = 0
     while s + step * (k + 1) < e - 0.05:
         piano(s + step * (k + 1), notes[PP[k % 8]], g * (1.0 if k % 2 == 0 else 0.8))
         k += 1
-choir_prog(P5, [(212, 0.07), (222, 0.11)], att=2.0, rel=2.0, t_lo=212.0, t_hi=LL[48][0] - 0.1)
+choir_prog(P5, [(T_DM, 0.07), (T_F2, 0.11)], att=2.0, rel=2.0, t_lo=T_DM - 0.1, t_hi=T_C9 - 0.1)
 T_E = LL[48][0]
 choir(T_E, CH['Cadd9'][2:], 6.0, 0.13, att=1.5, rel=4.0)
 for i, m in enumerate([48, 55, 62, 64, 67, 72]):
@@ -334,7 +337,9 @@ piano(T_E + 1.7, 79, 0.07)
 for li in (44, 45, 46):                                          # the three questions
     celesta(LL[li][0] - 0.1, 88, 0.035, pan=0.4)
     celesta(LL[li][0] + 0.2, 84, 0.028, pan=0.2)
-for t, m, d in [(216.2, 76, 4.0), (220.2, 74, 2.3), (222.5, 74, 2.5), (225.0, 72, 3.0), (228.0, 76, 6.0)]:
+_ts = [T_GS + f * (T_C9 - T_GS) for f in (0.008, 0.339, 0.529, 0.736)] + [T_C9 - 0.2]   # solo voice spans Gsus -> Cadd9
+for i, (t, m) in enumerate(zip(_ts, (76, 74, 74, 72, 76))):
+    d = _ts[i + 1] - t if i < 4 else 6.0
     lead(t, [(m, d)], 1.0, 0.05, kind='u', p=4.0, vibd=0.006, glide=0.05, pan=0.0, rel=2.0, cath=0.9)
 T_EC = MK['endcard']
 celesta(T_EC, 84, 0.06, pan=-0.2)                               # end card chime

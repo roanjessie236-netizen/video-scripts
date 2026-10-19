@@ -63,6 +63,13 @@ L = [
 (47, 5, 'cap', '下一章人类历史，', '下一章人类历史，', 'The next chapter of human history', -15, '-4Hz', '+0%', '片尾，极慢', 'brief'),
 (48, 5, 'cap', '正在等待我们书写。', None, 'is waiting for us to write.', -15, '-5Hz', '+0%', '尾音落在音乐里', 'brief'),
 ]
+# ---- v4.1 「旁白连贯」 pass: one consistent read. Same rate / pitch / volume for every line (only the two heaviest
+# questions and the closing sentence are a touch slower); no extra commas inside sentences except the enumeration
+# (#9) and the climactic question (#40). Word-synced cuts in #3 / #9 use small inserted pauses (stretch.py).
+FLOW_RATE = {2: -7, 18: -7, 40: -9, 44: -7, 45: -7, 46: -7, 47: -9, 48: -9}
+FLOW_SPOKEN = {9: '长生不死，幸福快乐，化身为神。', 12: '赫拉利设想了三条升级之路：', 40: '是否仍然知道，如何成为人？'}
+L = [(i, sec, kind, sub, FLOW_SPOKEN.get(i), en, FLOW_RATE.get(i, -6), '-2Hz', '+0%', cue, src)
+     for i, sec, kind, sub, t, en, r, p, v, cue, src in L]
 out = []
 for i, sec, kind, sub, t, en, r, p, v, cue, src in L:
     spoken = t if t else sub.replace('|', '').replace('/', '')
