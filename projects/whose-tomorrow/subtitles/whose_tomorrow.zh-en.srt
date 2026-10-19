@@ -1,0 +1,240 @@
+1
+00:00:01,450 --> 00:00:05,924
+1930年，经济学家凯恩斯写下一个预言：
+In 1930, the economist John Maynard Keynes made a prediction:
+
+2
+00:00:06,024 --> 00:00:12,140
+百年之后，机器将承担大部分工作，人们每周只需工作十五小时。
+a century on, machines would do most of the work, and people would need to work just fifteen hours a week.
+
+3
+00:00:12,440 --> 00:00:15,693
+一百年快到了，机器越来越能干，
+The century is nearly up, and machines have indeed grown ever more capable,
+
+4
+00:00:15,793 --> 00:00:18,241
+我们却并没有因此变得轻松。
+yet we are no more at ease.
+
+5
+00:00:18,281 --> 00:00:23,749
+当机器能生产一切，财富该属于谁？
+When machines can produce everything, who should the wealth belong to?
+
+6
+00:00:28,999 --> 00:00:34,528
+回望七万年，人类的每一次飞跃，都伴随着劳动方式的巨变。
+Looking back over seventy thousand years, every leap humankind made came with a great change in the way we work.
+
+7
+00:00:34,628 --> 00:00:39,754
+认知革命，让智人学会用故事组织大规模的协作。
+The Cognitive Revolution taught Sapiens to organise hundreds, even thousands, through shared stories.
+
+8
+00:00:39,854 --> 00:00:42,515
+农业革命带来了剩余的粮食，
+The Agricultural Revolution brought surplus grain,
+
+9
+00:00:42,615 --> 00:00:46,930
+也带来了粮仓、私有财产、阶级和国家。
+and with it granaries, private property, classes and the state.
+
+10
+00:00:47,030 --> 00:00:49,781
+工业革命用蒸汽取代了肌肉，
+The Industrial Revolution replaced muscle with steam,
+
+11
+00:00:49,881 --> 00:00:53,969
+也把千百万农民变成了工厂里的雇佣工人。
+and turned millions of peasants into wage workers in factories.
+
+12
+00:00:54,009 --> 00:01:02,297
+手推磨产生的是封建主的社会，蒸汽磨产生的是工业资本家的社会。
+The hand-mill gives you society with the feudal lord; the steam-mill, society with the industrial capitalist.
+
+13
+00:01:02,337 --> 00:01:06,610
+生产力变了，生产关系迟早也要跟着改变。
+When the forces of production change, the relations of production must sooner or later follow.
+
+14
+00:01:06,810 --> 00:01:11,498
+赫拉利说，人类靠共同相信的故事团结在一起；
+Harari says humans are bound together by the stories they share;
+
+15
+00:01:11,598 --> 00:01:17,321
+历史唯物主义还要追问：故事的背后，是谁在劳动，谁在占有？
+historical materialism asks further: behind the stories, who does the work, and who owns the wealth?
+
+16
+00:01:19,821 --> 00:01:23,583
+今天，一台新的“蒸汽机”正在轰鸣。
+Today, a new "steam engine" is roaring to life.
+
+17
+00:01:23,683 --> 00:01:29,000
+人工智能像电力一样，是一种通用技术，会渗入每个行业。
+Like electricity, AI is a general-purpose technology; it will seep into every industry.
+
+18
+00:01:29,100 --> 00:01:33,841
+这一次，最先被冲击的不是工厂，而是写字楼。
+This time, the first to be hit is not the factory, but the office tower.
+
+19
+00:01:34,141 --> 00:01:39,264
+历史上，技术总在消灭旧岗位的同时，创造出新岗位。
+Throughout history, technology has created new jobs even as it destroyed old ones.
+
+20
+00:01:39,364 --> 00:01:47,111
+预测显示，到2030年，全球将新增1.7亿个岗位，减少9200万个。
+One forecast says that by 2030 the world will gain 170 million jobs and lose 92 million.
+
+21
+00:01:47,311 --> 00:01:50,454
+而就连体力劳动这条最后的退路，
+And even the last refuge, manual work,
+
+22
+00:01:50,554 --> 00:01:56,259
+也随着具身智能走进仓库、工地和厨房，正在慢慢收窄。
+is narrowing, as embodied AI moves into warehouses, building sites and kitchens.
+
+23
+00:01:58,759 --> 00:02:04,024
+《未来简史》担心，21世纪会出现一个庞大的“无用阶级”。
+Homo Deus fears the twenty-first century may create a vast "useless class".
+
+24
+00:02:04,124 --> 00:02:06,964
+可真正的危险，不是人没用了，
+But the real danger is not that people become useless;
+
+25
+00:02:07,064 --> 00:02:11,192
+而是财富堆积如山，多数人却失去了收入。
+it is that wealth piles up like mountains, while most people lose their income.
+
+26
+00:02:11,292 --> 00:02:15,680
+问题，从“还有没有工作”，变成了“财富如何分配”。
+The question shifts from "Will there be work?" to "How will the wealth be shared?"
+
+27
+00:02:15,980 --> 00:02:18,493
+这正是历史唯物主义揭示的矛盾：
+This is the contradiction historical materialism reveals:
+
+28
+00:02:18,793 --> 00:02:23,181
+生产力一路飞奔，生产关系却原地踏步。
+the forces of production race ahead, while the relations of production stand still.
+
+29
+00:02:23,681 --> 00:02:28,333
+有人想踩刹车：两百年前，卢德派砸毁了织布机；
+Some have tried to slam on the brakes: two hundred years ago, the Luddites smashed the looms;
+
+30
+00:02:28,433 --> 00:02:31,851
+明清两代的海禁，也曾锁住港口。
+the sea bans of the Ming and Qing dynasties once locked the ports.
+
+31
+00:02:31,951 --> 00:02:34,678
+可技术的洪流，从来挡不住。
+But the flood of technology has never been held back.
+
+32
+00:02:34,778 --> 00:02:39,704
+我们能决定的，是修建怎样的堤坝，让水流向哪里。
+What we can decide is what kind of channels to build, and where the water will flow.
+
+33
+00:02:42,204 --> 00:02:45,639
+摆在我们面前的，是三种明天。
+Before us lie three tomorrows.
+
+34
+00:02:45,739 --> 00:02:49,981
+第一种：算力和数据，集中在少数人手中。
+In the first, computing power and data are concentrated in a few hands.
+
+35
+00:02:50,081 --> 00:02:55,126
+《今日简史》早就警告过：谁拥有数据，谁就拥有未来。
+21 Lessons warned long ago: whoever owns the data owns the future.
+
+36
+00:02:55,226 --> 00:03:01,062
+少数人成了云端的领主，其余的人得到的是施舍，而不是权利。
+A few become lords of the cloud; everyone else receives charity, not rights.
+
+37
+00:03:01,462 --> 00:03:07,378
+第二种：发点补贴，征点税，让旧秩序修修补补地维持下去。
+In the second, a little welfare, a little tax, and the old order is patched up and kept running.
+
+38
+00:03:07,778 --> 00:03:12,465
+第三种：让每一个人，都成为机器的共同主人。
+In the third, every one of us becomes a co-owner of the machines.
+
+39
+00:03:12,565 --> 00:03:20,332
+AI创造的财富，通过公共基金、全民分红和更短的工时，回到每个人手里。
+The wealth AI creates flows back to everyone, through public funds, citizens' dividends and shorter working hours.
+
+40
+00:03:20,432 --> 00:03:26,169
+劳动不再只是谋生的手段，人们可以去创造、学习、照顾彼此。
+Work is no longer merely a means of survival; people are free to create, to learn, and to care for one another.
+
+41
+00:03:26,209 --> 00:03:34,234
+每个人的自由发展，是一切人的自由发展的条件。
+The free development of each is the condition for the free development of all.
+
+42
+00:03:35,084 --> 00:03:38,368
+但这样的明天，不会自动到来。
+But such a tomorrow will not arrive on its own.
+
+43
+00:03:38,468 --> 00:03:43,104
+八小时工作制，是工人们一次次走上街头争取来的；
+The eight-hour day was won by workers taking to the streets, again and again;
+
+44
+00:03:43,144 --> 00:03:47,073
+技术决定可能性，制度决定结果。
+Technology decides what is possible; institutions decide what happens.
+
+45
+00:03:47,113 --> 00:03:50,858
+而制度，由人选择，靠人争取。
+And institutions are chosen by people, and won by people.
+
+46
+00:03:51,058 --> 00:03:54,649
+马克思说：人们自己创造自己的历史。
+As Marx wrote, people make their own history.
+
+47
+00:03:55,099 --> 00:03:57,768
+明天属于谁？
+So, whose tomorrow is it?
+
+48
+00:03:57,868 --> 00:04:02,246
+属于每一个为它共同奋斗的人。
+It belongs to everyone who strives for it, together.
+
