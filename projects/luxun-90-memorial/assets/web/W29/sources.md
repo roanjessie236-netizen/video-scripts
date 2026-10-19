@@ -43,3 +43,20 @@
 | 文件 | 内容与权利 | 来源与编写日期 |
 |---|---|---|
 | sources.md | 本项目研究记录；引文/外部素材依原权利，不授予第三方许可 | 本地编写；2026-10-19 |
+
+
+## 第四轮（2026-10-19）
+
+前三轮登记原样保留。C只登记待申请，不作为可播素材；D不入库。本轮新增核实记录：[W29-05-round4-research.md](W29-05-round4-research.md)。
+
+| 文件名（—为仅链接） | 标题/内容 | 来源页面URL | 原始文件URL | 作者/摄影者/收藏机构 | 授权类型 | 可否商用 | grade | 获取日期 | 备注 |
+|---|---|---|---|---|---|---|---|---|---|
+| W29-06-nahan-1923-cover.png | 《呐喊》新潮社1923年8月初版封面扫描 | https://commons.wikimedia.org/wiki/File:NLC416-12jh005259-45031_%E5%90%B6%E5%96%8A.pdf | https://upload.wikimedia.org/wikipedia/commons/c/c6/NLC416-12jh005259-45031_%E5%90%B6%E5%96%8A.pdf | 鲁迅／新潮社；国家图书馆来源机械扫描 | 公有领域旧作的机械扫描；Commons PD-scan/PD-China | 是，注明版本及国图来源 | A | 2026-10-19 | 1758×2658；16,994 bytes；PDF1；与同册PDF288配对核版；原扫描黑白、留白大，书名框有效细节有限；未增色或放大。 |
+| W29-07-nahan-1923-colophon.png | 《呐喊》1923年8月初版版权页 | https://commons.wikimedia.org/wiki/File:NLC416-12jh005259-45031_%E5%90%B6%E5%96%8A.pdf | https://upload.wikimedia.org/wikipedia/commons/c/c6/NLC416-12jh005259-45031_%E5%90%B6%E5%96%8A.pdf | 新潮社／国家图书馆来源扫描 | 公版旧版权信息页的机械扫描 | 是，注明出处 | A | 2026-10-19 | 1709×2346；43,025 bytes；PDF288：1923六月付印、八月初版；新潮社发行、周作人编辑、京华印书局印刷。 |
+| W29-08-panghuang-1928-fifth-cover.png | 《彷徨》北新书局1928年3月五版封面 | https://commons.wikimedia.org/wiki/File:NLC416-06jh006138-90222_%E5%BD%B7%E5%BE%A8.pdf | https://upload.wikimedia.org/wikipedia/commons/c/cf/NLC416-06jh006138-90222_%E5%BD%B7%E5%BE%A8.pdf | 陶元庆作书面；鲁迅著；国图来源扫描 | 公版旧作机械扫描，Commons PD-scan/PD-China | 是，注明版次与设计者 | A | 2026-10-19 | 1676×2139；44,798 bytes；PDF1；PDF2明确1928年3月五版，PDF3署陶元庆作书面。 |
+| W29-09-panghuang-1928-edition.png | 《彷徨》1928年3月五版版次页 | https://commons.wikimedia.org/wiki/File:NLC416-06jh006138-90222_%E5%BD%B7%E5%BE%A8.pdf | https://upload.wikimedia.org/wikipedia/commons/c/cf/NLC416-06jh006138-90222_%E5%BD%B7%E5%BE%A8.pdf | 北新书局／国图来源扫描 | 公版旧书目事实页机械扫描 | 是，注明出处 | A | 2026-10-19 | 1528×2134；14,709 bytes；PDF2；保留原藏书章及条码，不抹除。 |
+| W29-10-fen-1947-cover.png | 《坟》鲁迅全集出版社1947年10月版封面 | https://commons.wikimedia.org/wiki/File:NLC416-10jh006112-28811_%E5%A2%B3.pdf | https://upload.wikimedia.org/wikipedia/commons/7/76/NLC416-10jh006112-28811_%E5%A2%B3.pdf | 陶元庆旧封面图；鲁迅著；国家图书馆来源扫描 | 公版旧作机械扫描；不含现代新摄影加工 | 是，注明1947年版及出处 | A | 2026-10-19 | 1720×2424；14,755 bytes；PDF1；不是1927初版。 |
+| W29-11-fen-1947-colophon.png | 《坟》1947年10月版版权页 | https://commons.wikimedia.org/wiki/File:NLC416-10jh006112-28811_%E5%A2%B3.pdf | https://upload.wikimedia.org/wikipedia/commons/7/76/NLC416-10jh006112-28811_%E5%A2%B3.pdf | 鲁迅全集出版社／国家图书馆来源扫描 | 旧版权信息页机械扫描 | 是，注明出处 | A | 2026-10-19 | 1739×2408；23,450 bytes；PDF266；民国三十六年十月版，未见具体印次数字，不写初版。 |
+| — | 排除：标称《野草》第一版封面但版次不足以确认 | https://commons.wikimedia.org/wiki/File:%E3%80%8A%E9%87%8E%E8%8D%89%E3%80%8B%E7%AC%AC%E4%B8%80%E7%89%88%E5%B0%81%E9%9D%A2.jpg | https://upload.wikimedia.org/wikipedia/commons/b/be/%E3%80%8A%E9%87%8E%E8%8D%89%E3%80%8B%E7%AC%AC%E4%B8%80%E7%89%88%E5%B0%81%E9%9D%A2.jpg | 页面署周树人，设计归属按馆方应孙福熙；1973复制来源 | 身份待核；仅研究参考 | 否，本轮不采用 | D | 2026-10-19 | 1767×2494；图面鲁迅著，与馆方初版鲁迅先生说明有别；不上传，不把元数据日期4.26当出版日。 |
+
+研究文档登记：`W29-05-round4-research.md`为本项目编写的证据记录，2026-10-19；第三方材料依表中原权利处理。`sources.md`仅追加本节。

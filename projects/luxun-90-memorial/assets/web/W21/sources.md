@@ -35,3 +35,16 @@ S6-01：原始全景10.4MB，未上色、未AI处理。另图是上海城市规�
 | 文件 | 内容与权利 | 来源与编写日期 |
 |---|---|---|
 | sources.md | 本项目研究记录；引文/外部素材依原权利，不授予第三方许可 | 本地编写；2026-10-19 |
+
+
+## 第四轮（2026-10-19）
+
+前三轮登记原样保留。C只登记待申请，不作为可播素材；D不入库。本轮新增核实记录：[W21-03-round4-audio.md](W21-03-round4-audio.md)。
+
+| 文件名（—为仅链接） | 标题/内容 | 来源页面URL | 原始文件URL | 作者/摄影者/收藏机构 | 授权类型 | 可否商用 | grade | 获取日期 | 备注 |
+|---|---|---|---|---|---|---|---|---|---|
+| — | 现代参考：Old tram（2019圣彼得堡，非上海） | https://freesound.org/people/mexatronik/sounds/710458/ | https://freesound.org/people/mexatronik/sounds/710458/download/710458__mexatronik__old-tram.wav | mexatronik | CC0 1.0 | 是，遵守许可证；身份和用途仍须核对 | A | 2026-10-19 | 54.311秒；WAV；96000Hz；24bit；立体声；页面29.9MB＞25MB，只记链接；不证明1930年代上海声景；未试听；未下载；所列原始URL是页面提供的登录下载入口，不是已取得的公开文件直链。 |
+| — | 现代参考：Shanghai Street（南京东路，非已核弄堂） | https://freesound.org/people/timsc/sounds/187252/ | https://freesound.org/people/timsc/sounds/187252/download/187252__timsc__shanghai-street.flac | timsc | CC0 1.0 | 是，遵守许可证；身份和用途仍须核对 | A | 2026-10-19 | 49.240秒；FLAC；48000Hz；16bit；立体声；3.9MB；2013上传，录制日未核；未试听；未下载；所列原始URL是页面提供的登录下载入口，不是已取得的公开文件直链。 |
+| — | 排除作弄堂实录：Shanghai Sounds（正文为双年展／PSA） | https://freesound.org/people/RTB45/sounds/392579/ | https://freesound.org/people/RTB45/sounds/392579/download/392579__rtb45__shanghai-sounds.wav | RTB45 | CC BY 4.0 | 页面开放许可，但本项目不采用；身份不符合 | D | 2026-10-19 | 183.925秒；WAV；44100Hz；16bit；立体声；30.9MB＞25MB；不是已核弄堂现场；展览声音权利未核；未试听；未下载；所列原始URL是页面提供的登录下载入口，不是已取得的公开文件直链。 |
+
+研究文档登记：`W21-03-round4-audio.md`为本项目编写的证据记录，2026-10-19；第三方材料依表中原权利处理。`sources.md`仅追加本节。

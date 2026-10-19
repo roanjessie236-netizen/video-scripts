@@ -24,3 +24,17 @@
 |---|---|---|---|---|
 | findings.md | 核实／制作建议文档 | 本地编写；引证链接逐项列于正文 | 本项目素材研究 | 供本片编辑；2026-10-19 |
 | sources.md | 本表与候选分级 | 本轮来源登记 | 本项目素材研究 | 同上；2026-10-19 |
+
+
+## 第四轮（2026-10-19）
+
+前三轮登记原样保留。C只登记待申请，不作为可播素材；D不入库。本轮新增核实记录：[W22-01-round4-audio.md](W22-01-round4-audio.md)。
+
+| 文件名（—为仅链接） | 标题/内容 | 来源页面URL | 原始文件URL | 作者/摄影者/收藏机构 | 授权类型 | 可否商用 | grade | 获取日期 | 备注 |
+|---|---|---|---|---|---|---|---|---|---|
+| — | 古琴单音候选：Guqin-open-strings.wav | https://freesound.org/people/RafaelCaro/sounds/176266/ | https://freesound.org/people/RafaelCaro/sounds/176266/download/176266__rafaelcaro__guqin-open-strings.wav | RafaelCaro | CC BY 4.0 | 是，遵守许可证；身份和用途仍须核对 | B | 2026-10-19 | 7.124秒；WAV；44100Hz；16bit；立体声；1.2MB；2013-01-26录于Cardedeu；拟S1-01；未试听；未下载；所列原始URL是页面提供的登录下载入口，不是已取得的公开文件直链。 |
+| — | 古琴曲段候选：Guqin-song.wav（梅花三弄前半及尾声） | https://freesound.org/people/RafaelCaro/sounds/176265/ | https://freesound.org/people/RafaelCaro/sounds/176265/download/176265__rafaelcaro__guqin-song.wav | RafaelCaro | CC BY 4.0 | 是，遵守许可证；身份和用途仍须核对 | B | 2026-10-19 | 387.877秒；WAV；44100Hz；16bit；立体声；65.3MB＞25MB，只记链接；2013-01-26录制；未试听；未下载；所列原始URL是页面提供的登录下载入口，不是已取得的公开文件直链。 |
+| — | 手工木雕候选：Wood Carving Off Mic.wav | https://freesound.org/people/Benboncan/sounds/59961/ | https://freesound.org/people/Benboncan/sounds/59961/download/59961__benboncan__wood-carving-off-mic.wav | Benboncan | CC BY 4.0 | 是，遵守许可证；身份和用途仍须核对 | B | 2026-10-19 | 152.917秒；WAV；44100Hz；16bit；立体声；25.7MB＞25MB，只记链接；凿刀和木槌后手工收尾；不是已确认纯刻刀；拟S6-11；未试听；未下载；所列原始URL是页面提供的登录下载入口，不是已取得的公开文件直链。 |
+| — | 排除：06475 abacus beads fast moving.wav | https://freesound.org/people/Robinhood76/sounds/339868/ | https://freesound.org/people/Robinhood76/sounds/339868/download/339868__robinhood76__06475-abacus-beads-fast-moving.wav | Robinhood76 | CC BY-NC 4.0 | 否 | D | 2026-10-19 | 3.555秒；WAV；44100Hz；16bit；立体声；614.4KB；许可带NC，剔除；未试听／未下载。 |
+
+研究文档登记：`W22-01-round4-audio.md`为本项目编写的证据记录，2026-10-19；第三方材料依表中原权利处理。`sources.md`仅追加本节。
