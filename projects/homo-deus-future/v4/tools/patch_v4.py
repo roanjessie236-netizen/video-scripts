@@ -79,6 +79,7 @@ rc = rep(rc, "def caption_layer(text, en=''):\n",
             return stack(parts, [-int(parts[0].shape[0] * 0.40)] * (len(parts) - 1))
         return cached(('capm', text), mkm)
 """)
+rc = rep(rc, "            zh = caption_layer(text)\n            e = text_layer(en, font('Light', 42), (214, 222, 236), shadow=(8, 0.8, 2), whole=True)\n            return stack([zh, e], [-int(zh.shape[0] * 0.22) - int(e.shape[0] * 0.25)])", "            zh = caption_layer(text)\n            e = text_layer(en, font('Light', 42), (214, 222, 236), shadow=(8, 0.8, 2), whole=True)\n            one = caption_layer('字').shape[0]  # v4: gap from a single caption line (two-line captions)\n            return stack([zh, e], [-int(one * 0.22) - int(e.shape[0] * 0.25)])")
 rc += '\n# HOMO-DEUS-V4\n'
 rd = rep(rd, "out = cv2.addWeighted(out, 1.0, q, 0.7 * k, 0)", "out = cv2.addWeighted(out, 1.0, q, p.get('glow', 0.7) * k, 0)")
 rd = rep(rd, "alow = max([window(t, s, e, 0.6, 0.6) for s, e, _, _ in TL['labels']] +",
