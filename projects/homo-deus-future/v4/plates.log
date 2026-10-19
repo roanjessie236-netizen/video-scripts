@@ -1,0 +1,123 @@
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "cosmos", "image": "01_cosmos.jpg", "frames": 18, "interval": [0.02, 6.98], "holes_px": 413933, "holes_in_crop": 399468, "crop": [7, 4, 2936, 1651], "upscale": 1.005}
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "earth", "image": "02_earth.jpg", "frames": 25, "interval": [8.02, 12.93], "holes_px": 0, "holes_in_crop": 0, "crop": [15, 7, 2929, 1646], "upscale": 1.01}
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "citylights", "image": "03_citylights.jpg", "frames": 26, "interval": [16.47, 17.98], "holes_px": 0, "holes_in_crop": 0, "crop": [95, 54, 2847, 1602], "upscale": 1.07}
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "elevator", "image": "04_elevator.jpg", "frames": 26, "interval": [19.02, 23.58], "holes_px": 0, "holes_in_crop": 0, "crop": [250, 16, 2693, 1390], "upscale": 1.205}
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "drones", "image": "05_drones.jpg", "frames": 26, "interval": [24.62, 29.58], "holes_px": 0, "holes_in_crop": 0, "crop": [172, 78, 2777, 1543], "upscale": 1.13}
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "bluecity", "image": "06_bluecity.jpg", "frames": 19, "interval": [31.12, 36.58], "holes_px": 292356, "holes_in_crop": 237952, "crop": [103, 51, 2840, 1591], "upscale": 1.076}
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "ainetwork", "image": "07_ainetwork.jpg", "frames": 26, "interval": [37.62, 42.98], "holes_px": 0, "holes_in_crop": 0, "crop": [132, 74, 2811, 1580], "upscale": 1.099}
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "robotwork", "image": "08_robotwork.jpg", "frames": 26, "interval": [44.02, 48.98], "holes_px": 0, "holes_in_crop": 0, "crop": [43, 107, 2604, 1547], "upscale": 1.15}
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "assistant", "image": "09_assistant.jpg", "frames": 26, "interval": [50.02, 54.98], "holes_px": 0, "holes_in_crop": 0, "crop": [83, 42, 2865, 1606], "upscale": 1.058}
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "datagalaxy", "image": "10_datagalaxy.jpg", "frames": 26, "interval": [56.52, 62.58], "holes_px": 0, "holes_in_crop": 0, "crop": [36, 23, 2906, 1637], "upscale": 1.026}
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "datacenter", "image": "11_datacenter.jpg", "frames": 26, "interval": [63.62, 67.58], "holes_px": 218880, "holes_in_crop": 218880, "crop": [80, 45, 2862, 1609], "upscale": 1.058}
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "metro", "image": "12_metro.jpg", "frames": 26, "interval": [68.62, 71.78], "holes_px": 0, "holes_in_crop": 0, "crop": [19, 95, 2624, 1560], "upscale": 1.13}
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "lab", "image": "13_lab.jpg", "frames": 20, "interval": [72.82, 78.98], "holes_px": 251224, "holes_in_crop": 235836, "crop": [73, 40, 2869, 1613], "upscale": 1.053}
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "dna", "image": "14_dna.jpg", "frames": 26, "interval": [80.02, 85.98], "holes_px": 0, "holes_in_crop": 0, "crop": [110, 62, 2833, 1593], "upscale": 1.081}
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "editing", "image": "15_editing.jpg", "frames": 26, "interval": [87.02, 91.98], "holes_px": 0, "holes_in_crop": 0, "crop": [95, 53, 2847, 1601], "upscale": 1.07}
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "artlife", "image": "16_artlife.jpg", "frames": 26, "interval": [93.02, 97.98], "holes_px": 0, "holes_in_crop": 0, "crop": [95, 84, 2847, 1632], "upscale": 1.07}
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "nanobots", "image": "17_nanobots.jpg", "frames": 26, "interval": [99.02, 104.58], "holes_px": 0, "holes_in_crop": 0, "crop": [14, 8, 2928, 1647], "upscale": 1.01}
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "cellplanets", "image": "18_cellplanets.jpg", "frames": 26, "interval": [105.62, 111.98], "holes_px": 0, "holes_in_crop": 0, "crop": [110, 62, 2833, 1593], "upscale": 1.081}
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "neurons", "image": "19_neurons.jpg", "frames": 26, "interval": [113.02, 120.78], "holes_px": 0, "holes_in_crop": 0, "crop": [75, 40, 2871, 1613], "upscale": 1.053}
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "hands", "image": "20_hands.jpg", "frames": 19, "interval": [121.82, 126.78], "holes_px": 273936, "holes_in_crop": 223384, "crop": [80, 45, 2862, 1609], "upscale": 1.058}
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "bci", "image": "21_bci.jpg", "frames": 26, "interval": [127.82, 131.98], "holes_px": 0, "holes_in_crop": 0, "crop": [95, 49, 2847, 1597], "upscale": 1.07}
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "underground", "image": "24_underground.jpg", "frames": 26, "interval": [133.02, 137.98], "holes_px": 0, "holes_in_crop": 0, "crop": [43, 107, 2604, 1547], "upscale": 1.15}
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "upload", "image": "25_upload.jpg", "frames": 26, "interval": [139.52, 143.78], "holes_px": 0, "holes_in_crop": 0, "crop": [103, 57, 2840, 1597], "upscale": 1.076}
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "ar", "image": "22_ar.jpg", "frames": 26, "interval": [144.82, 148.98], "holes_px": 0, "holes_in_crop": 0, "crop": [80, 45, 2862, 1609], "upscale": 1.058}
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "stationin", "image": "26_stationin.jpg", "frames": 26, "interval": [150.02, 154.18], "holes_px": 0, "holes_in_crop": 0, "crop": [80, 45, 2862, 1609], "upscale": 1.058}
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "mirror", "image": "27_mirror.jpg", "frames": 26, "interval": [155.22, 161.58], "holes_px": 0, "holes_in_crop": 0, "crop": [44, 23, 2899, 1629], "upscale": 1.031}
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "clinic", "image": "36_clinic.jpg", "frames": 26, "interval": [162.62, 168.18], "holes_px": 0, "holes_in_crop": 0, "crop": [135, 48, 2887, 1596], "upscale": 1.07}
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "automation", "image": "37_automation.jpg", "frames": 26, "interval": [169.22, 174.38], "holes_px": 138320, "holes_in_crop": 138320, "crop": [110, 34, 2833, 1565], "upscale": 1.081}
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "worker", "image": "38_worker.jpg", "frames": 26, "interval": [175.42, 180.38], "holes_px": 0, "holes_in_crop": 0, "crop": [172, 35, 2909, 1575], "upscale": 1.076}
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "faces", "image": "39_faces.jpg", "frames": 26, "interval": [181.42, 187.58], "holes_px": 0, "holes_in_crop": 0, "crop": [146, 66, 2795, 1556], "upscale": 1.111}
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "divide", "image": "40_divide.jpg", "frames": 26, "interval": [188.62, 193.98], "holes_px": 0, "holes_in_crop": 0, "crop": [250, 56, 2693, 1430], "upscale": 1.205}
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "crowdwalk", "image": "41_crowdwalk.jpg", "frames": 26, "interval": [195.02, 199.58], "holes_px": 0, "holes_in_crop": 0, "crop": [144, 112, 2749, 1577], "upscale": 1.13}
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "toport", "image": "42_toport.jpg", "frames": 26, "interval": [200.62, 205.58], "holes_px": 0, "holes_in_crop": 0, "crop": [66, 69, 2877, 1650], "upscale": 1.047}
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "sunrise", "image": "28_sunrise.jpg", "frames": 15, "interval": [206.62, 212.18], "holes_px": 522864, "holes_in_crop": 469168, "crop": [80, 45, 2862, 1609], "upscale": 1.058}
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "futureearth", "image": "29_futureearth.jpg", "frames": 26, "interval": [213.22, 218.18], "holes_px": 0, "holes_in_crop": 0, "crop": [110, 62, 2833, 1593], "upscale": 1.081}
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "moonbase", "image": "30_moonbase.jpg", "frames": 26, "interval": [219.22, 221.88], "holes_px": 0, "holes_in_crop": 0, "crop": [117, 107, 2678, 1547], "upscale": 1.15}
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "marscity", "image": "31_marscity.jpg", "frames": 26, "interval": [222.92, 226.68], "holes_px": 0, "holes_in_crop": 0, "crop": [80, 45, 2862, 1609], "upscale": 1.058}
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "starship", "image": "32_starship.jpg", "frames": 25, "interval": [227.72, 234.43], "holes_px": 0, "holes_in_crop": 0, "crop": [66, 37, 2877, 1618], "upscale": 1.047}
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "spaceport", "image": "33_spaceport.jpg", "frames": 14, "interval": [234.52, 241.48], "holes_px": 0, "holes_in_crop": 0, "crop": [66, 36, 2877, 1617], "upscale": 1.047}
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "child", "image": "34_child.jpg", "frames": 26, "interval": [242.52, 257.68], "holes_px": 0, "holes_in_crop": 0, "crop": [14, 7, 2928, 1646], "upscale": 1.01}
+/data/hd/v4/tools/extract_plates.py:142: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(blk, axis=0)
+{"id": "eye", "image": "35_eye.jpg", "frames": 26, "interval": [258.72, 263.28], "holes_px": 0, "holes_in_crop": 0, "crop": [29, 16, 2914, 1638], "upscale": 1.02}
