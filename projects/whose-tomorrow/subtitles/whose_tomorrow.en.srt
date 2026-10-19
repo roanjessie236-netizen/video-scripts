@@ -1,192 +1,216 @@
 1
-00:00:01,450 --> 00:00:05,924
+00:00:01,250 --> 00:00:05,674
 In 1930, the economist John Maynard Keynes made a prediction:
 
 2
-00:00:06,024 --> 00:00:12,140
+00:00:05,774 --> 00:00:11,890
 a century on, machines would do most of the work, and people would need to work just fifteen hours a week.
 
 3
-00:00:12,440 --> 00:00:15,693
+00:00:11,990 --> 00:00:15,193
 The century is nearly up, and machines have indeed grown ever more capable,
 
 4
-00:00:15,793 --> 00:00:18,241
+00:00:15,293 --> 00:00:17,641
 yet we are no more at ease.
 
 5
-00:00:18,281 --> 00:00:23,749
-When machines can produce everything, who should the wealth belong to?
+00:00:17,681 --> 00:00:22,992
+When machines can produce everything, whose tomorrow will it be?
 
 6
-00:00:28,999 --> 00:00:34,528
+00:00:27,842 --> 00:00:33,321
 Looking back over seventy thousand years, every leap humankind made came with a great change in the way we work.
 
 7
-00:00:34,628 --> 00:00:39,754
+00:00:33,421 --> 00:00:38,447
 The Cognitive Revolution taught Sapiens to organise hundreds, even thousands, through shared stories.
 
 8
-00:00:39,854 --> 00:00:42,515
+00:00:38,547 --> 00:00:41,158
 The Agricultural Revolution brought surplus grain,
 
 9
-00:00:42,615 --> 00:00:46,930
+00:00:41,258 --> 00:00:45,523
 and with it granaries, private property, classes and the state.
 
 10
-00:00:47,030 --> 00:00:49,781
+00:00:45,623 --> 00:00:48,324
 The Industrial Revolution replaced muscle with steam,
 
 11
-00:00:49,881 --> 00:00:53,969
+00:00:48,424 --> 00:00:52,412
 and turned millions of peasants into wage workers in factories.
 
 12
-00:00:54,009 --> 00:01:02,297
+00:00:52,452 --> 00:01:00,540
 The hand-mill gives you society with the feudal lord; the steam-mill, society with the industrial capitalist.
 
 13
-00:01:02,337 --> 00:01:06,610
+00:01:00,580 --> 00:01:04,853
 When the forces of production change, the relations of production must sooner or later follow.
 
 14
-00:01:06,810 --> 00:01:11,498
+00:01:04,953 --> 00:01:09,591
 Harari says humans are bound together by the stories they share;
 
 15
-00:01:11,598 --> 00:01:17,321
+00:01:09,691 --> 00:01:15,414
 historical materialism asks further: behind the stories, who does the work, and who owns the wealth?
 
 16
-00:01:19,821 --> 00:01:23,583
+00:01:17,814 --> 00:01:21,476
 Today, a new "steam engine" is roaring to life.
 
 17
-00:01:23,683 --> 00:01:29,000
+00:01:21,576 --> 00:01:26,743
 Like electricity, AI is a general-purpose technology; it will seep into every industry.
 
 18
-00:01:29,100 --> 00:01:33,841
+00:01:26,843 --> 00:01:31,584
 This time, the first to be hit is not the factory, but the office tower.
 
 19
-00:01:34,141 --> 00:01:39,264
-Throughout history, technology has created new jobs even as it destroyed old ones.
+00:01:31,684 --> 00:01:36,269
+The machines of the past replaced our hands, and people could still turn to work of the mind;
 
 20
-00:01:39,364 --> 00:01:47,111
-One forecast says that by 2030 the world will gain 170 million jobs and lose 92 million.
+00:01:36,369 --> 00:01:41,380
+this time, AI replaces the mind, and embodied AI replaces the hands.
 
 21
-00:01:47,311 --> 00:01:50,454
-And even the last refuge, manual work,
+00:01:41,480 --> 00:01:47,640
+Unmanned factories, unmanned farms, unmanned offices: most jobs will be replaced.
 
 22
-00:01:50,554 --> 00:01:56,259
-is narrowing, as embodied AI moves into warehouses, building sites and kitchens.
-
-23
-00:01:58,759 --> 00:02:04,024
+00:01:50,040 --> 00:01:55,205
 Homo Deus fears the twenty-first century may create a vast "useless class".
 
+23
+00:01:55,305 --> 00:01:59,795
+Yet the root of "uselessness" lies not in technology, but in the relations of wage labour:
+
 24
-00:02:04,124 --> 00:02:06,964
-But the real danger is not that people become useless;
+00:01:59,895 --> 00:02:04,282
+those who own no means of production can live only by selling their labour power;
 
 25
-00:02:07,064 --> 00:02:11,192
-it is that wealth piles up like mountains, while most people lose their income.
+00:02:04,382 --> 00:02:09,515
+once production no longer needs their labour, they become "useless".
 
 26
-00:02:11,292 --> 00:02:15,680
-The question shifts from "Will there be work?" to "How will the wealth be shared?"
+00:02:09,615 --> 00:02:13,422
+So wealth piles up like mountains, while most people lose their income —
 
 27
-00:02:15,980 --> 00:02:18,493
-This is the contradiction historical materialism reveals:
+00:02:13,722 --> 00:02:16,886
+and who, then, will buy what the machines produce?
 
 28
-00:02:18,793 --> 00:02:23,181
-the forces of production race ahead, while the relations of production stand still.
+00:02:16,986 --> 00:02:21,374
+The question shifts from "Will there be work?" to "How will the wealth be shared?"
 
 29
-00:02:23,681 --> 00:02:28,333
-Some have tried to slam on the brakes: two hundred years ago, the Luddites smashed the looms;
+00:02:21,574 --> 00:02:24,087
+This is the contradiction historical materialism reveals:
 
 30
-00:02:28,433 --> 00:02:31,851
-the sea bans of the Ming and Qing dynasties once locked the ports.
+00:02:24,387 --> 00:02:28,775
+the forces of production race ahead, while the relations of production stand still.
 
 31
-00:02:31,951 --> 00:02:34,678
-But the flood of technology has never been held back.
+00:02:29,075 --> 00:02:32,962
+Some want to slam on the brakes, but history's brakes have never held:
 
 32
-00:02:34,778 --> 00:02:39,704
-What we can decide is what kind of channels to build, and where the water will flow.
+00:02:33,062 --> 00:02:36,712
+the Luddites smashed the looms, yet the machines only multiplied;
 
 33
-00:02:42,204 --> 00:02:45,639
-Before us lie three tomorrows.
+00:02:36,812 --> 00:02:41,106
+the Ming and Qing sea bans locked the ports, and bought only backwardness and defeat.
 
 34
-00:02:45,739 --> 00:02:49,981
-In the first, computing power and data are concentrated in a few hands.
+00:02:41,206 --> 00:02:42,695
+The flood of technology cannot be held back;
 
 35
-00:02:50,081 --> 00:02:55,126
-21 Lessons warned long ago: whoever owns the data owns the future.
+00:02:42,995 --> 00:02:47,917
+what we can decide is what kind of dykes to build, and where the water will flow.
 
 36
-00:02:55,226 --> 00:03:01,062
-A few become lords of the cloud; everyone else receives charity, not rights.
+00:02:50,317 --> 00:02:53,652
+Before us lie three tomorrows.
 
 37
-00:03:01,462 --> 00:03:07,378
-In the second, a little welfare, a little tax, and the old order is patched up and kept running.
+00:02:53,752 --> 00:02:57,944
+In the first, computing power and data are concentrated in a few hands.
 
 38
-00:03:07,778 --> 00:03:12,465
-In the third, every one of us becomes a co-owner of the machines.
+00:02:58,044 --> 00:03:03,039
+21 Lessons warned long ago: whoever owns the data owns the future.
 
 39
-00:03:12,565 --> 00:03:20,332
-The wealth AI creates flows back to everyone, through public funds, citizens' dividends and shorter working hours.
+00:03:03,139 --> 00:03:08,975
+A few become lords of the cloud; everyone else receives charity, not rights.
 
 40
-00:03:20,432 --> 00:03:26,169
-Work is no longer merely a means of survival; people are free to create, to learn, and to care for one another.
+00:03:09,075 --> 00:03:12,723
+In the second, tax and subsidy patch things up.
 
 41
-00:03:26,209 --> 00:03:34,234
-The free development of each is the condition for the free development of all.
+00:03:13,023 --> 00:03:18,846
+But tax too high and capital balks; too low and the market cannot hold — a dead end.
 
 42
-00:03:35,084 --> 00:03:38,368
-But such a tomorrow will not arrive on its own.
+00:03:19,246 --> 00:03:25,030
+In the third, the means of production belong to all of society, and everyone is a co-owner of the machines.
 
 43
-00:03:38,468 --> 00:03:43,104
-The eight-hour day was won by workers taking to the streets, again and again;
+00:03:25,130 --> 00:03:28,403
+With AI and big data, production is planned —
 
 44
-00:03:43,144 --> 00:03:47,073
-Technology decides what is possible; institutions decide what happens.
+00:03:28,703 --> 00:03:31,752
+for human need, not for profit.
 
 45
-00:03:47,113 --> 00:03:50,858
-And institutions are chosen by people, and won by people.
+00:03:31,792 --> 00:03:37,382
+Basic needs, according to need; scarce resources, according to contribution.
 
 46
-00:03:51,058 --> 00:03:54,649
-As Marx wrote, people make their own history.
+00:03:37,422 --> 00:03:43,061
+Work is no longer merely a means of survival; people are free to create, to learn, and to care for one another.
 
 47
-00:03:55,099 --> 00:03:57,768
-So, whose tomorrow is it?
+00:03:43,101 --> 00:03:51,126
+The free development of each is the condition for the free development of all.
 
 48
-00:03:57,868 --> 00:04:02,246
+00:03:51,776 --> 00:03:55,010
+But such a tomorrow will not arrive on its own.
+
+49
+00:03:55,110 --> 00:03:59,646
+The eight-hour day was won by workers taking to the streets, again and again;
+
+50
+00:03:59,686 --> 00:04:03,515
+Technology decides what is possible; institutions decide what happens.
+
+51
+00:04:03,555 --> 00:04:07,300
+And institutions are chosen by people, and won by people.
+
+52
+00:04:07,400 --> 00:04:10,991
+As Marx wrote, people make their own history.
+
+53
+00:04:11,341 --> 00:04:13,910
+So, whose tomorrow is it?
+
+54
+00:04:14,010 --> 00:04:18,388
 It belongs to everyone who strives for it, together.
 

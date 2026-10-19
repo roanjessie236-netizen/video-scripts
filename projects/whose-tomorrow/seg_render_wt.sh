@@ -4,7 +4,7 @@
 #        bash seg_render_wt.sh mux [OUTNAME.mp4]  # concat all segments + mux out/mix.mp4 audio
 # Segment boundaries are in frames (24 fps) so segments can be re-rendered independently when an image changes.
 cd "$(dirname "$0")/engine"
-B=(0 957 1311 2010 2100 2667 2814 3450 3565 3834 3981 5136 5246)
+B=(0 762 1164 1778 2256 2926 3580 4172 4640 5220 5847)
 END=$(python3 -c "import json;print(round(json.load(open('shotlist.json'))['duration']*24))"); B+=($END)
 SEG=../out/seg; mkdir -p $SEG; PRESET=${PRESET:-medium}; CRF=${CRF:-19}
 NS=$(( ${#B[@]} - 1 ))

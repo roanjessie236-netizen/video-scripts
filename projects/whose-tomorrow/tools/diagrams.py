@@ -69,14 +69,19 @@ def tiers(lit):
             text(d, (cx - 200 * S, (yb + yt) / 2), '决定', F('SemiBold', 40), GOLDT + (255,), 'rm')
             arrow(d, cx + 160 * S, yt + 6 * S, cx + 160 * S, yb - 6 * S, DIM + (255,), 3, 22)
             text(d, (cx + 200 * S, (yb + yt) / 2), '反作用', F('Regular', 36), (176, 160, 136, 255), 'lm')
-    if all(lit):   # bracket: economic base
-        top = y0 + (bh + gap); bot = y0 + 2 * (bh + gap) + bh; x = cx + bw / 2 + 60 * S
-        d.line([(x, top), (x + 30 * S, top), (x + 30 * S, bot), (x, bot)], fill=GOLD + (200,), width=3 * S)
-        text(d, (x + 70 * S, (top + bot) / 2 - 30 * S), '经济基础', F('SemiBold', 44), GOLDT + (230,), 'lm')
-        text(d, (x + 72 * S, (top + bot) / 2 + 34 * S), 'ECONOMIC BASE', F('Medium', 24), WARM + (200,), 'lm', tracking=4)
+    if all(lit):   # bracket: economic base = the SUM OF THE RELATIONS OF PRODUCTION only (Marx, Preface 1859)
+        top = y0 + (bh + gap) - 6 * S; bot = top + bh + 12 * S; x = cx + bw / 2 + 50 * S; ym = (top + bot) / 2
+        d.line([(x, top), (x + 30 * S, top), (x + 30 * S, bot), (x, bot)], fill=GOLD + (220,), width=3 * S)
+        d.line([(x + 30 * S, ym), (x + 52 * S, ym)], fill=GOLD + (220,), width=3 * S)
+        text(d, (x + 76 * S, ym - 52 * S), '经济基础', F('Bold', 50), GOLDT + (240,), 'lm')
+        text(d, (x + 78 * S, ym + 8 * S), '＝ 生产关系的总和', F('Regular', 34), WARM + (230,), 'lm')
+        text(d, (x + 78 * S, ym + 58 * S), 'ECONOMIC BASE', F('Medium', 22), WARM + (190,), 'lm', tracking=4)
+        text(d, (W / 2, 168 * S), '「这些生产关系的总和构成社会的经济结构，即有法律的和政治的上层建筑竖立其上的现实基础。」',
+             F('Regular', 36), WARM + (215,), 'mm')
+        text(d, (W / 2, 232 * S), '马克思 ·《〈政治经济学批判〉序言》· 1859', F('Medium', 28), (190, 172, 140, 210), 'mm', tracking=3)
     glow(im, L, 14, 0.55)
     return im
-def conflict():
+def conflict(full=True):
     im = background(); L = Image.new('RGBA', (W, H)); d = ImageDraw.Draw(L)
     x0, x1 = 760 * S, 2480 * S
     text(d, (W / 2, 300 * S), '矛  盾', F('Bold', 84), GOLDT + (255,), 'mm', tracking=30)
@@ -90,6 +95,9 @@ def conflict():
         d.ellipse([x - 16 * S, y1 - 16 * S, x + 16 * S, y1 + 16 * S], fill=GOLDT + (255,))
         text(d, (x, y1 - 92 * S), lab, F('SemiBold', 46), WARM + (255,), 'mm')
         text(d, (x, y1 - 44 * S), yr, F('Regular', 28), (200, 184, 156, 255), 'mm')
+    if not full:
+        glow(im, L, 14, 0.6)
+        return im
     text(d, (x0 - 60 * S, y2), '生产关系', F('Bold', 74), GOLDT + (255,), 'rm', tracking=8)
     text(d, (x0 - 60 * S, y2 + 74 * S), 'RELATIONS OF PRODUCTION', F('Medium', 22), WARM + (200,), 'rm', tracking=4)
     xe = x0 + (x1 - x0) * 0.24
@@ -108,5 +116,6 @@ def save(im, name):
     im.convert('RGB').resize((W // S, H // S), Image.LANCZOS).save(os.path.join(OUT, name), quality=95, subsampling=0)
 save(tiers([False, False, True]), 'dg_hm_a.jpg')
 save(tiers([True, True, True]), 'dg_hm_b.jpg')
+save(conflict(False), 'dg_conflict_a.jpg')
 save(conflict(), 'dg_conflict.jpg')
 print('ok')

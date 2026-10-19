@@ -1,240 +1,270 @@
 1
-00:00:01,450 --> 00:00:05,924
+00:00:01,250 --> 00:00:05,674
 1930年，经济学家凯恩斯写下一个预言：
 In 1930, the economist John Maynard Keynes made a prediction:
 
 2
-00:00:06,024 --> 00:00:12,140
+00:00:05,774 --> 00:00:11,890
 百年之后，机器将承担大部分工作，人们每周只需工作十五小时。
 a century on, machines would do most of the work, and people would need to work just fifteen hours a week.
 
 3
-00:00:12,440 --> 00:00:15,693
+00:00:11,990 --> 00:00:15,193
 一百年快到了，机器越来越能干，
 The century is nearly up, and machines have indeed grown ever more capable,
 
 4
-00:00:15,793 --> 00:00:18,241
+00:00:15,293 --> 00:00:17,641
 我们却并没有因此变得轻松。
 yet we are no more at ease.
 
 5
-00:00:18,281 --> 00:00:23,749
-当机器能生产一切，财富该属于谁？
-When machines can produce everything, who should the wealth belong to?
+00:00:17,681 --> 00:00:22,992
+当机器能生产一切，明天属于谁？
+When machines can produce everything, whose tomorrow will it be?
 
 6
-00:00:28,999 --> 00:00:34,528
+00:00:27,842 --> 00:00:33,321
 回望七万年，人类的每一次飞跃，都伴随着劳动方式的巨变。
 Looking back over seventy thousand years, every leap humankind made came with a great change in the way we work.
 
 7
-00:00:34,628 --> 00:00:39,754
+00:00:33,421 --> 00:00:38,447
 认知革命，让智人学会用故事组织大规模的协作。
 The Cognitive Revolution taught Sapiens to organise hundreds, even thousands, through shared stories.
 
 8
-00:00:39,854 --> 00:00:42,515
+00:00:38,547 --> 00:00:41,158
 农业革命带来了剩余的粮食，
 The Agricultural Revolution brought surplus grain,
 
 9
-00:00:42,615 --> 00:00:46,930
+00:00:41,258 --> 00:00:45,523
 也带来了粮仓、私有财产、阶级和国家。
 and with it granaries, private property, classes and the state.
 
 10
-00:00:47,030 --> 00:00:49,781
+00:00:45,623 --> 00:00:48,324
 工业革命用蒸汽取代了肌肉，
 The Industrial Revolution replaced muscle with steam,
 
 11
-00:00:49,881 --> 00:00:53,969
+00:00:48,424 --> 00:00:52,412
 也把千百万农民变成了工厂里的雇佣工人。
 and turned millions of peasants into wage workers in factories.
 
 12
-00:00:54,009 --> 00:01:02,297
+00:00:52,452 --> 00:01:00,540
 手推磨产生的是封建主的社会，蒸汽磨产生的是工业资本家的社会。
 The hand-mill gives you society with the feudal lord; the steam-mill, society with the industrial capitalist.
 
 13
-00:01:02,337 --> 00:01:06,610
+00:01:00,580 --> 00:01:04,853
 生产力变了，生产关系迟早也要跟着改变。
 When the forces of production change, the relations of production must sooner or later follow.
 
 14
-00:01:06,810 --> 00:01:11,498
+00:01:04,953 --> 00:01:09,591
 赫拉利说，人类靠共同相信的故事团结在一起；
 Harari says humans are bound together by the stories they share;
 
 15
-00:01:11,598 --> 00:01:17,321
+00:01:09,691 --> 00:01:15,414
 历史唯物主义还要追问：故事的背后，是谁在劳动，谁在占有？
 historical materialism asks further: behind the stories, who does the work, and who owns the wealth?
 
 16
-00:01:19,821 --> 00:01:23,583
+00:01:17,814 --> 00:01:21,476
 今天，一台新的“蒸汽机”正在轰鸣。
 Today, a new "steam engine" is roaring to life.
 
 17
-00:01:23,683 --> 00:01:29,000
+00:01:21,576 --> 00:01:26,743
 人工智能像电力一样，是一种通用技术，会渗入每个行业。
 Like electricity, AI is a general-purpose technology; it will seep into every industry.
 
 18
-00:01:29,100 --> 00:01:33,841
+00:01:26,843 --> 00:01:31,584
 这一次，最先被冲击的不是工厂，而是写字楼。
 This time, the first to be hit is not the factory, but the office tower.
 
 19
-00:01:34,141 --> 00:01:39,264
-历史上，技术总在消灭旧岗位的同时，创造出新岗位。
-Throughout history, technology has created new jobs even as it destroyed old ones.
+00:01:31,684 --> 00:01:36,269
+过去的机器替代双手，人还能转向用头脑的工作；
+The machines of the past replaced our hands, and people could still turn to work of the mind;
 
 20
-00:01:39,364 --> 00:01:47,111
-预测显示，到2030年，全球将新增1.7亿个岗位，减少9200万个。
-One forecast says that by 2030 the world will gain 170 million jobs and lose 92 million.
+00:01:36,369 --> 00:01:41,380
+这一次，人工智能替代头脑，具身智能替代双手。
+this time, AI replaces the mind, and embodied AI replaces the hands.
 
 21
-00:01:47,311 --> 00:01:50,454
-而就连体力劳动这条最后的退路，
-And even the last refuge, manual work,
+00:01:41,480 --> 00:01:47,640
+无人工厂、无人农场、无人办公室——大部分岗位都将被取代。
+Unmanned factories, unmanned farms, unmanned offices: most jobs will be replaced.
 
 22
-00:01:50,554 --> 00:01:56,259
-也随着具身智能走进仓库、工地和厨房，正在慢慢收窄。
-is narrowing, as embodied AI moves into warehouses, building sites and kitchens.
-
-23
-00:01:58,759 --> 00:02:04,024
+00:01:50,040 --> 00:01:55,205
 《未来简史》担心，21世纪会出现一个庞大的“无用阶级”。
 Homo Deus fears the twenty-first century may create a vast "useless class".
 
+23
+00:01:55,305 --> 00:01:59,795
+可“无用”的根源不在技术，而在雇佣劳动的生产关系：
+Yet the root of "uselessness" lies not in technology, but in the relations of wage labour:
+
 24
-00:02:04,124 --> 00:02:06,964
-可真正的危险，不是人没用了，
-But the real danger is not that people become useless;
+00:01:59,895 --> 00:02:04,282
+不占有生产资料的人，只能靠出卖劳动力为生；
+those who own no means of production can live only by selling their labour power;
 
 25
-00:02:07,064 --> 00:02:11,192
-而是财富堆积如山，多数人却失去了收入。
-it is that wealth piles up like mountains, while most people lose their income.
+00:02:04,382 --> 00:02:09,515
+生产领域一旦不再需要他们的劳动，他们就成了“无用”的人。
+once production no longer needs their labour, they become "useless".
 
 26
-00:02:11,292 --> 00:02:15,680
+00:02:09,615 --> 00:02:13,422
+于是财富堆积如山，多数人却没了收入——
+So wealth piles up like mountains, while most people lose their income —
+
+27
+00:02:13,722 --> 00:02:16,886
+机器造出的商品，又卖给谁？
+and who, then, will buy what the machines produce?
+
+28
+00:02:16,986 --> 00:02:21,374
 问题，从“还有没有工作”，变成了“财富如何分配”。
 The question shifts from "Will there be work?" to "How will the wealth be shared?"
 
-27
-00:02:15,980 --> 00:02:18,493
+29
+00:02:21,574 --> 00:02:24,087
 这正是历史唯物主义揭示的矛盾：
 This is the contradiction historical materialism reveals:
 
-28
-00:02:18,793 --> 00:02:23,181
+30
+00:02:24,387 --> 00:02:28,775
 生产力一路飞奔，生产关系却原地踏步。
 the forces of production race ahead, while the relations of production stand still.
 
-29
-00:02:23,681 --> 00:02:28,333
-有人想踩刹车：两百年前，卢德派砸毁了织布机；
-Some have tried to slam on the brakes: two hundred years ago, the Luddites smashed the looms;
-
-30
-00:02:28,433 --> 00:02:31,851
-明清两代的海禁，也曾锁住港口。
-the sea bans of the Ming and Qing dynasties once locked the ports.
-
 31
-00:02:31,951 --> 00:02:34,678
-可技术的洪流，从来挡不住。
-But the flood of technology has never been held back.
+00:02:29,075 --> 00:02:32,962
+有人想踩刹车，可历史的刹车从来踩不住：
+Some want to slam on the brakes, but history's brakes have never held:
 
 32
-00:02:34,778 --> 00:02:39,704
-我们能决定的，是修建怎样的堤坝，让水流向哪里。
-What we can decide is what kind of channels to build, and where the water will flow.
+00:02:33,062 --> 00:02:36,712
+卢德派砸毁了织布机，机器却越来越多；
+the Luddites smashed the looms, yet the machines only multiplied;
 
 33
-00:02:42,204 --> 00:02:45,639
+00:02:36,812 --> 00:02:41,106
+明清海禁锁住了港口，换来的却是落后挨打。
+the Ming and Qing sea bans locked the ports, and bought only backwardness and defeat.
+
+34
+00:02:41,206 --> 00:02:42,695
+技术的洪流挡不住；
+The flood of technology cannot be held back;
+
+35
+00:02:42,995 --> 00:02:47,917
+我们能决定的，是修建怎样的堤坝，让水流向哪里。
+what we can decide is what kind of dykes to build, and where the water will flow.
+
+36
+00:02:50,317 --> 00:02:53,652
 摆在我们面前的，是三种明天。
 Before us lie three tomorrows.
 
-34
-00:02:45,739 --> 00:02:49,981
+37
+00:02:53,752 --> 00:02:57,944
 第一种：算力和数据，集中在少数人手中。
 In the first, computing power and data are concentrated in a few hands.
 
-35
-00:02:50,081 --> 00:02:55,126
+38
+00:02:58,044 --> 00:03:03,039
 《今日简史》早就警告过：谁拥有数据，谁就拥有未来。
 21 Lessons warned long ago: whoever owns the data owns the future.
 
-36
-00:02:55,226 --> 00:03:01,062
+39
+00:03:03,139 --> 00:03:08,975
 少数人成了云端的领主，其余的人得到的是施舍，而不是权利。
 A few become lords of the cloud; everyone else receives charity, not rights.
 
-37
-00:03:01,462 --> 00:03:07,378
-第二种：发点补贴，征点税，让旧秩序修修补补地维持下去。
-In the second, a little welfare, a little tax, and the old order is patched up and kept running.
-
-38
-00:03:07,778 --> 00:03:12,465
-第三种：让每一个人，都成为机器的共同主人。
-In the third, every one of us becomes a co-owner of the machines.
-
-39
-00:03:12,565 --> 00:03:20,332
-AI创造的财富，通过公共基金、全民分红和更短的工时，回到每个人手里。
-The wealth AI creates flows back to everyone, through public funds, citizens' dividends and shorter working hours.
-
 40
-00:03:20,432 --> 00:03:26,169
+00:03:09,075 --> 00:03:12,723
+第二种：征税、发补贴，修修补补。
+In the second, tax and subsidy patch things up.
+
+41
+00:03:13,023 --> 00:03:18,846
+可税高了资本不干，税低了市场撑不住——走不通。
+But tax too high and capital balks; too low and the market cannot hold — a dead end.
+
+42
+00:03:19,246 --> 00:03:25,030
+第三种：生产资料归全社会所有，人人都是机器的共同主人。
+In the third, the means of production belong to all of society, and everyone is a co-owner of the machines.
+
+43
+00:03:25,130 --> 00:03:28,403
+借助人工智能和大数据，有计划地生产——
+With AI and big data, production is planned —
+
+44
+00:03:28,703 --> 00:03:31,752
+为了人的需要，而不是为了利润。
+for human need, not for profit.
+
+45
+00:03:31,792 --> 00:03:37,382
+基本需要，按需分配；稀缺资源，按贡献分配。
+Basic needs, according to need; scarce resources, according to contribution.
+
+46
+00:03:37,422 --> 00:03:43,061
 劳动不再只是谋生的手段，人们可以去创造、学习、照顾彼此。
 Work is no longer merely a means of survival; people are free to create, to learn, and to care for one another.
 
-41
-00:03:26,209 --> 00:03:34,234
+47
+00:03:43,101 --> 00:03:51,126
 每个人的自由发展，是一切人的自由发展的条件。
 The free development of each is the condition for the free development of all.
 
-42
-00:03:35,084 --> 00:03:38,368
+48
+00:03:51,776 --> 00:03:55,010
 但这样的明天，不会自动到来。
 But such a tomorrow will not arrive on its own.
 
-43
-00:03:38,468 --> 00:03:43,104
+49
+00:03:55,110 --> 00:03:59,646
 八小时工作制，是工人们一次次走上街头争取来的；
 The eight-hour day was won by workers taking to the streets, again and again;
 
-44
-00:03:43,144 --> 00:03:47,073
+50
+00:03:59,686 --> 00:04:03,515
 技术决定可能性，制度决定结果。
 Technology decides what is possible; institutions decide what happens.
 
-45
-00:03:47,113 --> 00:03:50,858
+51
+00:04:03,555 --> 00:04:07,300
 而制度，由人选择，靠人争取。
 And institutions are chosen by people, and won by people.
 
-46
-00:03:51,058 --> 00:03:54,649
+52
+00:04:07,400 --> 00:04:10,991
 马克思说：人们自己创造自己的历史。
 As Marx wrote, people make their own history.
 
-47
-00:03:55,099 --> 00:03:57,768
+53
+00:04:11,341 --> 00:04:13,910
 明天属于谁？
 So, whose tomorrow is it?
 
-48
-00:03:57,868 --> 00:04:02,246
+54
+00:04:14,010 --> 00:04:18,388
 属于每一个为它共同奋斗的人。
 It belongs to everyone who strives for it, together.
 

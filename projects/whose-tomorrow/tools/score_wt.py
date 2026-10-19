@@ -22,6 +22,12 @@ def w(i, word):
 
 
 def chain(points, end):
+    keep, nxt = [], end          # v2: drop chord points squeezed out by a tighter edit (keep the later harmony)
+    for s_, c_ in reversed(points):
+        if s_ < nxt - 0.3:
+            keep.append((s_, c_))
+            nxt = s_
+    points = keep[::-1]
     out = []
     for k, (s, c) in enumerate(points):
         e = points[k + 1][0] if k + 1 < len(points) else end
@@ -215,17 +221,18 @@ impact(C3, 0.35, notes=(33, 45))
 place(ensemble('saw', 33, T_CO - C3, p=1.4, voices=4, cents=8, vib=0.0, att=2.5, rel=1.5, width=0.9), C3, 0.08,
       hall=0.1, cath=0.5)
 ambience(C3, T_CO - C3, 0.06, fin=2.0, fout=1.5, wind=0.3, shimmer=0.8)
-P3 = chain([(C3, 'Am'), (T_W2, 'Fmaj7'), (T_LO, 'C/E'), (T_PX, 'Dm'), (T_PX + 2.4, 'Am'), (T_DV, 'F'),
+P3 = chain([(C3, 'Am'), (T_W2, 'Fmaj7'), (T_LO, 'C/E'), (SH['v2_scaffold'], 'Am'), (SH['v2_lockedgate'], 'F'),
+            (SH['v2_lockedgate'] + 2.6, 'G'), (T_PX, 'Dm'), (T_PX + 2.4, 'Am'), (T_DV, 'F'),
             (T_DV + 2.5, 'Esus')], T_CO)
 pad_prog(P3, [(C3, 0.04), (T_CO, 0.06)], p=2.0, att=2.0, rel=2.0, hall=0.4, cath=0.35)
 piano_walk(P3, 2 * BEAT, 0.065, keep=[1, 0, 1, 1, 0, 1, 0, 1])
 choir_prog(P3, [(T_PX, 0.03), (T_CO, 0.05)], att=2.0, rel=2.0, vowels=('u',), t_lo=T_PX - 0.1)
-piano(w(25, '堆积如山'), 81, 0.045, pan=0.3)
-piano(w(25, '收入'), 76, 0.05, pan=0.2)
+piano(w(26, '堆积如山'), 81, 0.045, pan=0.3)
+piano(w(26, '收入'), 76, 0.05, pan=0.2)
 for t in np.arange(T_DV, T_CO, 2 * BEAT):
     place(HEART, t, ramp(t, [(T_DV, 0.06), (T_CO, 0.1)]), hall=0.1, cath=0.2)
 # 矛盾: forces race ahead (rising arp), relations stand still (one stuck low note)
-T_F, T_R = w(27, '生产力'), w(27, '生产关系')
+T_F, T_R = w(28, '生产力'), w(28, '生产关系')
 T_LU = SH['luddites']
 PC = chain([(T_CO, 'Am'), (T_F, 'F'), (T_F + 1.0, 'G'), (T_R, 'Esus'), (T_R + 1.4, 'E')], T_LU)
 impact(T_CO + 0.3, 0.3)
@@ -272,7 +279,7 @@ T_AS, T_HV, T_WS, T_GC = SH['assembly'], SH['harvest'], SH['workshop'], SH['gard
 impact(C4, 0.4, notes=(33, 45))
 pad(C4, T_CC - C4, 'Am9', gain=0.07, p=2.6, att=1.2, rel=0.8, hall=0.4, cath=0.4)
 for k, m in enumerate([76, 81, 84]):                           # three roads: three chimes
-    celesta(w(32, '三') + k * 0.42, m, 0.04, pan=-0.5 + 0.5 * k)
+    celesta(w(33, '三') + k * 0.42, m, 0.04, pan=-0.5 + 0.5 * k)
 ambience(C4, T_CC - C4 + 1.0, 0.07, fin=1.5, fout=1.0, wind=0.4, shimmer=1.2)
 # first tomorrow: cloud lords (cold, digital)
 P4a = chain([(T_CC, 'Am9'), (T_CC + 4 * BEAT, 'Fmaj7'), (T_DS, 'Dm'), (T_DS + 4 * BEAT, 'Am9'), (T_CS, 'F'),
@@ -290,7 +297,7 @@ for i, m in enumerate([88, 84, 81, 79, 76, 74, 72, 69]):
     celesta(T_DS + 0.1 + i * 0.14, m, 0.035, pan=0.7 - 0.2 * i)
 for t in np.arange(T_CS, T_QU - 0.2, BEAT):                      # identical screens: mechanical ticks
     place(METAL, t, 0.01, pan=0.4, hall=0.1)
-place(BOOM, w(35, '施舍'), 0.15, hall=0.1, cath=0.3)
+place(BOOM, w(36, '施舍'), 0.15, hall=0.1, cath=0.3)
 # second tomorrow: patching the old order (thin, grey)
 PQ = chain([(T_QU, 'Dm'), (T_QU + 3.0, 'Am')], T_AS)
 pad_prog(PQ, [(T_QU, 0.04), (T_AS, 0.035)], p=2.0, att=0.8, rel=1.0, hall=0.4, cath=0.35)
@@ -318,15 +325,15 @@ for t in np.arange(T_HV, T_GC - 0.1, 2 * BEAT):
 lead(T_WS + 0.2, [(76, 2), (79, 2), (81, 3), (79, 1), (76, 2), (74, 2), (72, 4)], BEAT, 0.09, kind='saw', pan=0.2)
 # the Manifesto line: full choir + brass, cadence to C
 T_MF = MK['manifesto']
-PMF = chain([(T_GC, 'Fmaj7'), (T_MF + 1.9, 'G'), (T_MF + 3.9, 'Am'), (T_MF + 5.4, 'F'), (LL[40][1], 'C')], SIL + 0.6)
+PMF = chain([(T_GC, 'Fmaj7'), (T_MF + 1.9, 'G'), (T_MF + 3.9, 'Am'), (T_MF + 5.4, 'F'), (LL[42][1], 'C')], SIL + 0.6)
 place(riser(1.2, 160.0, 2.4), T_GC - 1.0, 0.1, hall=0.2)
 impact(T_MF - 0.2, 0.7, with_braam=True, notes=(29, 41, 48))
-pad_prog(PMF, [(T_GC, 0.14), (LL[40][1], 0.15), (SIL, 0.1)], p=3.8, att=0.4, rel=2.0, hall=0.4, cath=0.3)
-choir_prog(PMF, [(T_GC, 0.09), (LL[40][1], 0.13)], att=0.8, rel=2.2)
-choir_prog(PMF, [(T_MF + 3.9, 0.05), (LL[40][1], 0.07)], att=0.8, rel=2.2, up=12, t_lo=T_MF + 3.8)
+pad_prog(PMF, [(T_GC, 0.14), (LL[42][1], 0.15), (SIL, 0.1)], p=3.8, att=0.4, rel=2.0, hall=0.4, cath=0.3)
+choir_prog(PMF, [(T_GC, 0.09), (LL[42][1], 0.13)], att=0.8, rel=2.2)
+choir_prog(PMF, [(T_MF + 3.9, 0.05), (LL[42][1], 0.07)], att=0.8, rel=2.2, up=12, t_lo=T_MF + 3.8)
 brass_prog(PMF, 0.1)
 timp_prog(PMF, 0.25)
-zheng_arp(PMF, BEAT / 2, [(T_GC, 0.05), (LL[40][1], 0.04)], T_GC, LL[40][1])
+zheng_arp(PMF, BEAT / 2, [(T_GC, 0.05), (LL[42][1], 0.04)], T_GC, LL[42][1])
 lead(T_MF + 0.1, [(79, 3), (81, 3), (84, 4), (83, 2), (81, 2), (79, 6)], BEAT, 0.09, kind='saw', pan=0.15)
 dip(SIL, MK['march'] - 0.3, 0.35, fade=1.2)                    # near-silence: 「但这样的明天，不会自动到来」
 
@@ -338,7 +345,7 @@ place(ensemble('saw', 33, T_MA - SIL + 1.0, p=1.2, voices=4, cents=8, vib=0.0, a
       hall=0.1, cath=0.5)
 for t in np.arange(SIL + 0.5, T_MA, 2 * BEAT):
     place(HEART, t, 0.09, hall=0.1, cath=0.2)
-celesta(w(41, '自动'), 76, 0.03, pan=0.2)
+celesta(w(43, '自动'), 76, 0.03, pan=0.2)
 # 1886: march (frame-drum 'snare' + taiko on the downbeat), rising
 PE1 = chain([(T_MA, 'Am'), (T_MA + 4 * BEAT, 'F'), (T_HA2, 'C'), (T_HA2 + 4 * BEAT, 'G'), (T_BR, 'Am'),
              (T_BR + 4 * BEAT, 'F'), (T_CW, 'C'), (T_TP, 'Gsus'), (T_TP + 0.5, 'G')], T_CH)
@@ -359,7 +366,7 @@ timp_prog(PE1, 0.22)
 spic(PE1, BEAT / 2, [(T_HA2, 0.04), (T_CH, 0.07)], [0, 1, 2, 3], T_HA2, T_CH - 0.2)
 str_line(T_MA, [(69, 2.5), (72, 2.5), (76, T_HA2 - T_MA - 5.0 + 0.0)], 0.05)
 impact(T_HA2 + 0.3, 0.4)                                        # 技术决定可能性 / 制度决定结果
-timp(w(43, '结果'), 36, 0.3)
+timp(w(45, '结果'), 36, 0.3)
 lead(T_BR + 0.1, [(76, 2), (79, 2), (81, 2), (84, 2), (83, 2), (81, 2), (79, 4)], BEAT, 0.08, kind='saw', pan=0.2)
 timp_roll(T_TP, T_CH - T_TP, 43, 0.1, 0.5)
 place(riser(T_CH - T_TP + 0.3, 160.0, 2.6), T_TP - 0.3, 0.14, hall=0.2)
@@ -367,10 +374,10 @@ place(riser(T_CH - T_TP + 0.3, 160.0, 2.6), T_TP - 0.3, 0.14, hall=0.2)
 pad(T_CH, T_SU - T_CH + 0.4, 'Fmaj7', gain=0.05, p=2.0, att=0.6, rel=1.4, hall=0.4, cath=0.4)
 choir(T_CH, [57, 64, 69], T_SU - T_CH, 0.035, att=1.0, rel=1.2, vowels=('o',))
 for k, m in enumerate([72, 76, 79]):
-    piano(LL[46][0] + 0.6 + k * 0.45, m, 0.07, pan=-0.1 + 0.1 * k)
-celesta(w(46, '谁'), 88, 0.04, pan=0.3)
+    piano(LL[48][0] + 0.6 + k * 0.45, m, 0.07, pan=-0.1 + 0.1 * k)
+celesta(w(48, '谁'), 88, 0.04, pan=0.3)
 # 「属于每一个为它共同奋斗的人。」 final resolution -> end card
-PF = chain([(T_SU, 'C'), (w(47, '共同'), 'G'), (LL[47][1] + 0.2, 'Am'), (LL[47][1] + 1.6, 'F'), (T_EN + 1.4, 'Cadd9')],
+PF = chain([(T_SU, 'C'), (w(49, '共同'), 'G'), (LL[49][1] + 0.2, 'Am'), (LL[49][1] + 1.6, 'F'), (T_EN + 1.4, 'Cadd9')],
            MK['end'])
 impact(T_SU + 0.3, 0.8, with_braam=True, notes=(36, 48, 55))
 pad_prog(PF, [(T_SU, 0.15), (T_EN + 1.4, 0.12), (MK['end'], 0.06)], p=4.0, att=0.3, rel=3.0, hall=0.4, cath=0.35)
