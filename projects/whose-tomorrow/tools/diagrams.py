@@ -66,7 +66,7 @@ def tiers(lit):
         if k < 2 and lit[k] and lit[k + 1]:
             yb, yt = top + bh + gap - 14 * S, top + bh + 14 * S      # up arrow (determines) / down (reacts back)
             arrow(d, cx - 160 * S, yb, cx - 160 * S, yt, GOLDT + (255,), 6, 30)
-            text(d, (cx - 200 * S, (yb + yt) / 2), '决定', F('SemiBold', 40), GOLDT + (255,), 'rm')
+            text(d, (cx - 200 * S, (yb + yt) / 2), '基础' if k == 0 else '决定', F('SemiBold', 40), GOLDT + (255,), 'rm')  # v3
             arrow(d, cx + 160 * S, yt + 6 * S, cx + 160 * S, yb - 6 * S, DIM + (255,), 3, 22)
             text(d, (cx + 200 * S, (yb + yt) / 2), '反作用', F('Regular', 36), (176, 160, 136, 255), 'lm')
     if all(lit):   # bracket: economic base = the SUM OF THE RELATIONS OF PRODUCTION only (Marx, Preface 1859)

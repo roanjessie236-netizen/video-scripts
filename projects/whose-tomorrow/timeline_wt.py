@@ -21,7 +21,7 @@ GAP = {1: 1.4, 2: 0.35, 3: 0.6, 4: 0.25, 5: 0.7,
        16: 2.9, 17: 0.4, 18: 0.45, 19: 0.6, 20: 0.3, 21: 0.4,                                       # 第二章
        22: 2.9, 23: 0.5, 24: 0.3, 25: 0.35, 26: 0.5, 27: 0.6, 28: 0.7, 29: 0.8, 30: 0.3, 31: 0.3,   # 第三章
        32: 0.5,
-       33: 2.9, 34: 0.5, 35: 0.45, 36: 0.35, 37: 0.6, 38: 0.9, 39: 0.45, 40: 0.7, 41: 0.6, 42: 0.8,  # 第四章
+       33: 2.9, 34: 0.5, 35: 0.6, 36: 0.45, 37: 0.35, 38: 0.9, 39: 0.45, 40: 0.7, 41: 0.6, 42: 0.8,  # 第四章
        43: 1.8, 44: 0.45, 45: 0.7, 46: 0.5, 47: 0.6, 48: 1.3, 49: 0.7}                               # 尾声
 ST, cur = {}, 0.0
 for i in sorted(LN):
@@ -231,23 +231,22 @@ shot('dujiangyan', '26_dujiangyan.jpg', w(32, '我们') - 0.35, pull(1.05, 0.03)
 # ---- 第四章 三种明天
 shot('threeroads', '27_threeroads.jpg', st(33) - 2.6, push(1.03, 0.022, cy=.52), grade='dawn', trans='fade', tdur=1.0,
      fx={'fog': dict(LOWFOG, a=0.22)}, desc='One road splitting into three, towards three cities')
-shot('cloudcastle', '28_cloudcastle.jpg', st(34) - 0.06, crane(1.1, 0.014, 0.01), grade='cyan', ease='lin',
-     desc='Fortress city of servers above the clouds')
-shot('datalords', '65_datalords.jpg', W_(34, '少数'), push(1.06, 0.04), grade='void', desc='A few figures in a penthouse over a sea of data')
-shot('dataweb', '66_dataweb.jpg', st(35) - 0.2, push(1.03, 0.03), grade='cyan', trans='glitch', tdur=0.3,
-     fx={'bloom': 0.2, 'par': 0.5}, desc='Everyone a node in a planetary data web')
-shot('cloudserfs', '29_cloudserfs.jpg', st(36) - 0.06, push(1.05, 0.03), grade='void',
-     desc='Endless hall of people labelling data under cold logos')
-shot('queue', '30_queue.jpg', W_(36, '施舍'), pan(1.1, 0.012), grade='ash', ease='lin', fx={'rain': {'a': 0.18}},
-     desc='Rainy queue at an automated welfare kiosk')
-shot('patcheddam', '67_patcheddam.jpg', st(37) - 0.06, push(1.05, 0.03), grade='steel', fx={'fog': dict(STEAMF, a=0.16)},
+# v3: tomorrow #1 = patching the old order (tax & subsidy), #2 = cloud lords
+shot('patcheddam', '67_patcheddam.jpg', st(34) - 0.06, push(1.05, 0.03), grade='steel', fx={'fog': dict(STEAMF, a=0.16)},
      desc='An old dam patched with sandbags, leaking')
-shot('capitalflight', '68_capitalflight.jpg', W_(37, '税高'), pan(1.1, 0.014, left=True), grade='amber', ease='lin',
+shot('capitalflight', '68_capitalflight.jpg', W_(34, '税高'), pan(1.1, 0.014, left=True), grade='amber', ease='lin',
      desc='Capital leaves: ships and a jet depart, factories dark')
-shot('emptymall', '60_emptymall.jpg', W_(37, '税低'), push(1.05, 0.035), grade='ash', fx={'flicker': {'amp': 0.03}},
-     desc='An abandoned mall: the market cannot hold')
-shot('deadend', '69_deadend.jpg', W_(37, '走'), push(1.04, 0.05), grade='ash', fx={'fog': dict(LOWFOG, a=0.3)},
-     desc='The road ends at a cliff in fog')
+shot('emptymall', '60_emptymall.jpg', W_(34, '税'), push(1.05, 0.03), grade='ash', fx={'flicker': {'amp': 0.03}},
+     desc='An abandoned mall: subsidies shrink, the market cannot hold')
+shot('cloudcastle', '28_cloudcastle.jpg', st(35) - 0.15, crane(1.1, 0.014, 0.01), grade='cyan', ease='lin',
+     trans='glitch', tdur=0.3, desc='Fortress city of servers above the clouds')
+shot('datalords', '65_datalords.jpg', W_(35, '少数'), push(1.06, 0.04), grade='void', desc='A few figures in a penthouse over a sea of data')
+shot('dataweb', '66_dataweb.jpg', st(36) - 0.3, push(1.03, 0.03), grade='cyan', trans='luma', tdur=0.4,
+     fx={'bloom': 0.2, 'par': 0.5}, desc='Everyone a node in a planetary data web')
+shot('cloudserfs', '29_cloudserfs.jpg', st(37) - 0.06, push(1.05, 0.03), grade='void',
+     desc='Endless hall of people labelling data under cold logos')
+shot('queue', '30_queue.jpg', W_(37, '施舍'), pan(1.1, 0.012), grade='ash', ease='lin', fx={'rain': {'a': 0.18}},
+     desc='Rainy queue at an automated welfare kiosk')
 shot('assembly', '31_assembly.jpg', st(38) - 0.6, push(1.03, 0.022), grade='hope', trans='leak', tdur=0.9,
      desc='Citizens of a garden city deciding together')
 shot('coowners', '70_coowners.jpg', W_(38, '人人'), orbit(1.1, 0.012, 1.0), grade='hope',
@@ -281,6 +280,20 @@ shot('earthdawn', '78_earthdawn.jpg', en(49) + 0.9, push(1.08, 0.008), grade='vo
 
 ENDCARD = [en(49) + 1.4, en(49) + 7.0]
 DUR = round(ENDCARD[1] + 1.2, 2)
+
+# v3: 2.5D depth parallax OFF wherever people / hands / humanoid figures are in frame (the per-pixel depth warp
+# stretched faces and bodies during camera moves) -> those shots move as rigid 2D plates; gentler parallax elsewhere.
+NOPAR = {'leisure', 'overtime', 'machinecity', 'cave', 'flint', 'campfire', 'hunters', 'wheat', 'scribe', 'ziggurat',
+         'millgate', 'textile', 'quern', 'steammill', 'myths', 'miners', 'owner', 'electric', 'fordline', 'switchboard',
+         'humanoids', 'station', 'workerportrait', 'idlecrowd', 'hiring', 'scaffold', 'lockedgate', 'paradox', 'brake',
+         'luddites', 'looms', 'haijin', 'gunboats', 'datalords', 'cloudserfs', 'queue', 'assembly', 'coowners',
+         'planning', 'harvest', 'publichall', 'workshop', 'care', 'darkdawn', 'march', 'hands', 'bridge', 'forward',
+         'childhill', 'sunrisecrowd', 'datacenter', 'robotarms', 'gardencity', 'aimind', 'keynes', 'emptyoffice', 'cloudcastle', 'patcheddam'}
+for s_ in SH:
+    if s_['id'] in NOPAR:
+        s_['fx']['par'] = 0
+    else:
+        s_['fx']['par'] = min(0.6, s_['fx'].get('par', 0.6))
 
 for a, b in zip(SH, SH[1:]):
     a['end'] = round(b['start'] + (b['tdur'] if b['trans'] not in ('cut', 'none') else 0.0), 3)
@@ -332,8 +345,8 @@ LABELS = [  # documentary lower-left labels [start, end, line1, line2, fade]
     [st(31) + 0.2, w(31, '换') - 0.1, '明清海禁 · 始于 1371 年（洪武四年）', 'MING & QING MARITIME BANS · FROM 1371', 0.3],
     [w(31, '换') + 0.05, en(31) + 0.3, '1840 · 鸦片战争', 'THE FIRST OPIUM WAR · 1840', 0.3],
     [w(32, '堤坝') - 0.2, en(32) + 0.5, '都江堰 · 约公元前 256 年 · 疏导而非堵塞', 'DUJIANGYAN · c. 256 BC · GUIDING THE RIVER, NOT DAMMING IT', 0.4],
-    [st(35) + 0.3, en(35) + 0.3, '赫拉利 ·《今日简史》· 2018', 'HARARI · 21 LESSONS FOR THE 21ST CENTURY · 2018', 0.4],
-    [w(36, '领主') - 0.1, en(36) + 0.3, '“技术封建主义” · 瓦鲁法基斯 · 2023', 'TECHNOFEUDALISM · YANIS VAROUFAKIS · 2023', 0.4],
+    [st(36) + 0.3, en(36) + 0.3, '赫拉利 ·《今日简史》· 2018', 'HARARI · 21 LESSONS FOR THE 21ST CENTURY · 2018', 0.4],
+    [w(37, '领主') - 0.1, en(37) + 0.3, '“技术封建主义” · 瓦鲁法基斯 · 2023', 'TECHNOFEUDALISM · YANIS VAROUFAKIS · 2023', 0.4],
     [st(40) + 0.4, en(40) + 0.6, '马克思 ·《哥达纲领批判》· 1875 ·「各尽所能，按需分配」', 'MARX · CRITIQUE OF THE GOTHA PROGRAMME · 1875 · "TO EACH ACCORDING TO NEEDS"', 0.45],
     [st(42) + 0.4, en(42) + 0.6, '马克思、恩格斯 ·《共产党宣言》· 1848', 'MARX & ENGELS · THE COMMUNIST MANIFESTO · 1848', 0.45],
     [st(44) + 0.2, en(44) + 0.3, '1886 年 5 月 1 日 · 芝加哥 · 争取八小时工作制大罢工', 'MAY 1, 1886 · CHICAGO · THE STRIKE FOR THE EIGHT-HOUR DAY', 0.4],
@@ -353,7 +366,7 @@ ALIAS = {  # v1 shot ids still used as cue points by tools/score_wt.py -> the v2
     'scaffold': SHOTS_AT['darkfactory'], 'humanoids': SHOTS_AT['robotfarm'], 'worker': SHOTS_AT['workerportrait'],
     'worker2': SHOTS_AT['idlecrowd'], 'lonely': SHOTS_AT['hiring'], 'divide': SHOTS_AT['scale'],
     'conflict': SHOTS_AT['conflict_a'], 'luddites': SHOTS_AT['brake'], 'dataism': SHOTS_AT['dataweb'],
-    'queue': SHOTS_AT['patcheddam'], 'harvest': SHOTS_AT['planning'], 'crossroads': SHOTS_AT['darkdawn'],
+    'harvest': SHOTS_AT['planning'], 'crossroads': SHOTS_AT['darkdawn'],
     'crowdwalk': SHOTS_AT['forward'], 'toport': w(47, '历史'), 'child': SHOTS_AT['childhill'],
     'sunrise': SHOTS_AT['sunrisecrowd'], 'end': SHOTS_AT['earthdawn'],
     'v2_scaffold': SHOTS_AT['scaffold'], 'v2_lockedgate': SHOTS_AT['lockedgate'], 'v2_queue': SHOTS_AT['queue'],

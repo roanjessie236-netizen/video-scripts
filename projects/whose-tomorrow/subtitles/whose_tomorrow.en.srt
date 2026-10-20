@@ -87,130 +87,130 @@ Unmanned factories, unmanned farms, unmanned offices: most jobs will be replaced
 Homo Deus fears the twenty-first century may create a vast "useless class".
 
 23
-00:01:55,305 --> 00:01:59,795
-Yet the root of "uselessness" lies not in technology, but in the relations of wage labour:
+00:01:55,305 --> 00:01:59,726
+Yet the root of "uselessness" lies not in technology, but in capitalist relations of production:
 
 24
-00:01:59,895 --> 00:02:04,282
+00:01:59,826 --> 00:02:04,213
 those who own no means of production can live only by selling their labour power;
 
 25
-00:02:04,382 --> 00:02:09,515
+00:02:04,313 --> 00:02:09,446
 once production no longer needs their labour, they become "useless".
 
 26
-00:02:09,615 --> 00:02:13,422
+00:02:09,546 --> 00:02:13,353
 So wealth piles up like mountains, while most people lose their income —
 
 27
-00:02:13,722 --> 00:02:16,886
+00:02:13,653 --> 00:02:16,817
 and who, then, will buy what the machines produce?
 
 28
-00:02:16,986 --> 00:02:21,374
+00:02:16,917 --> 00:02:21,305
 The question shifts from "Will there be work?" to "How will the wealth be shared?"
 
 29
-00:02:21,574 --> 00:02:24,087
+00:02:21,505 --> 00:02:24,018
 This is the contradiction historical materialism reveals:
 
 30
-00:02:24,387 --> 00:02:28,775
+00:02:24,318 --> 00:02:28,706
 the forces of production race ahead, while the relations of production stand still.
 
 31
-00:02:29,075 --> 00:02:32,962
+00:02:29,006 --> 00:02:32,893
 Some want to slam on the brakes, but history's brakes have never held:
 
 32
-00:02:33,062 --> 00:02:36,712
+00:02:32,993 --> 00:02:36,643
 the Luddites smashed the looms, yet the machines only multiplied;
 
 33
-00:02:36,812 --> 00:02:41,106
+00:02:36,743 --> 00:02:41,037
 the Ming and Qing sea bans locked the ports, and bought only backwardness and defeat.
 
 34
-00:02:41,206 --> 00:02:42,695
+00:02:41,137 --> 00:02:42,626
 The flood of technology cannot be held back;
 
 35
-00:02:42,995 --> 00:02:47,917
+00:02:42,926 --> 00:02:47,848
 what we can decide is what kind of dykes to build, and where the water will flow.
 
 36
-00:02:50,317 --> 00:02:53,652
+00:02:50,248 --> 00:02:53,583
 Before us lie three tomorrows.
 
 37
-00:02:53,752 --> 00:02:57,944
-In the first, computing power and data are concentrated in a few hands.
+00:02:53,683 --> 00:02:57,356
+In the first, tax and subsidy patch things up.
 
 38
-00:02:58,044 --> 00:03:03,039
-21 Lessons warned long ago: whoever owns the data owns the future.
+00:02:57,656 --> 00:03:02,983
+But tax too high and capital balks; too low, subsidies shrink and the market cannot hold.
 
 39
-00:03:03,139 --> 00:03:08,975
-A few become lords of the cloud; everyone else receives charity, not rights.
+00:03:03,083 --> 00:03:07,322
+In the second, computing power and data are concentrated in a few hands.
 
 40
-00:03:09,075 --> 00:03:12,723
-In the second, tax and subsidy patch things up.
+00:03:07,422 --> 00:03:12,417
+21 Lessons warned long ago: whoever owns the data owns the future.
 
 41
-00:03:13,023 --> 00:03:18,846
-But tax too high and capital balks; too low and the market cannot hold — a dead end.
+00:03:12,517 --> 00:03:18,353
+A few become lords of the cloud; everyone else receives charity, not rights.
 
 42
-00:03:19,246 --> 00:03:25,030
+00:03:18,753 --> 00:03:24,537
 In the third, the means of production belong to all of society, and everyone is a co-owner of the machines.
 
 43
-00:03:25,130 --> 00:03:28,403
+00:03:24,637 --> 00:03:27,910
 With AI and big data, production is planned —
 
 44
-00:03:28,703 --> 00:03:31,752
+00:03:28,210 --> 00:03:31,259
 for human need, not for profit.
 
 45
-00:03:31,792 --> 00:03:37,382
+00:03:31,299 --> 00:03:36,889
 Basic needs, according to need; scarce resources, according to contribution.
 
 46
-00:03:37,422 --> 00:03:43,061
+00:03:36,929 --> 00:03:42,568
 Work is no longer merely a means of survival; people are free to create, to learn, and to care for one another.
 
 47
-00:03:43,101 --> 00:03:51,126
+00:03:42,608 --> 00:03:50,633
 The free development of each is the condition for the free development of all.
 
 48
-00:03:51,776 --> 00:03:55,010
+00:03:51,283 --> 00:03:54,517
 But such a tomorrow will not arrive on its own.
 
 49
-00:03:55,110 --> 00:03:59,646
+00:03:54,617 --> 00:03:59,153
 The eight-hour day was won by workers taking to the streets, again and again;
 
 50
-00:03:59,686 --> 00:04:03,515
+00:03:59,193 --> 00:04:03,022
 Technology decides what is possible; institutions decide what happens.
 
 51
-00:04:03,555 --> 00:04:07,300
+00:04:03,062 --> 00:04:06,807
 And institutions are chosen by people, and won by people.
 
 52
-00:04:07,400 --> 00:04:10,991
+00:04:06,907 --> 00:04:10,498
 As Marx wrote, people make their own history.
 
 53
-00:04:11,341 --> 00:04:13,910
+00:04:10,848 --> 00:04:13,417
 So, whose tomorrow is it?
 
 54
-00:04:14,010 --> 00:04:18,388
+00:04:13,517 --> 00:04:17,895
 It belongs to everyone who strives for it, together.
 

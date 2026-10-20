@@ -4,7 +4,7 @@
 # starts SH), so a re-timed edit re-scores itself.
 # Arc: rain + piano (1930) -> machine pulse -> title -> frame drums & flute (deep past) -> industrial hammers ->
 # electronic pulse (AI) -> sparse piano (paradox) -> tension & flood -> water resolves (Dujiangyan) -> cold digital
-# (cloud lords) -> warm I-V-vi-IV turn (shared future) -> near-silence -> march -> choir & brass resolution.
+# (v3: patching, then cloud lords) -> warm I-V-vi-IV turn (shared future) -> near-silence -> march -> choir & brass resolution.
 import json as _json, os as _os
 _SL = _json.load(open(_os.environ.get('SHOTLIST', '/data/wt/engine/shotlist.json'), encoding='utf-8'))
 MK = _SL['marks']
@@ -274,39 +274,43 @@ str_line(T_DJ, [(72, 2.0), (76, 2.0), (74, SH['threeroads'] - T_DJ - 4.0)], 0.05
 # ------------------------------------------------------------------ CH4  three tomorrows
 log('ch4')
 C4 = SH['threeroads']
-T_CC, T_DS, T_CS, T_QU = SH['cloudcastle'], SH['dataism'], SH['cloudserfs'], SH['queue']
+T_PD, T_CC, T_DS, T_CS, T_QU = SH['patcheddam'], SH['cloudcastle'], SH['dataism'], SH['cloudserfs'], SH['queue']
 T_AS, T_HV, T_WS, T_GC = SH['assembly'], SH['harvest'], SH['workshop'], SH['gardencity']
 impact(C4, 0.4, notes=(33, 45))
-pad(C4, T_CC - C4, 'Am9', gain=0.07, p=2.6, att=1.2, rel=0.8, hall=0.4, cath=0.4)
+pad(C4, T_PD - C4, 'Am9', gain=0.07, p=2.6, att=1.2, rel=0.8, hall=0.4, cath=0.4)
 for k, m in enumerate([76, 81, 84]):                           # three roads: three chimes
     celesta(w(33, '三') + k * 0.42, m, 0.04, pan=-0.5 + 0.5 * k)
-ambience(C4, T_CC - C4 + 1.0, 0.07, fin=1.5, fout=1.0, wind=0.4, shimmer=1.2)
-# first tomorrow: cloud lords (cold, digital)
+ambience(C4, T_PD - C4 + 1.0, 0.07, fin=1.5, fout=1.0, wind=0.4, shimmer=1.2)
+# v3: first tomorrow = patching the old order (thin, grey, rain on the leaking dam)
+PQ = chain([(T_PD, 'Dm'), (T_PD + 3.0, 'Am')], T_CC)
+pad_prog(PQ, [(T_PD, 0.04), (T_CC, 0.035)], p=2.0, att=0.8, rel=1.0, hall=0.4, cath=0.35)
+for k, m in enumerate([62, 60, 57, 60, 62, 60, 57, 55]):
+    if T_PD + 0.3 + k * BEAT < T_CC - 0.4:
+        piano(T_PD + 0.3 + k * BEAT, m, 0.05 if k % 2 == 0 else 0.04)
+ambience(T_PD, T_CC - T_PD, 0.05, fin=0.5, fout=0.8, wind=0.2, shimmer=0.2)
+for t in np.arange(T_PD, T_CC, 0.04):                            # rain
+    if np.random.rand() < 0.5:
+        place(SHAKER, t, 0.006 + 0.006 * np.random.rand(), pan=np.random.uniform(-0.8, 0.8), hall=0.2)
+# v3: second tomorrow = cloud lords (cold, digital) -> straight into the warm turn
 P4a = chain([(T_CC, 'Am9'), (T_CC + 4 * BEAT, 'Fmaj7'), (T_DS, 'Dm'), (T_DS + 4 * BEAT, 'Am9'), (T_CS, 'F'),
-             (T_CS + 3.0, 'Esus')], T_QU)
+             (T_CS + 3.0, 'Esus')], T_AS)
 glitch(T_CC - 0.05, 0.7, 0.07, 41)
-place(ensemble('saw', 81, T_QU - T_CC, p=1.0, voices=3, cents=18, vib=0.0, att=1.0, rel=1.0, width=1.0), T_CC,
+place(ensemble('saw', 81, T_AS - T_CC, p=1.0, voices=3, cents=18, vib=0.0, att=1.0, rel=1.0, width=1.0), T_CC,
       0.018, hall=0.2, cath=0.7)
-place(ensemble('saw', 28, T_QU - T_CC, p=1.2, voices=3, cents=6, vib=0.0, att=0.6, rel=0.8, width=0.3), T_CC,
+place(ensemble('saw', 28, T_AS - T_CC, p=1.2, voices=3, cents=6, vib=0.0, att=0.6, rel=0.8, width=0.3), T_CC,
       0.06, hall=0.05)
 arp(P4a, BEAT / 2, [(T_CC, 0.025), (T_CS, 0.045)], [0, 2, 1, 3, 0, 2, 1, 3], bright_pts=[(T_CC, 0.5), (T_CS, 0.9)])
-subpulse(P4a, BEAT / 2, [(T_CC, 0.03), (T_CS, 0.05)], T_CC, T_QU - 0.2)
-beat_kit(T_DS, T_QU - 0.2, [(T_DS, 0.06), (T_CS, 0.09)], kick=False)
+subpulse(P4a, BEAT / 2, [(T_CC, 0.03), (T_CS, 0.05)], T_CC, T_AS - 0.6)
+beat_kit(T_DS, T_AS - 0.6, [(T_DS, 0.06), (T_CS, 0.09)], kick=False)
 pad_prog(P4a, [(T_CC, 0.05), (T_CS, 0.07)], p=2.6, att=1.0, rel=0.8, hall=0.4, cath=0.4)
 for i, m in enumerate([88, 84, 81, 79, 76, 74, 72, 69]):
     celesta(T_DS + 0.1 + i * 0.14, m, 0.035, pan=0.7 - 0.2 * i)
-for t in np.arange(T_CS, T_QU - 0.2, BEAT):                      # identical screens: mechanical ticks
+for t in np.arange(T_CS, T_AS - 0.6, BEAT):                      # identical screens: mechanical ticks
     place(METAL, t, 0.01, pan=0.4, hall=0.1)
-place(BOOM, w(36, '施舍'), 0.15, hall=0.1, cath=0.3)
-# second tomorrow: patching the old order (thin, grey)
-PQ = chain([(T_QU, 'Dm'), (T_QU + 3.0, 'Am')], T_AS)
-pad_prog(PQ, [(T_QU, 0.04), (T_AS, 0.035)], p=2.0, att=0.8, rel=1.0, hall=0.4, cath=0.35)
-for k, m in enumerate([62, 60, 57, 60, 62, 60, 57, 55]):
-    piano(T_QU + 0.3 + k * 2 * BEAT * 0.5, m, 0.05 if k % 2 == 0 else 0.04)
-ambience(T_QU, T_AS - T_QU, 0.05, fin=0.5, fout=0.8, wind=0.2, shimmer=0.2)
-for t in np.arange(T_QU, T_AS, 0.04):                            # rain
-    if np.random.rand() < 0.5:
-        place(SHAKER, t, 0.006 + 0.006 * np.random.rand(), pan=np.random.uniform(-0.8, 0.8), hall=0.2)
+place(BOOM, w(37, '施舍'), 0.15, hall=0.1, cath=0.3)
+for t in np.arange(T_QU, T_AS - 0.3, 0.05):                       # soft rain under the welfare queue
+    if np.random.rand() < 0.35:
+        place(SHAKER, t, 0.004 + 0.004 * np.random.rand(), pan=np.random.uniform(-0.8, 0.8), hall=0.2)
 # third tomorrow: common owners (warm I-V-vi-IV turn)
 T_TURN = MK['turn']
 place(swell(1.4), T_AS - 1.0, 0.1, hall=0.3)
