@@ -285,13 +285,14 @@ for i, it in enumerate(ITEMS):
     xx += 24
 X0 = W / 2 + (xx - 24) / 2 - CW
 VL = [(i, vcol(c, SERIF(VFS, 'SemiBold'), CELL, INK + (255,)), vcol(c, SERIF(VFS, 'SemiBold'), CELL, (160, 50, 36, 255)), X0 - x) for i, c, x in cols]
+T4 = 4.2   # 第四条“忘记我”亮起（相对本镜头起点 37.5）
 def will_fn(t, d):
     im, _ = kb(PAPER, 1.0 + 0.05 * t / d, .5, .5)
     for i, ink, red, x in VL:
-        a = 0.2 + 0.8 * (0.75 if i == 1 else clamp((t - 0.3) / 0.6) if i == 2 else 0)
-        paste_a(im, red if (i == 2 and t > 0.3) else ink, (x - (ink.width - CW) / 2, TOP), a * clamp(t / 0.5))
+        a = 0.2 + 0.8 * (0.75 if i == 1 else clamp((t - 0.3) / 0.6) if i == 2 else clamp((t - T4) / 0.6) if i == 3 else 0)
+        paste_a(im, red if (i == 2 and t > 0.3) or (i == 3 and t > T4) else ink, (x - (ink.width - CW) / 2, TOP), a * clamp(t / 0.5))
     return im
-X(38, 42.4, will_fn)
+X(38, 44, will_fn)   # 第二条加深、第三条红字，随后第四条“忘记我，管自己生活”红字
 # P10 第四十四天：日历翻页（背景为故居卧室虚化）
 WK = '一二三四五六日'
 def cal_card(day):
@@ -307,7 +308,7 @@ def cal_card(day):
 CAL = [None] * 45
 def cal_fn(t, d):
     im, _ = kb(IMG('bg_m_bed'), 1.05 + 0.04 * t / d, .5, .5)
-    v = ease((t - 0.6) / 3.0) * 44; k = min(44, int(v)); fr = v - k if k < 44 else 0
+    v = ease((t - 0.8) / 1.5) * 44; k = min(44, int(v)); fr = v - k if k < 44 else 0   # 1.5 秒翻完 44 页
     for kk in (k, min(44, k + 1)):
         if CAL[kk] is None: CAL[kk] = cal_card(kk)
     cx, cy = W / 2 - 160, H / 2 - 40
@@ -315,12 +316,12 @@ def cal_fn(t, d):
     top = CAL[k] if fr < 0.02 else CAL[k].rotate(-10 * fr, expand=True, resample=Image.BILINEAR)
     paste_a(im, top, (cx - top.width / 2 + 60 * fr, cy - top.height / 2 - 520 * fr * fr), 1 - fr)
     return im
-X(42.4, 47, cal_fn)
+X(44, 47.2, cal_fn)
 nd = text_rgba('第 44 天', SERIF(72, 'Bold'), CREAM, shadow=8)
-ov(45.6, 47.4, lambda b, t, a: paste_a(b, nd, (W / 2 + 160, H / 2 - 90), a), 0.4, 0.4)
+ov(45.7, 47.6, lambda b, t, a: paste_a(b, nd, (W / 2 + 160, H / 2 - 90), a), 0.3, 0.4)
 # P11 故居卧室（今貌）  P12 1936年10月留影 → 缓推到眼睛
-X(47, 51.8, KB('m_bed', 1.04, 1.16, (.5, .5), (.42, .5)))
-INFO(47.4, 51.7, '今日 · 实拍', '上海鲁迅故居 · 二楼卧室')
+X(47.2, 51.8, KB('m_bed', 1.04, 1.16, (.5, .5), (.42, .5)))
+INFO(47.6, 51.7, '今日 · 实拍', '上海鲁迅故居 · 二楼卧室')
 X(51.8, 58, CARDS('hz231', [('hz231', 1140, 450, 700, -1.6, 0.2)], grow=0.45, aim=(0.22, 420)))   # 极慢推近到眼睛
 INFO(52.2, 56.4, '史料 · 照片', '1936年10月的鲁迅', '上海', '出处：林贤治《鲁迅画传》')
 # P13 “先生：”信笺字卡
@@ -451,7 +452,7 @@ GRAIN = [Image.fromarray(np.clip(128 + _g.normal(0, 5.2, (H, W)), 0, 255).astype
 del _yy, _xx, _d
 
 # ---------- 合成 ----------
-PAPER_T = [(16, 19.6), (24, 29), (38, 42.4), (58, 63)]   # 纸面/白旗镜头：字幕改用墨色
+PAPER_T = [(16, 19.6), (24, 29), (38, 44), (58, 63)]   # 纸面/白旗镜头：字幕改用墨色
 SUBGRAD = Image.new('RGBA', (W, 300), (0, 0, 0, 0)); SUBGRAD.putalpha(Image.linear_gradient('L').resize((W, 300)).point(lambda v: int((v / 255) ** 1.6 * 150)))
 WHITE = Image.new('RGB', (W, H), (250, 250, 248)); BLACK = Image.new('RGB', (W, H), (0, 0, 0))
 SHK = [(16, -10), (-12, 8), (8, -5), (-5, 3), (2, -1), (0, 0)]
