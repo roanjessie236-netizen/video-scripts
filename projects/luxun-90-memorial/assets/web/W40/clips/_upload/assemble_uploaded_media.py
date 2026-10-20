@@ -27,14 +27,13 @@ def fetch_chunk(part):
         f'https://api.github.com/repos/{REPO}/git/blobs/{part["sha"]}',
         headers={'Authorization': 'Bearer ' + os.environ['GH_TOKEN'],
                  'Accept': 'application/vnd.github.raw+json',
-                 'X-GitHub-Api-Version': '2022-11-28',
                  'User-Agent': 'luxun-local-media-assembly'})
     for attempt in range(4):
         try:
             with urllib.request.urlopen(req, timeout=90) as response:
                 data = response.read()
-                kind = response.headers.get('Content-Type', '')
-            if 'json' in kind:
+            # Raw media types may themselves contain '+json'; verify bytes first.
+            if len(data) != part['size'] or blob_sha(data) != part['sha']:
                 body = json.loads(data)
                 assert body['encoding'] == 'base64'
                 data = base64.b64decode(body['content'])
@@ -86,13 +85,18 @@ def main():
                 assert current in (expected, item['sha']), 'Concurrent edit: ' + item['path']
                 target.parent.mkdir(parents=True, exist_ok=True)
                 target.write_bytes((staging / item['path']).read_bytes())
-            git('add', '--', *[item['path'] for item in files])
+            # Preserve exact bytes, including the existing research documents' line endings.
+            for item in files:
+                sha = git('hash-object', '-w', '--no-filters', '--', item['path'])
+                assert sha == item['sha'], 'Unexpected staged bytes: ' + item['path']
+                git('update-index', '--add', '--cacheinfo', '100644,' + sha + ',' + item['path'])
             if not git('diff', '--cached', '--name-only'):
                 print('All files already published:', git('rev-parse', 'HEAD'))
                 return
             git('commit', '-m', 'Add local Lu Xun movie and complete TV scenes with Opus index')
             try:
-                git('push', 'origin', 'HEAD:main')
+                git('-c', 'pack.window=0', '-c', 'pack.threads=2', '-c', 'pack.compression=1',
+                    'push', 'origin', 'HEAD:main')
                 print('PUBLISHED_COMMIT=' + git('rev-parse', 'HEAD'), flush=True)
                 return
             except subprocess.CalledProcessError:
