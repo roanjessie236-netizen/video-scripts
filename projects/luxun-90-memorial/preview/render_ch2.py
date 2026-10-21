@@ -1,5 +1,6 @@
 # 样片 v3：第二章 南京·东京·仙台（1898—1909 弃医从文）。框架与 render_preview_v3.py 相同（同一套相片卡、介绍卡、字幕、调色、颗粒）
 # 真实素材为主；幻灯片放映、讲堂欢呼、雪地背影为 AI 情景再现（右上角标注）。1920x1080/25fps，无声，旁白与原文以字幕显示
+# r2（2026-10-21）：节奏收紧——每个镜头在最后一句旁白/原文（含分镜设计的静默）结束后 0.5 秒切走；父亲照（与第一章重复）换成 AI“仙台寓所夜读”；幻灯片小字只写“画面为情景再现”。
 # 先运行 prep_v3.py 与 prep_ch2.py 生成 preview/src3/。用法：python3 render_ch2.py [--plan] [--stills 1,2,3] [--part k/n out.mp4]（k 从 0 开始）
 import math, sys, re, csv, random, datetime, subprocess, yaml
 from collections import OrderedDict
@@ -176,6 +177,7 @@ def chunks(txt, n=18):
         if cur and (len(cur) + len(p) > n or (p.startswith('“') and cur.endswith('。'))): out.append(cur); cur = p
         else: cur += p
     if cur: out.append(cur)
+    if len(out) >= 2 and nchar(out[-1]) <= 2 and len(out[-2]) + len(out[-1]) <= 24: _x = out.pop(); out[-1] += _x   # 句尾“提出——”之类并入上一行
     res = []
     for c in out:
         s = c
@@ -196,7 +198,7 @@ def SUB(t0, kind, txt=None):
     return t0 + dur
 # ---------- 第二章字幕（时序与 storyboard 一致；本章从 0 秒起算，B站母版对应 +179.5 秒） ----------
 OFF = 179.5
-T = 0.0; TURN2 = None
+T = 0.0; TURN2 = None; SHOTS = []
 for sid in ['S2-01', 'S2-02', 'S2-03', 'S2-04', 'S2-05', 'S2-06', 'S2-07', 'S2-08', 'S2-09']:
     s = SHOT[sid]; t = T + 0.4
     for a in s.get('audio', []):
@@ -207,8 +209,21 @@ for sid in ['S2-01', 'S2-02', 'S2-03', 'S2-04', 'S2-05', 'S2-06', 'S2-07', 'S2-0
         if sid == 'S2-08':   # 后半句由“第二次转身”字卡呈现
             a1, a2 = txt.split('这是', 1); t = SUB(t, 'vo', a1) + GAP; TURN2 = t; t += nchar('这是' + a2) / VR + GAP; continue
         t = SUB(t, kind, txt) + GAP
-    T += s['dur']
+    SHOTS.append((sid, T, s['dur'], max(0.0, t - GAP - T) if t > T + 0.4 + 1e-6 else 0.0)); T += s['dur']
 TOTAL_MAIN = 167.0; CRED = 7.0; TOTAL = TOTAL_MAIN + CRED
+# 节奏收紧：下面的画面仍按分镜原时长编排，最后用 M() 把每个镜头“声音结束 + TAIL”之后的留白压缩到 TAIL（声音段内只平移，不变速）
+TAIL = 0.5; NEWD = {'S2-01': 4.0}   # 章节卡只有音乐，5 秒压到 4 秒
+MAP, _ns = [], 0.0
+for _sid, _os, _od, _A in SHOTS:
+    _nd = NEWD.get(_sid, min(_od, _A + TAIL)); MAP.append((_os, _od, _A, _ns, _nd)); _ns += _nd
+NEW_MAIN = _ns
+def M(t):
+    if t < 0: return t
+    for os_, od, A, ns_, nd in MAP:
+        if t < os_ + od:
+            r = t - os_
+            return ns_ + r if r <= A else ns_ + A + (r - A) * (nd - A) / (od - A)
+    return t - TOTAL_MAIN + NEW_MAIN
 def at(sub):
     for a, b, c in SUBLOG:
         if sub in c: return a
@@ -245,13 +260,13 @@ INFO(t_ph + 0.4, 30.3, '史料 · 照片', '“断发照”', '1903年 · 东京
 X(30.4, 37, CARDS('hz24b', [('hz24b', 1140, 500, 820, -1.0, 0.2)]))
 INFO(30.8, 36.9, '史料 · 手迹', '《自题小像》', '1903年作 · 1931年重写', SRC_HZ)
 # S2-04 仙台医专 → 住处 → 父亲（“救治像我父亲似的被误的病人”）
-t_fa = at('救治像我父亲') - 0.3
-X(37, 41.8, CARDS('hz30', [('hz30', 1110, 500, 520, -1.2, 0.2, 1240)]))
-INFO(37.4, 41.7, '史料 · 照片', '仙台医学专门学校', '1904年秋入学 · 日本仙台', SRC_HZ)
-X(41.8, t_fa, CARDS('hz31', [('hz31', 1140, 480, 640, 1.4, 0.2)]))
-INFO(42.2, t_fa - 0.1, '史料 · 照片', '鲁迅在仙台的住处', '日本仙台', SRC_HZ)
-X(t_fa, 54, CARDS('hz10f', [('hz10f', 1140, 470, 700, 1.6, 0.2)], grow=0.07))
-INFO(t_fa + 0.4, 53.9, '史料 · 照片', '父亲周伯宜', '1896年病逝', SRC_HZ)
+t_fa = at('我的梦很美满') - 0.3
+X(37, 40.9, CARDS('hz30', [('hz30', 1110, 500, 520, -1.2, 0.2, 1240)]))
+INFO(37.4, 40.8, '史料 · 照片', '仙台医学专门学校', '1904年秋入学 · 日本仙台', SRC_HZ)
+X(40.9, t_fa, CARDS('hz31', [('hz31', 1140, 480, 640, 1.4, 0.2)]))
+INFO(41.3, t_fa - 0.1, '史料 · 照片', '鲁迅在仙台的住处', '日本仙台', SRC_HZ)
+X(t_fa, 54, KB('b05', 1.02, 1.15, (.56, .48), (.42, .6))); AITAG(t_fa, 54)   # 父亲照已在第一章用过，这里换成 AI 情景再现
+INFO(t_fa + 0.4, 53.9, '情景再现', '仙台寓所的夜晚', '1904—1906年 · 医专学生周树人')
 # S2-05 藤野严九郎 → 解剖学笔记
 X(54, 60.6, CARDS('hz33', [('hz33', 1140, 480, 780, -1.4, 0.2)]))
 INFO(54.4, 60.5, '史料 · 照片', '藤野严九郎', '仙台医专解剖学教授', SRC_HZ)
@@ -266,7 +281,7 @@ X(t_me, t_wan, CARDS('hz35', [('hz35', 1140, 480, 800, -1.2, 0.2)], grow=0.06))
 INFO(t_me + 0.3, t_wan - 0.1, '史料 · 照片', '与仙台医专同学合影', '1904年 · 后排右一为鲁迅', SRC_HZ)
 X(t_wan, 93.2, KB('b02', 1.04, 1.12, (.5, .5), (.5, .46))); AITAG(t_wan, 93.2)
 X(93.2, 98, KB('b03', 1.06, 1.2, (.7, .42), (.74, .38), post=dim(0.0, 0.8, 1.6, 4.6))); AITAG(93.2, 97.4)
-NOTE = text_rgba('这张幻灯片至今没有找到，画面为情景再现', SANS(28), (214, 216, 214, 255), shadow=3)
+NOTE = text_rgba('画面为情景再现', SANS(28), (214, 216, 214, 255), shadow=3)
 ov(93.6, 97.8, lambda b, t, a: paste_a(b, NOTE, (W / 2 - NOTE.width / 2, H - 110 - NOTE.height / 2), a), 0.6, 0.6)
 # S2-07 走出讲堂，走进雪地 → “改变他们的精神”
 X(98, 104, KB('b04', 1.0, 1.06, (.5, .5), (.5, .5)), 'black'); AITAG(98, 104)
@@ -321,9 +336,9 @@ ov(t_21, t_hg + 0.3, num21, 0.3, 0.5)
 X(t_hg, 167, CARDS('qj492', [('qj492', 1140, 480, 780, -1.4, 0.2)]))
 INFO(t_hg + 0.4, 166.9, '史料 · 照片', '鲁迅在杭州', '1909年 · 回国任教于浙江两级师范学堂', SRC_QJ)
 # 片尾
-CR = [('样片 v3｜第二章 南京·东京·仙台（B站母版 02:59—05:46，无配音）', 40, 'SemiBold', INK),
+CR = [(f'样片 v3 r2｜第二章 南京·东京·仙台（B站母版 02:59—{int((OFF + NEW_MAIN) // 60):02d}:{int((OFF + NEW_MAIN) % 60):02d}，无配音）', 40, 'SemiBold', INK),
       ('', 0, '', None),
-      ('AI 情景再现：幻灯片放映、讲堂欢呼、走进雪地（画面右上角已标注；那张幻灯片至今没有找到）', 28, 'Regular', (70, 64, 58)),
+      ('AI 情景再现：仙台寓所夜读、幻灯片放映、讲堂欢呼、走进雪地（画面右上角已标注）', 28, 'Regular', (70, 64, 58)),
       ('历史照片、手迹与《新生》封面画（瓦茨《希望》）：林贤治《鲁迅画传》；《鲁迅全集》2005年版文前彩插', 28, 'Regular', (70, 64, 58)),
       ('《天演论》书影：中国现代文学馆　《坟》1947年版：国家图书馆藏本扫描（Wikimedia Commons，公有领域）', 28, 'Regular', (70, 64, 58)),
       ('鲁迅原文均据《鲁迅全集》2005年版', 28, 'Regular', (70, 64, 58))]
@@ -336,6 +351,18 @@ def cred(t, d):
     return im
 X(TOTAL_MAIN, TOTAL, cred)
 
+# ---------- 节奏收紧：把镜头、叠加层、字幕、震屏统一映射到新时间 ----------
+def _nom(t0, t1, tr): return (t0 + 0.25, t1 - 0.5) if tr == 'flash' else ((t0, t1 - 0.5) if tr == 'black' else (t0 + 0.5, t1 - 0.5))
+_new = []
+for t0, t1, fn, tr, td in clips:
+    a, b = _nom(t0, t1, tr); _new.append((M(a) - (a - t0), M(b) + (t1 - b), fn, tr, td))
+clips[:] = _new
+ovs[:] = [(M(t0), M(t1), dr, fin, fout) for t0, t1, dr, fin, fout in ovs]
+subs[:] = [(M(t0), M(t1), ims, attr) for t0, t1, ims, attr in subs]
+SUBLOG[:] = [(round(M(a), 2), round(M(b), 2), c) for a, b, c in SUBLOG]
+SHAKES[:] = [M(x) for x in SHAKES]
+TOTAL_MAIN = NEW_MAIN; TOTAL = TOTAL_MAIN + CRED
+
 WM = text_rgba('样片 v3 · 无配音', SANS(22, 'Light'), (255, 255, 255, 255), shadow=2)
 
 # ---------- 浮尘（淡） ----------
@@ -345,7 +372,7 @@ SPR = {}
 for r in (2, 3, 4, 6):
     m = Image.new('L', (r * 6, r * 6), 0); ImageDraw.Draw(m).ellipse((r * 2, r * 2, r * 4, r * 4), fill=255); m = m.filter(ImageFilter.GaussianBlur(r * 0.8))
     s = Image.new('RGBA', m.size, (236, 236, 230, 255)); s.putalpha(m); SPR[r] = s
-DUSTR = [(69, 93.2), (109.8, 123)]
+DUSTR = [(M(a), M(b)) for a, b in [(69, 93.2), (109.8, 123)]]
 def dust(base, T):
     a = max([clamp((T - a0) / 0.8) * clamp((a1 - T) / 0.8) for a0, a1 in DUSTR] + [0])
     if a <= 0: return
