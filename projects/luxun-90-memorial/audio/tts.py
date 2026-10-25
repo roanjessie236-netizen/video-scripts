@@ -1,5 +1,5 @@
 # 配音合成：按字幕时间逐句生成（edge-tts），自动调语速贴合字幕显示时长；旁白/原文两种声音；返回放好位置的人声轨
-import asyncio, json, re, subprocess, sys, os, numpy as np
+import asyncio, json, re, subprocess, sys, os, hashlib, numpy as np
 sys.path.insert(0, '/tmp/pylib'); import edge_tts
 SR = 48000; CACHE = '/tmp/vo/cache/'; os.makedirs(CACHE, exist_ok=True)
 VR, QR = 4.2, 3.3
@@ -14,7 +14,7 @@ def speak_text(t):
 async def _gen(text, voice, rate, pitch, path):
     await edge_tts.Communicate(text, voice, rate=f'{rate:+d}%', pitch=f'{pitch:+d}Hz').save(path)
 def gen(text, voice, rate, pitch):
-    key = re.sub(r'\W', '', voice)[-10:] + f'_{rate:+d}_{pitch:+d}_' + str(abs(hash(text)) % 10**10)
+    key = re.sub(r'\W', '', voice)[-10:] + f'_{rate:+d}_{pitch:+d}_' + hashlib.md5(text.encode()).hexdigest()[:12]
     mp3 = CACHE + key + '.mp3'
     if not os.path.exists(mp3):
         for k in range(4):
@@ -25,22 +25,33 @@ def gen(text, voice, rate, pitch):
     # 去掉首尾静音
     e = np.convolve(np.abs(x), np.ones(480) / 480, 'same'); idx = np.where(e > 10 ** (-42 / 20))[0]
     return x[max(0, idx[0] - 240): idx[-1] + 2400] if len(idx) else x
+# 原文声音的处理方案（可按候选音色切换）：base=(语速%, 音高Hz)，flt=ffmpeg 滤镜，rev=(RT60秒, 湿声dB) 或 None
+QPROF = dict(base=(-16, -3), flt='highpass=f=110,lowpass=f=9500,acompressor=threshold=-20dB:ratio=2.5:attack=8:release=120:makeup=2,aecho=0.85:0.7:28|52:0.14|0.08', rev=None)
+def reverb(y, rt60, wet_db, seed=7):
+    """合成小房间混响：预延迟 14ms＋指数衰减噪声（逐渐变暗），比 aecho 的回声自然"""
+    rng = np.random.default_rng(seed); n = int(rt60 * 1.3 * SR); t = np.arange(n) / SR
+    ir = rng.standard_normal(n) * np.exp(-6.91 * t / rt60)
+    ir = np.convolve(ir, np.ones(6) / 6, 'same'); ir = np.concatenate([np.zeros(int(0.014 * SR)), ir]); ir /= np.sqrt((ir ** 2).sum())
+    m = len(y) + len(ir) - 1; L = 1 << (m - 1).bit_length()
+    w = np.fft.irfft(np.fft.rfft(y, L) * np.fft.rfft(ir, L), L)[:m]
+    out = np.concatenate([y, np.zeros(len(ir) - 1, np.float32)]) + w * (10 ** (wet_db / 20))
+    return out.astype(np.float32)
 def fx(x, kind):
-    flt = 'highpass=f=70,acompressor=threshold=-20dB:ratio=2.5:attack=8:release=120:makeup=2' if kind == 'vo' else \
-          'highpass=f=110,lowpass=f=9500,acompressor=threshold=-20dB:ratio=2.5:attack=8:release=120:makeup=2,aecho=0.85:0.7:28|52:0.14|0.08'
+    flt = 'highpass=f=70,acompressor=threshold=-20dB:ratio=2.5:attack=8:release=120:makeup=2' if kind == 'vo' else QPROF['flt']
     y = np.frombuffer(subprocess.run(['ffmpeg', '-v', 'error', '-f', 'f32le', '-ar', str(SR), '-ac', '1', '-i', '-', '-af', flt, '-f', 'f32le', '-'],
                                      input=x.astype(np.float32).tobytes(), capture_output=True).stdout, np.float32)
+    if kind != 'vo' and QPROF.get('rev'): y = reverb(y, *QPROF['rev'])
     act = y[np.abs(y) > 0.01]; rms = np.sqrt((act ** 2).mean()) if len(act) else 1
     return y * (10 ** (-17 / 20) / rms)          # 每句人声统一到约 -17 dBFS（有声部分）
 def fit_line(text, kind, window, room, voice):
     """window：字幕显示时长；room：到下一句开始前可多用的时间"""
-    base_r, base_p = (0, 0) if kind == 'vo' else (-16, -3)
+    base_r, base_p = (0, 0) if kind == 'vo' else QPROF['base']
     er, ep = next((v for k, v in EMO.items() if k in text), (0, 0))
     r, p = base_r + er, base_p + ep; st = speak_text(text); log = []
     for it in range(4):
         x = gen(st, voice, r, p); d = len(x) / SR; log.append((r, round(d, 2)))
-        hi = window + min(0.35, max(0.0, room - 0.15)); lo = window * (0.9 if kind == 'vo' else 0.8)
-        if d > hi: r = min(r + int(np.ceil((d / (window * 0.98) - 1) * 100)) + 1, 35)
+        hi = window + (min(0.35, max(0.0, room - 0.15)) if kind == 'vo' else min(0.8, max(0.0, room - 0.5))); lo = window * (0.9 if kind == 'vo' else 0.8)
+        if d > hi: r = min(r + int(np.ceil((d / (hi * 0.98) - 1) * 100)) + 1, 35 if kind == 'vo' else -4)   # 原文不读快
         elif d < lo: r = max(r - int(np.ceil((1 - d / (window * 0.97)) * 100)), -15 if kind == 'vo' else -28)
         else: break
         if (r, p) == (log[-1][0], p) : break
