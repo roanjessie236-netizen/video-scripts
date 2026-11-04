@@ -1,10 +1,11 @@
+# v5（2026-10-27）：gen 可返回逐词时间（WordBoundary）；新增 gen_poem 诗词按句读；读音表加“还回来、荃不察、两间馀”
 # 配音合成：按字幕时间逐句生成（edge-tts），自动调语速贴合字幕显示时长；旁白/原文两种声音；返回放好位置的人声轨
 import asyncio, json, re, subprocess, sys, os, hashlib, numpy as np
 sys.path.insert(0, '/tmp/pylib'); import edge_tts
 SR = 48000; CACHE = '/tmp/vo/cache/'; os.makedirs(CACHE, exist_ok=True)
 VR, QR = 4.2, 3.3
 def nchar(t): return len(re.sub(r'[，。；：！？、—“”（）\s]', '', t))
-PRON = {'许寿裳': '许寿常', '阒寂': '去寂', '竦听': '耸听'}                 # 只改配音稿，字幕不变（多音字/生僻字）
+PRON = {'许寿裳': '许寿常', '阒寂': '去寂', '竦听': '耸听', '还回来': '环回来', '荃不察': '全不察', '两间馀': '两间余'}                 # 只改配音稿，字幕不变（多音字/生僻字）
 EMO = {'九十年过去了，我们没有听他的话': (-6, -2), '这一次，就当是写给先生的一封回信': (-8, -2), '他停止了呼吸': (-3, -1),
        '可是先生': (-5, -1), '先生，九十年过去了': (-10, -3), '您让我们忘记您': (-8, -2), '我们会好好生活': (-8, -2),
        '只是在黑夜里': (-6, -2), '有一分热': (-4, -1), '不要做任何关于纪念的事情': (-3, -1)}
@@ -13,18 +14,39 @@ def speak_text(t):
     return t.replace('——', '，')
 async def _gen(text, voice, rate, pitch, path):
     await edge_tts.Communicate(text, voice, rate=f'{rate:+d}%', pitch=f'{pitch:+d}Hz').save(path)
-def gen(text, voice, rate, pitch):
-    key = re.sub(r'\W', '', voice)[-10:] + f'_{rate:+d}_{pitch:+d}_' + hashlib.md5(text.encode()).hexdigest()[:12]
-    mp3 = CACHE + key + '.mp3'
-    if not os.path.exists(mp3):
-        for k in range(4):
-            try: asyncio.run(_gen(text, voice, rate, pitch, mp3)); break
+async def _gen2(text, voice, rate, pitch, path, jpath):
+    c = edge_tts.Communicate(text, voice, rate=f'{rate:+d}%', pitch=f'{pitch:+d}Hz', boundary='WordBoundary'); marks = []
+    with open(path + '.part', 'wb') as f:
+        async for ch in c.stream():
+            if ch['type'] == 'audio': f.write(ch['data'])
+            elif ch['type'] == 'WordBoundary': marks.append((ch['offset'] / 1e7, ch['duration'] / 1e7, ch['text']))
+    os.replace(path + '.part', path); json.dump(marks, open(jpath, 'w'), ensure_ascii=False)
+def _key(text, voice, rate, pitch): return CACHE + re.sub(r'\W', '', voice)[-10:] + f'_{rate:+d}_{pitch:+d}_' + hashlib.md5(text.encode()).hexdigest()[:12]
+def gen(text, voice, rate, pitch, marks=False):
+    """marks=True：同时返回逐词时间 [(起点秒, 时长秒, 词)]（已扣除去掉的开头静音）"""
+    mp3 = _key(text, voice, rate, pitch) + '.mp3'; js = mp3[:-4] + '.json'
+    if not os.path.exists(mp3) or (marks and not os.path.exists(js)):
+        for k in range(5):
+            try: asyncio.run(_gen2(text, voice, rate, pitch, mp3, js)); break
             except Exception as e:
-                if k == 3: raise
+                if k == 4: raise
     x = np.frombuffer(subprocess.run(['ffmpeg', '-v', 'error', '-i', mp3, '-ac', '1', '-ar', str(SR), '-f', 'f32le', '-'], capture_output=True).stdout, np.float32)
     # 去掉首尾静音
     e = np.convolve(np.abs(x), np.ones(480) / 480, 'same'); idx = np.where(e > 10 ** (-42 / 20))[0]
-    return x[max(0, idx[0] - 240): idx[-1] + 2400] if len(idx) else x
+    a = max(0, idx[0] - 240) if len(idx) else 0
+    y = x[a: idx[-1] + 2400] if len(idx) else x
+    if not marks: return y
+    mk = [(o - a / SR, d, w) for o, d, w in json.load(open(js))] if os.path.exists(js) else []
+    return y, mk
+# 诗词模式：按句读（逗号、句号处断开分别合成），句间停顿；返回音频与每个分句的起点（用于字幕对位）
+POEM_PAUSE = {'，': 0.35, '、': 0.3, '；': 0.5, '。': 0.7, '！': 0.7, '？': 0.7}
+def gen_poem(text, voice, rate, pitch):
+    st = speak_text(text); parts = re.findall(r'[^，。；！？、]+[，。；！？、]?', st); out, starts, t = [], [], 0.0
+    for i, ptxt in enumerate(parts):
+        y = gen(ptxt.rstrip('，。；！？、'), voice, rate, pitch); starts.append((t, ptxt)); out.append(y); t += len(y) / SR
+        if i < len(parts) - 1:
+            g = POEM_PAUSE.get(ptxt[-1], 0.35); out.append(np.zeros(int(g * SR), np.float32)); t += g
+    return np.concatenate(out), starts
 # 原文声音的处理方案（可按候选音色切换）：base=(语速%, 音高Hz)，flt=ffmpeg 滤镜，rev=(RT60秒, 湿声dB) 或 None
 QPROF = dict(base=(-16, -3), flt='highpass=f=110,lowpass=f=9500,acompressor=threshold=-20dB:ratio=2.5:attack=8:release=120:makeup=2,aecho=0.85:0.7:28|52:0.14|0.08', rev=None)
 def reverb(y, rt60, wet_db, seed=7):

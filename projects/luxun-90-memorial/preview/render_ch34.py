@@ -1,3 +1,5 @@
+# 样片 v5（r3，2026-10-27）：按反馈改——删《秋夜》枣树段；《在酒楼上》《孤独者》后加对新文化运动的反思；朱安/许广平段重写并补女师大学潮、刘和珍；三一八后补思想转变（《无花的蔷薇之二》《空谈》）；“吃人”段加快；
+#   排时改为按实际配音时长（/tmp/vo/dur34.json，由 audio/dur34.py 生成：逐词时间对齐每行字幕）；--main 只渲染正片
 # 样片 v3 r2：第三、四章 北京（1912—1926 从沉默到呐喊；彷徨与反抗绝望）。框架与 render_ch2.py 相同（相片卡、介绍卡、字幕、调色、颗粒）
 # r2（2026-10-21）按反馈改：节奏收紧（旁白/原文说完 0.5 秒切走）；影像为主——1917年北京纪录影像（AI 上色版）、1920年代军阀战事纪录片、《觉醒年代》、电影《阿Q正传》（1981）；
 # 文学作品用 AI 情景再现（狂人日记、孔乙己、故乡、祝福、在酒楼上、孤独者、秋夜、过客）；新增《在酒楼上》《孤独者》段落与《秋夜》；“吃人”从“仁义道德”字缝里放大成一组大字；修 0:35 卡顿（补树书屋片段换剪辑点）。1920x1080/25fps，无声
@@ -7,7 +9,7 @@ from collections import OrderedDict
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageOps, ImageChops
 W, H, FPS = 1920, 1080, 25
-ROOT = '/data/luxun90/'; S3 = ROOT + 'preview/src3/'
+ROOT = '/tmp/root/'; S3 = ROOT + 'preview/src3/'
 FD = '/usr/share/fonts/google-noto-cjk/'
 def SERIF(s, w='Regular'): return ImageFont.truetype(FD + f'NotoSerifCJK-{w}.ttc', s, index=2)
 def SANS(s, w='Regular'): return ImageFont.truetype(FD + f'NotoSansSC-{w}.otf', s)
@@ -166,6 +168,8 @@ QS = {r[0]: r[2] for r in csv.reader(open(ROOT + 'quotes_src.tsv', encoding='utf
 # r2 新增引文（已据《鲁迅全集》2005年版核对；v2.6 分镜时并入 quotes_src.tsv / quotes_checked.tsv）
 Q.update({'Q94': '飞了一个小圈子，便又回来停在原地点', 'Q95': '我已经躬行我先前所憎恶，所反对的一切，拒斥我先前所崇仰，所主张的一切了。'})
 QS.update({'Q94': '《在酒楼上》', 'Q95': '《孤独者》'})
+# r3 新增（据《鲁迅全集》2005年版第3卷《华盖集续编·空谈》核对）
+Q.update({'Q98': '改革自然常不免于流血，但流血非即等于改革。'}); QS.update({'Q98': '《空谈》'})
 VR, QR, GAP, LEAD, TAIL = 4.2, 3.3, 0.6, 0.4, 0.5   # 旁白 4.2 字/秒，原文 3.3 字/秒；每个镜头在最后一句结束后 0.5 秒切走
 def nchar(txt): return len(re.sub(r'[，。；：！？、—“”（）\s]', '', txt))
 def chunks(txt, n=18):
@@ -189,35 +193,47 @@ def chunks(txt, n=18):
     return res
 FS, FA = SERIF(44, 'Medium'), SERIF(26)
 SUBLOG = []
+import json as _json, os as _os
+DURF = '/tmp/vo/dur34.json'   # 每句实际配音时长与各行字幕起点（audio/dur34.py 生成）；没有时退回按字数估算
+DUR = _json.load(open(DURF, encoding='utf-8')) if _os.path.exists(DURF) else {}
 def SUB(t0, kind, txt=None):
-    q = kind != 'vo'; txt = txt or Q[kind]; dur = nchar(txt) / (QR if q else VR)
+    q = kind != 'vo'; txt = txt or Q[kind]; D = DUR.get(txt)
+    dur = D['dur'] if D else nchar(txt) / (QR if q else VR)
     cs = chunks(txt); tot = sum(len(c) for c in cs); u = t0
+    st = D['cs'] if D and len(D['cs']) == len(cs) else None
     attr = (text_rgba('——鲁迅' + QS[kind], FA, (214, 216, 214, 255), shadow=3, salpha=230, glow=6), text_rgba('——鲁迅' + QS[kind], FA, (96, 90, 82, 255))) if q else None
-    for c in cs:
-        dd = dur * len(c) / tot
-        subs.append((u, u + dd - 0.08, (text_rgba(c, FS, (248, 240, 222, 255) if q else (244, 244, 240, 255), shadow=3, salpha=230, glow=8),
-                                        text_rgba(c, FS, (40, 36, 32, 255))), attr))
-        SUBLOG.append((round(u, 2), round(u + dd, 2), c)); u += dd
+    for i, c in enumerate(cs):
+        a = t0 + st[i] if st else u
+        b = (t0 + st[i + 1] if i + 1 < len(cs) else t0 + dur + 0.2) if st else u + dur * len(c) / tot
+        subs.append((a, b - 0.08, (text_rgba(c, FS, (248, 240, 222, 255) if q else (244, 244, 240, 255), shadow=3, salpha=230, glow=8),
+                                   text_rgba(c, FS, (40, 36, 32, 255))), attr))
+        SUBLOG.append((round(a, 2), round(b, 2), c)); u = b
     return t0 + dur
 # ---------- 第三、四章时间线（r2：按紧凑时长直接排，不再沿用 storyboard 时长；本章从 0 秒起算） ----------
 OFF = 332.75   # 第二章 r2 收紧后，本章在 B站母版中的起点（v2.6 分镜同步）
 SEQ = [('S3-01', [{'vo': '1912年，他应教育总长蔡元培之邀进入教育部，5月随部到北京，住进宣武门外的绍兴县馆。'}]),
  ('S3-02', [{'vo': '辛亥之后，是复辟，是军阀混战。他白天上班，夜里抄古碑、读佛经。'}, {'q': 'Q15'}]),
  ('S3-03', [{'vo': '那时，老朋友钱玄同常来夜谈，劝他给《新青年》写文章。他说——'}, {'q': 'Q17'}, {'q': 'Q18'}]),
- ('S3-04', [{'vo': '1918年5月，《狂人日记》发表在《新青年》上，第一次署名“鲁迅”。'}, {'q': 'Q57'}, {'q': 'Q20'}]),
+ ('S3-04', [{'vo': '1918年5月，《狂人日记》发表在《新青年》上，第一次署名“鲁迅”。'}, {'q': 'Q57', 'gap': 0.3}, {'q': 'Q20'}]),
  ('S3-05', [{'q': 'Q21'}, {'sil': 1.5}]),
  ('S3-06', [{'vo': '此后几年，孔乙己、阿Q、闰土……一个个从他笔下走了出来。他一直在问自己——'}, {'q': 'Q89'}, {'vo': '这是他的第三次转身：沉默的抄碑人，发出了第一声呐喊。'}]),
  ('S4-01', [{'vo': '1923年，他和弟弟周作人失和，搬出八道湾，后来迁入西三条胡同的小院。'}]),
  ('S4-02', [{'vo': '《新青年》的同人也散了——'}, {'q': 'Q59'}]),
  ('S4-02a', [{'vo': '1924年的《在酒楼上》，当年拔神像胡子的吕纬甫，回乡教起了“子曰诗云”。他笑自己像只蝇子——'}, {'q': 'Q94'}]),
- ('S4-02b', [{'vo': '1925年的《孤独者》里，魏连殳做了杜师长的顾问，他在信里写——'}, {'q': 'Q95'}, {'vo': '后来，他为《彷徨》题诗——'}, {'q': 'Q24'}]),
+ ('S4-02b', [{'vo': '1925年的《孤独者》里，魏连殳做了杜师长的顾问，他在信里写——'}, {'q': 'Q95'},
+             {'vo': '吕纬甫、魏连殳，都曾是冲在前头的新派青年。五四退潮，一个回到原地，一个向旧势力低头。'},
+             {'vo': '这是他对新文化运动的反思：少数人的呐喊，唤不醒整个社会；启蒙扎不进这片土地，觉醒的人也会被重新吞没。'},
+             {'vo': '后来，他为《彷徨》题诗——'}, {'q': 'Q24'}]),
  ('S4-03', [{'vo': '这一时期，他越来越多地拿起杂文。1925年的《灯下漫笔》，把几千年的历史归结为两种时代——'}, {'q': 'Q80'}, {'q': 'Q81'}]),
- ('S4-04', [{'vo': '他在屋后接出一间小书房，人称“老虎尾巴”。散文诗集《野草》，大多写在这里。'}, {'q': 'Q66'}]),
- ('S4-05', [{'vo': '《野草》里有一个过客，不知从哪里来，到哪里去。老翁说前面是坟，劝他回去。他说——'}, {'q': 'Q27'}, {'q': 'Q26'}]),
+ ('S4-05', [{'vo': '在散文诗集《野草》里，有一个过客，不知从哪里来，到哪里去。老翁说前面是坟，劝他回去。他说——'}, {'q': 'Q27'}, {'q': 'Q26'}]),
  ('S4-06', [{'q': 'Q25'}, {'vo': '看不见希望，也不向绝望下跪。这是他的第四次转身：反抗绝望。'}, {'sil': 1.0}]),
- ('S4-07', [{'vo': '他与朱安的旧式婚姻，已经过了将近二十年。1925年3月，女师大学生许广平给他写来第一封信。'}]),
- ('S4-08', [{'vo': '1926年3月18日，北京学生和市民到段祺瑞执政府门前请愿，卫队开枪。'}, {'sil': 0.8}, {'q': 'Q75'}, {'q': 'Q31'}])]
-EXTRA = {'S3-04': 0.4, 'S4-08': 0.7}   # “吃人”大字落定、片尾“真的猛士”各多留一点
+ ('S4-07', [{'vo': '那几年，他自己的生活也近乎荒芜：与朱安的婚姻是母亲包办的，名存实亡，已近二十年。'},
+            {'vo': '直到1925年3月，女师大学生许广平给他写来第一封信。两人书信往来，后来编成了《两地书》。'}]),
+ ('S4-07b', [{'vo': '这一年，女师大学潮愈演愈烈。他站在学生一边，被教育总长章士钊免了职。'}, {'vo': '和许广平并肩抗争的学生里，有一个叫刘和珍。'}]),
+ ('S4-08', [{'vo': '1926年3月18日，北京学生和市民到段祺瑞执政府门前请愿，卫队开枪。'}, {'sil': 0.8}, {'vo': '当天，他写下——'}, {'q': 'Q33'}, {'q': 'Q75'}, {'q': 'Q31'}]),
+ ('S4-09', [{'vo': '他一向不赞成请愿，更痛惜青年的血——'}, {'q': 'Q98'},
+            {'vo': '从此他更认定：对这样的政府，不能再抱幻想；战斗要用“壕堑战”，因为战士的生命是宝贵的。这年夏天，他离开了北京。'}])]
+EXTRA = {'S3-04': 0.4, 'S4-08': 0.5, 'S4-09': 1.0}   # “吃人”大字落定、“真的猛士”、章末离京各多留一点
 T = 0.0; TURN, ST, EN = {}, {}, {}
 for sid, aud in SEQ:
     ST[sid] = T; t = T + LEAD
@@ -227,12 +243,12 @@ for sid, aud in SEQ:
         if kind == 'vo' and '转身' in txt and '这是' in txt:   # “这是他的第N次转身……”由转身字卡呈现
             a1, a2 = txt.split('这是', 1)
             if a1: t = SUB(t, 'vo', a1) + GAP
-            TURN[sid] = t; t += nchar('这是' + a2) / VR + GAP; continue
-        t = SUB(t, kind, txt) + GAP
+            TURN[sid] = t; t += DUR.get('这是' + a2, {}).get('dur', nchar('这是' + a2) / VR) + GAP; continue
+        t = SUB(t, kind, txt) + a.get('gap', GAP)
     T = t - GAP + TAIL + EXTRA.get(sid, 0); EN[sid] = T
 TURN3, TURN4 = TURN['S3-06'], TURN['S4-06']
-TOTAL_MAIN = round(T, 2); CRED = 7.0; TOTAL = TOTAL_MAIN + CRED
-assert 270 < TOTAL_MAIN < 278, TOTAL_MAIN
+TOTAL_MAIN = round(T * FPS) / FPS; CRED = 7.0; TOTAL = TOTAL_MAIN + CRED   # 对齐到整帧
+assert 230 < TOTAL_MAIN < 360, TOTAL_MAIN
 def at(sub):
     for a, b, c in SUBLOG:
         if sub in c: return a
@@ -417,7 +433,7 @@ def ry_fn(t, d, e=e):
     g = ease((TT - t_grow) / 1.5)                              # 0→1：“吃人”放大到画面中央
     kdim = 1 - 0.55 * ease((TT - t_20) / 1.0) - 0.4 * g        # “仁义道德”逐渐隐去
     for i, (x, y, r) in enumerate(RY_COLS):
-        a = clamp((TT - t_pai - 0.1 - i * 0.32) / 0.6) * kdim
+        a = clamp((TT - t_pai - 0.1 - i * 0.22) / 0.5) * kdim   # r3：排得更快
         if a <= 0.01: continue
         c = DER(('ry', i), lambda r=r: col_img('仁义道德', SERIF(84, 'SemiBold'), (214, 204, 186, 255), 104).rotate(r, expand=True, resample=Image.BICUBIC))
         paste_a(im, c, (x - c.width / 2, y - c.height / 2 + 4 * math.sin(TT * 0.7 + i)), a)
@@ -493,11 +509,16 @@ def g01_fn(t, d, s=s):
     return im
 X(s, e, g01_fn); AITAG(s, e)
 INFO(s + 0.4, t_94 - 1.2, '情景再现', '《在酒楼上》', '1924年2月作 · 收入《彷徨》')
-# S4-02b 《孤独者》：做了杜师长顾问的魏连殳（两种景别）→ 月光下潮湿的石路（《题〈彷徨〉》）
+# S4-02b 《孤独者》：做了杜师长顾问的魏连殳（两种景别）→ r3 反思：酒楼二人 → 魏连殳 → 看客 → 铁屋子 → 月光下潮湿的石路（《题〈彷徨〉》）
 s, e = ST['S4-02b'], EN['S4-02b']; t_95 = at_char('我已经躬行') - 0.3; t_ti = at_char('他为《彷徨》') - 0.4; t_24 = at_char('寂寞新文苑') - 0.2
-X(s, t_95, KB('g02', 1.0, 1.08, (.5, .5), (.5, .47))); AITAG(s, e)
+t_rA = at_char('吕纬甫、魏连殳') - 0.3; t_ww = at_char('五四退潮') - 0.3; t_fs = at_char('这是他对新文化') - 0.3; t_qm = at_char('启蒙扎不进') - 0.3
+X(s, t_95, KB('g02', 1.0, 1.08, (.5, .5), (.5, .47))); AITAG(s, t_fs)
 INFO(s + 0.4, t_95 - 0.1, '情景再现', '《孤独者》', '1925年10月作 · 收入《彷徨》')
-XQ(t_95, t_ti, KB('g02', 1.55, 1.75, (.5, .4), (.5, .37)))
+XQ(t_95, t_rA, KB('g02', 1.55, 1.75, (.5, .4), (.5, .37)))
+X(t_rA, t_ww, KB('g01', 1.0, 1.07, (.5, .62), (.5, .6), post=lambda im, t, d, M, size: snow(im, t, M, size)))
+X(t_ww, t_fs, KB('g02', 1.0, 1.06, (.5, .5), (.5, .5), gray=lambda t, d: 0.6 * ease(t / d)))
+X(t_fs, t_qm, FILM('q_face', 1.0, 1.06, off=0.5, post=dim(0.2, 0.4, 0, 6))); TAG(t_fs, t_qm, T_AQ)
+X(t_qm, t_ti, KB('d01', 1.10, 1.22, (.5, .57), (.5, .6), post=dim(0.0, 0.45, 0, 5))); AITAG(t_qm, e)
 X(t_ti, e, KB('g03', 1.0, 1.14, (.55, .5), (.555, .47)))
 INFO(t_ti + 0.3, t_24 + 0.6, '情景再现', '《孤独者》结尾', '坦然地在潮湿的石路上走，月光底下')
 # S4-03 伏案写杂文 → 灯下 → 1917年街头人群（压暗）上排字：两种时代的循环 → “第三样时代”
@@ -531,17 +552,6 @@ def loop_ov(b, t, a):
 ov(t_l1 - 0.2, e + 0.3, loop_ov, 0.3, 0.6)
 POP(t_3, e + 0.3, Pop([('第三样时代', SERIF(136, 'Bold'), CREAM, W / 2, CY, t_3, 0.12)]))
 POP(t_qn, e + 0.3, Pop([('是现在的青年的使命', SERIF(54, 'SemiBold'), (228, 200, 170), W / 2, CY + 170, t_qn, 0.07)]))
-# S4-04 “老虎尾巴” → 《秋夜》：两株枣树（星光闪烁，镜头从这一株摇到那一株）
-s, e = ST['S4-04'], EN['S4-04']; t_yc = at_char('散文诗集') - 0.3; t_y1 = at_char('一株是枣树'); t_y2 = at_char('还有一株')
-X(s, t_yc, CARDS('qj497', [('qj497', 1140, 500, 640, -1.2, 0.2, 1500)]))
-INFO(s + 0.4, t_yc - 0.1, '史料 · 照片', '“老虎尾巴”', '西三条21号 · 北屋后接出的小书房', SRC_QJ)
-TL, TR = (0.335, 0.47), (0.665, 0.47)
-def h01_fn(t, d):
-    TT = t_yc - 0.5 + t; u1 = ease((TT - t_y1 + 1.2) / 1.6); u2 = ease((TT - t_y2 + 0.3) / 1.6)
-    z = lerp(lerp(1.0, 1.06, clamp((TT - t_yc) / 4)), 1.7, u1); cx = lerp(lerp(.5, TL[0], u1), TR[0], u2); cy = lerp(.47, TL[1], u1)
-    src = IMG('h01'); im, M = kb(src, z + 0.04 * u2, cx, cy); stars(im, TT, M, src.size); return im
-X(t_yc, e, h01_fn); AITAG(t_yc, e)
-INFO(t_yc + 0.4, t_y1 - 1.3, '情景再现', '《野草·秋夜》', '1924年9月15日作 · 《野草》首篇')
 # S4-05 《过客》
 s, e = ST['S4-05'], EN['S4-05']; t_27 = at_char('但是，那前面') - 0.3; t_26 = at_char('我以为绝望') - 0.3
 X(s, t_27, KB('c01', 1.02, 1.12, (.45, .56), (.42, .56))); AITAG(s, e)
@@ -555,45 +565,63 @@ INFO(s + 0.4, TURN4 - 0.2, '史料 · 照片', '鲁迅', '1925年7月 · 北京�
 X(TURN4 + 0.7, e, KB('bg_hz94', 1.0, 1.08, (.5, .5), (.5, .5)), 'flash'); SHAKES.append(TURN4 + 1.05)
 POP(TURN4 + 0.9, e + 0.2, Pop([('第四次转身', SERIF(46), (226, 196, 186), W / 2, 380, TURN4 + 0.9, 0.08),
                                ('反抗绝望', SERIF(124, 'Bold'), CREAM, W / 2, 520, TURN4 + 1.3, 0.16)]))
-# S4-07 朱安 → 许广平 → 书信
-s, e = ST['S4-07'], EN['S4-07']; t_xg = at_char('1925年3月') - 0.3; t_xin = at_char('给他写来') - 0.4
-X(s, t_xg, CARDS('zhuan', [('zhuan', 1140, 490, 740, -1.2, 0.2)]))
-INFO(s + 0.4, t_xg - 0.1, '史料 · 照片', '朱安', '1906年奉母命与鲁迅成婚', SRC_WC)
+# S4-07 r3：雪夜寓所（“近乎荒芜”）→ 朱安 → 许广平 → 书信
+s, e = ST['S4-07'], EN['S4-07']; t_zx = at_char('与朱安') - 0.2; t_xg = at_char('直到1925年') - 0.3; t_xin = at_char('两人书信') - 0.3
+X(s, t_zx, FILM('q_yard', 1.02, 1.08, off=2.0, post=dim(0.25, 0.4, 0, 4))); TAG(s, t_zx, T_AQ)
+X(t_zx, t_xg, CARDS('zhuan', [('zhuan', 1140, 490, 740, -1.2, 0.2)]))
+INFO(t_zx + 0.4, t_xg - 0.1, '史料 · 照片', '朱安', '1906年奉母命与鲁迅成婚', SRC_WC)
 X(t_xg, t_xin, CARDS('hz95', [('hz95', 1140, 490, 800, 1.2, 0.2)]))
 INFO(t_xg + 0.4, t_xin - 0.1, '史料 · 照片', '许广平', '北京女子师范大学学生', SRC_HZ)
 X(t_xin, e, CARDS('qj3653', [('qj3653', 1140, 500, 840, -1.0, 0.2)], grow=0.05))
 INFO(t_xin + 0.3, e - 0.1, '史料 · 手迹', '鲁迅致许广平信', '1925年 · 二人通信后编为《两地书》', SRC_QJ)
-# S4-08 三一八 → 刘和珍 → “真的猛士”（中央大字）
+# S4-07b r3：女师大学潮 → 章士钊免职 → 刘和珍
+s, e = ST['S4-07b'], EN['S4-07b']; t_zs = at_char('被教育总长') - 0.2; t_lz = at_char('和许广平并肩') - 0.3
+X(s, t_zs, CARDS('nsd', [('nsd', 1140, 500, 640, -1.0, 0.2, 1500)]))
+INFO(s + 0.4, t_zs - 0.1, '史料 · 照片', '北京女子师范大学', '许广平、刘和珍就读的学校', SRC_WC)
+X(t_zs, t_lz, CARDS('zsz', [('zsz', 1140, 480, 820, 1.2, 0.2)]))
+INFO(t_zs + 0.3, t_lz - 0.1, '史料 · 照片', '章士钊', '1925年兼署教育总长 · 8月呈请免去鲁迅教育部佥事', SRC_WC)
+X(t_lz, e, CARDS('lhz', [('lhz', 1140, 490, 800, -1.2, 0.2)]))
+INFO(t_lz + 0.4, e - 0.1, '史料 · 照片', '刘和珍', '女师大学生自治会主席', SRC_WC)
+# S4-08 三一八 → 卫队开枪 → 当天写《无花的蔷薇之二》（灯下）→ 刘和珍 → “真的猛士”（中央大字）
 s, e = ST['S4-08'], EN['S4-08']
-t_103 = at_char('到段祺瑞') - 0.3; t_kq = at_char('卫队开枪'); t_lh = at_char('在四十余') - 0.5; t_31 = at_char('真的猛士') - 0.3; t_face = t_lh + 3.0
+t_103 = at_char('到段祺瑞') - 0.3; t_kq = at_char('卫队开枪'); t_dt = at_char('当天，他写下') - 0.3; t_lh = at_char('在四十余') - 0.5
+t_31 = at_char('真的猛士') - 0.3; t_face = at_char('刘和珍君是') - 0.2
 X(s, t_103, CARDS('hz102', [('hz102', 1140, 500, 640, -1.0, 0.2, 1560)]))
 INFO(s + 0.4, t_103 - 0.1, '史料 · 照片', '三一八请愿', '1926年3月18日 · 北京', SRC_HZ)
 def kq_post(im, t, d):
     k = 0.5 * eout((t - (t_kq - t_103 + 0.5)) / 0.35)
     if k > 0: im.paste(Image.blend(im, DARK, k))
-X(t_103, t_lh, CARDS('hz103', [('hz103', 1140, 490, 800, 1.2, 0.2)], post=kq_post))
+X(t_103, t_dt, CARDS('hz103', [('hz103', 1140, 490, 800, 1.2, 0.2)], post=kq_post))
 INFO(t_103 + 0.3, t_kq - 0.1, '史料 · 照片', '请愿群众与执政府卫队对峙', '1926年3月18日 · 北京', SRC_HZ)
+X(t_dt, t_lh, KB('h02', 1.06, 1.14, (.44, .5), (.48, .52), post=lamp((0.222, 0.36), 300, 0.2))); AITAG(t_dt, t_lh)
+INFO(t_dt + 0.4, t_lh - 0.2, '情景再现', '《无花的蔷薇之二》', '文末注：“三月十八日，民国以来最黑暗的一天，写。”')
 X(t_lh, t_face, CARDS('hz104', [('hz104', 1140, 480, 800, -1.0, 0.2)]))
 INFO(t_lh + 0.3, t_31 - 0.2, '史料 · 照片', '刘和珍（后排中）', '女师大学生自治会主席 · 1926年3月18日遇难', SRC_HZ)
 X(t_face, t_31, KB('card_hz104', 1.22, 1.36, (.5, .2), (.5, .19)))
 X(t_31, e, KB('bg_hz104', 1.0, 1.04, (.5, .5), (.5, .5), post=dim(0.9, 0.95, 0, 10)))
-HIDE.append((t_31 + 0.1, e + 0.6))
-t_zm, t_zs = at_char('敢于直面'), at_char('敢于正视')
-POP(t_31 + 0.3, e + 0.3, Pop([('真的猛士，', SERIF(84, 'Bold'), CREAM, W / 2, 330, t_31 + 0.4, 0.1)]))
-POP(t_zm, e + 0.3, Pop([('敢于直面惨淡的人生，', SERIF(72, 'SemiBold'), CREAM, W / 2, 470, t_zm, 0.08)]))
-POP(t_zs, e + 0.3, Pop([('敢于正视淋漓的鲜血。', SERIF(72, 'SemiBold'), CREAM, W / 2, 590, t_zs, 0.08)]))
+HIDE.append((t_31 + 0.1, e + 0.1))
+t_zm, t_zs2 = at_char('敢于直面'), at_char('敢于正视')
+POP(t_31 + 0.3, e + 0.2, Pop([('真的猛士，', SERIF(84, 'Bold'), CREAM, W / 2, 330, t_31 + 0.4, 0.1)]))
+POP(t_zm, e + 0.2, Pop([('敢于直面惨淡的人生，', SERIF(72, 'SemiBold'), CREAM, W / 2, 470, t_zm, 0.08)]))
+POP(t_zs2, e + 0.2, Pop([('敢于正视淋漓的鲜血。', SERIF(72, 'SemiBold'), CREAM, W / 2, 590, t_zs2, 0.08)]))
 ATT31 = text_rgba('——鲁迅《记念刘和珍君》', SERIF(36), (214, 210, 200, 255), shadow=4)
-ov(t_zs + 1.2, e + 0.3, lambda b, t, a: paste_a(b, ATT31, (W / 2 + 200 - ATT31.width / 2, 720), a), 0.6, 0.5)
+ov(t_zs2 + 1.2, e + 0.2, lambda b, t, a: paste_a(b, ATT31, (W / 2 + 200 - ATT31.width / 2, 720), a), 0.6, 0.5)
+# S4-09 r3：思想转变——请愿照（渐灰）上《空谈》→ 1925年像（“壕堑战”）→ 北京城门（离京）
+s, e = ST['S4-09'], EN['S4-09']; t_v3 = at_char('从此他更认定') - 0.3; t_bj = at_char('这年夏天') - 0.3
+X(s, t_v3, KB('card_hz102', 1.02, 1.10, (.5, .5), (.52, .48), gray=lambda t, d: 0.85 * ease(t / d), post=dim(0.15, 0.35, 0, 8)))
+X(t_v3, t_bj, CARDS('hz61', [('hz61', 1140, 490, 800, 1.0, 0.2)]))
+INFO(t_v3 + 0.4, t_bj - 0.1, '史料 · 照片', '鲁迅', '1925年 · 北京　为俄译本《阿Q正传》所摄', SRC_HZ)
+X(t_bj, e, FILM('a_wall', 1.02, 1.08, off=1.0)); TAG(t_bj, e, T_17)
 build_tags()
 # 片尾
 def mmss(x): return f'{int(x // 60):02d}:{int(x % 60):02d}'
-CR = [(f'样片 v3 r2｜第三、四章 北京（B站母版 {mmss(OFF)}—{mmss(OFF + TOTAL_MAIN)}，无配音）', 40, 'SemiBold', INK),
+CR = [(f'样片 v5｜第三、四章 北京（B站母版 {mmss(OFF)}—{mmss(OFF + TOTAL_MAIN)}）', 40, 'SemiBold', INK),
       ('', 0, '', None),
-      ('AI 情景再现：铁屋子、《狂人日记》《孔乙己》《故乡》《祝福》《在酒楼上》《孤独者》《秋夜》《过客》、灯下写作（右上角已标注）', 26, 'Regular', (70, 64, 58)),
+      ('AI 情景再现：铁屋子、《狂人日记》《孔乙己》《故乡》《祝福》《在酒楼上》《孤独者》《过客》、灯下写作（右上角已标注）', 26, 'Regular', (70, 64, 58)),
       ('影视剧：《觉醒年代》（2021）第8、13、15集，曹磊饰鲁迅；电影《阿Q正传》（1981，上海电影制片厂，岑范导演）', 26, 'Regular', (70, 64, 58)),
       ('以上均为非历史影像，已裁去原片字幕与台标', 26, 'Regular', (70, 64, 58)),
       ('纪录影像：Benjamin Brodsky 摄1917年北京（AI 修复上色版）、《China At The Front》（1920年代）——Internet Archive', 26, 'Regular', (70, 64, 58)),
-      ('历史照片、手迹：林贤治《鲁迅画传》；《鲁迅全集》2005年版文前彩插　《新青年》原刊、朱安像：Wikimedia Commons（公有领域）', 26, 'Regular', (70, 64, 58)),
+      ('历史照片、手迹：林贤治《鲁迅画传》；《鲁迅全集》2005年版文前彩插　《新青年》原刊，朱安、女师大、章士钊、刘和珍像：Wikimedia Commons', 26, 'Regular', (70, 64, 58)),
       ('鲁迅原文均据《鲁迅全集》2005年版', 26, 'Regular', (70, 64, 58))]
 CRS = [text_rgba(c, SERIF(s, w), f + (255,)) if c else None for c, s, w, f in CR]
 assert max(c.width for c in CRS if c) < W - 80, [c.width for c in CRS if c]
@@ -605,7 +633,7 @@ def cred(t, d):
     return im
 X(TOTAL_MAIN, TOTAL, cred)
 
-WM = text_rgba('样片 v3 r2 · 无配音', SANS(22, 'Light'), (255, 255, 255, 255), shadow=2)
+WM = text_rgba('样片 v5', SANS(22, 'Light'), (255, 255, 255, 255), shadow=2)
 
 # ---------- 浮尘（淡） ----------
 rnd = random.Random(11)
@@ -682,7 +710,7 @@ if __name__ == '__main__':
             frame(tt).save(f'/tmp/v3_{tt:06.1f}.jpg', quality=85)
         sys.exit(0)
     k, n = map(int, sys.argv[sys.argv.index('--part') + 1].split('/')); out = sys.argv[sys.argv.index('--part') + 2]
-    N = int(round(TOTAL * FPS)); a, b = N * k // n, N * (k + 1) // n
+    N = int(round((TOTAL_MAIN if '--main' in sys.argv else TOTAL) * FPS)); a, b = N * k // n, N * (k + 1) // n   # --main：只渲染正片（全片拼接用）
     p = subprocess.Popen(['ffmpeg', '-y', '-loglevel', 'error', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', f'{W}x{H}', '-r', str(FPS), '-i', '-',
                           '-c:v', 'libx264', '-preset', 'medium', '-crf', '19', '-pix_fmt', 'yuv420p', out], stdin=subprocess.PIPE)
     for f in range(a, b):

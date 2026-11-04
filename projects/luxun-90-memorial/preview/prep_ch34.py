@@ -1,12 +1,13 @@
 # 第三、四章（北京 1912—1926）素材准备：画传/全集/原刊扫描裁成相片卡；AI 图调色；《觉醒年代》片段抽帧（裁掉片中字幕与台标）并统一“冷调旧胶片·中档”。输出到 preview/src3/
 # 原始页：pdftoppm -r 200 画传第54…134页 → v3/pdf/hzN-0NN.png；pdfimages -j 全集第101、103、497、498、3653、5514、6618页 → v3/pdf/qjN-000.jpg
 # 《觉醒年代》片段：GitHub assets/web/W40/clips/juexing-niandai/ 下载到 v3/jx/（3840x2160/60fps，原片字幕与台标在画面下部，一律裁掉）
+# r3（2026-10-27）：删《秋夜》（h01、qj497 不再用）；新增 Commons 女师大、章士钊、刘和珍像；《China At The Front》改为远程截取（0950ChinaAtTheFront）
 # r2（2026-10-21）：新增 1917年北京纪录影像（AI 上色版）、1920年代军阀战事纪录片、电影《阿Q正传》（1981）片段，及9张 AI 情景再现（文学作品复现）
 # 用法：python3 prep_ch34.py [--cards] [--film [名1,名2]]
 import os, sys, subprocess, numpy as np
 from PIL import Image, ImageFilter, ImageOps
 import importlib.util
-R = '/data/luxun90/'; P = R + 'preview/v3/pdf/'; AW = R + 'assets/web/'; O = R + 'preview/src3/'; FILES = '/data/.agent-service/files/'; JX = R + 'preview/v3/jx/'
+R = '/tmp/root/'; P = R + 'preview/v3/pdf/'; AW = R + 'assets/web/'; O = R + 'preview/src3/'; FILES = '/data/.agent-service/files/'; JX = R + 'preview/v3/jx/'
 spec = importlib.util.spec_from_file_location('pv', R + 'preview/prep_lib.py'); pv = importlib.util.module_from_spec(spec); spec.loader.exec_module(pv)
 os.makedirs(O, exist_ok=True)
 AI = {'d01': 'f73d6811-c71c-4dc4-993a-a9e983d496ec',   # 铁屋子：无窗铁屋里熟睡的人（脸不入画）
@@ -20,15 +21,17 @@ AI = {'d01': 'f73d6811-c71c-4dc4-993a-a9e983d496ec',   # 铁屋子：无窗铁�
       'g01': 'db32e7a3-dac6-41c8-a80d-49ab99c1efa8',   # 《在酒楼上》：酒楼窗外雪中的梅与红山茶
       'g02': 'c8559de3-f5b7-44ea-a859-4ae817a8dc50',   # 《孤独者》：做了杜师长顾问的魏连殳，厅内军官打牌
       'g03': '20ffe2a3-1f71-4920-a2fd-460a31ffc095',   # 《孤独者》结尾：月光下湿石路上独行
-      'h01': '8782406c-6d78-437a-a7c8-2511e35c9d00',   # 《秋夜》：后园墙外两株枣树
       'h02': 'b44032fd-8386-4aae-aad9-ea126c898b26'}   # 灯下写作
 CARD = {  # 名: (文件, 裁切 l,t,r,b 像素)　r2 只保留仍在用的
  'hz56': ('hz56-056.png', (0, 0, 2400, 3250)),            # 绍兴县馆大门
  'w0701': (AW + 'W07/W07-01-xinqingnian-cover.png', None), 'w0702': (AW + 'W07/W07-02-kuangren-first-page.png', None),
  'hz61': ('hz61-061.png', (345, 1100, 2175, 2960)),         # 1925年为俄译本《阿Q正传》所摄
  'qj103': ('qj103-000.jpg', None), 'hz80': ('hz80-080.png', (0, 0, 2400, 2520)),
- 'qj497': ('qj497-000.jpg', None), 'hz94': ('hz94-094.png', (264, 476, 1968, 2524)),
- 'zhuan': ('/data/luxun90/preview/v3/web/zhuan_bj.jpg', None), 'hz95': ('hz95-095.png', (0, 0, 2400, 2900)), 'qj3653': ('qj3653-000.jpg', None),
+ 'hz94': ('hz94-094.png', (264, 476, 1968, 2524)),
+ 'zhuan': (R + 'preview/v3/web/zhuan_bj.jpg', None), 'hz95': ('hz95-095.png', (0, 0, 2400, 2900)), 'qj3653': ('qj3653-000.jpg', None),
+ 'nsd': (R + 'preview/v3/web/nsd.png', (0, 0, 1466, 1084)),     # 北京女子师范大学（Commons: Beijing Women Normal School.png，CC0）
+ 'zsz': (R + 'preview/v3/web/zsz.jpg', (0, 0, 1170, 2053)),     # 章士钊（Commons: Zhang Shizhao2.jpg，公有领域，不晚于1925年）
+ 'lhz': (R + 'preview/v3/web/lhz.jpg', (0, 0, 911, 1475)),      # 刘和珍（Commons: Liu hezhen.jpg，公有领域）
  'hz102': ('hz102-102.png', (0, 1624, 2400, 3316)), 'hz103': ('hz103-103.png', (0, 1548, 1064, 3316)), 'hz104': ('hz104-104.png', (0, 0, 1548, 1896))}
 def trim(im, thr=14):
     g = np.asarray(ImageOps.grayscale(im)).astype(np.int16); bgv = np.median(np.concatenate([g[0], g[-1], g[:, 0], g[:, -1]]))
@@ -41,7 +44,7 @@ SRC = {'c17': ('https://archive.org/download/china-amazing-china-in-1917-1080p-s
        # 《Amazing China in 1917》：Benjamin Brodsky 1917年拍摄的中国纪录片片段，AI 修复上色版（Internet Archive），4:3 画面位于 x 240—1680
        'aq': ('https://archive.org/download/the-true-story-of-ah-q-chn/The%20True%20Story%20Of%20Ah%20Q%20%281981%29%20CHN%20Disk%20Kino%20Bluray%20Original%20Version.mkv', 1920, 1080),
        # 电影《阿Q正传》（1981，上海电影制片厂，岑范导演，严顺开饰阿Q）蓝光原版，有效画面 y 131—947
-       'fr': (ARC + 'front1927.mp4', 640, 480)}            # 纪录片《China At The Front》（1920年代军阀战事），Internet Archive
+       'fr': ('https://archive.org/download/0950ChinaAtTheFront/0950_China_At_The_Front.mp4', 640, 480)}            # 纪录片《China At The Front》（1920年代军阀战事），Internet Archive
 for f in os.listdir(JX): SRC[f] = (JX + f, 3840, 2160)    # 《觉醒年代》：GitHub assets/web/W40/clips/juexing-niandai/，原片字幕与台标在画面下部，一律裁掉
 # (名, [(源, 起, 止, 裁切 (x0, y0, w))...])：同一名下多段顺接；裁切 ≤1 为原片比例，否则为像素；高 = w×9/16
 FILM = [('f_rub', [('JXND_E08_S01_P05_001108-001118.mp4', 3.5, 5.45, (0.10, 0.04, 0.80)),
@@ -81,7 +84,7 @@ def one(item):
     return name, k
 def film(only=None):
     from multiprocessing import Pool
-    with Pool(2) as p:
+    with Pool(3) as p:
         for name, k in p.imap_unordered(one, [x for x in FILM if not only or x[0] in only]): print(name, k, 'frames', flush=True)
 if '--film' in sys.argv:
     _i = sys.argv.index('--film') + 1; film(sys.argv[_i].split(',') if _i < len(sys.argv) and not sys.argv[_i].startswith('--') else None)
