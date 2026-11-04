@@ -105,6 +105,10 @@ def fit_generic(txt, kind, tierk, r, p, win, hi, lo_r, rmin, rmax, poem=False):
         if d > hi and r < rmax: r = min(r + int(np.ceil((d / (hi * 0.98) - 1) * 100)) + 1, rmax)
         elif d < win * lo_r and r > rmin: r = max(r - int(np.ceil((1 - d / (win * lo_r * 1.03)) * 100)), rmin)
         else: break
+    if d > hi:                                 # 来回摆动仍超长：改用试过的、不超长的最长一档
+        ok = [(dd, rr) for rr, dd in log if dd <= hi]
+        if ok:
+            r = max(ok)[1]; x, info = synth(txt, kind, r, p, poem); d = len(x) / SR; log.append((r, round(d, 2)))
     return x, info, d, log
 def fit(e, hard_end):
     """画面不动的章节：整句贴字幕（同 v4），诗词用分句模式"""
